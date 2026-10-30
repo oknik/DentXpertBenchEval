@@ -2,6 +2,8 @@
 
 from typing import Any
 
+from bench.metrics.a61_a62_a71 import score_a61_fields, score_a62_fields, score_a71_fields
+
 
 def score_clinical_fields(
     pred: dict[str, Any] | None,
@@ -11,9 +13,18 @@ def score_clinical_fields(
     *,
     task_code: str,
 ) -> dict[str, Any]:
+    # Approved rubrics live in one place. These branches also keep direct callers
+    # consistent with run.TASK_SPECS, which overrides the scorer for these tasks.
+    if task_code == "A6.1":
+        return score_a61_fields(pred, ref, case_points, scoring)
+    if task_code == "A6.2":
+        return score_a62_fields(pred, ref, case_points, scoring)
+    if task_code == "A7.1":
+        return score_a71_fields(pred, ref, case_points, scoring)
+
     objective = {}
     pending = []
-    if task_code in {"A5.1", "A5.2", "A6.2"}:
+    if task_code in {"A5.1", "A5.2"}:
         expected = set(ref["diagnoses"])
         actual = set(pred["diagnoses"]) if pred else set()
         tp = len(expected & actual)
@@ -24,17 +35,12 @@ def score_clinical_fields(
             "false_negative": len(expected - actual),
         }
         pending = ["reason"] + (["exclude_reason"] if task_code == "A5.2" else [])
-    elif task_code == "A6.1":
-        objective["total"] = {"exact_match": pred is not None and pred["total"] == ref["total"]}
-        objective["images"] = {"exact_match": pred is not None and pred["images"] == ref["images"]}
     elif task_code == "A5.3":
         pending = ["sufficiency", "reason"]
     elif task_code == "A6.3":
         pending = ["conditions"]
-    elif task_code == "A7.1":
-        pending = ["plans"]
-    # Existing task definitions contain copied surface_grades weights. They do
-    # not specify a valid A5-A7 rubric. Report comparisons, never invent points.
+    # A6.3 still contains copied surface_grades weights and has no approved
+    # rubric. Report comparisons; never invent points.
     return {
         "objective_metrics": objective,
         "pending_review_fields": pending,

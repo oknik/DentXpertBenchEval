@@ -3,6 +3,12 @@ from typing import Any
 from bench.protocol import A11_FIELD_KEYS
 
 
+# A6.3 intentionally stays on the pending-review path. The other tasks have an
+# approved rubric and can report complete, partial, or incomplete totals.
+TOTALLED_CLINICAL_TASKS = {"A5.1", "A5.2", "A5.3", "A6.1", "A6.2", "A7.1"}
+F1_CLINICAL_TASKS = {"A5.1", "A5.2", "A6.2"}
+
+
 def summarize_fields(rows: list[dict[str, Any]], field_keys: tuple[str, ...]) -> dict[str, Any]:
     if any("scoring_status" in row for row in rows):
         return summarize_clinical(rows)
@@ -68,6 +74,14 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
         metrics = [row["objective_metrics"][key] for row in rows if key in row.get("objective_metrics", {})]
         correct = sum(item["exact_match"] for item in metrics)
         objective[key] = {"correct": correct, "total": len(metrics), "accuracy": correct / len(metrics)}
+        if key == "images":
+            per_image_matched = sum(item.get("per_image_matched", 0) for item in metrics)
+            per_image_total = sum(item.get("per_image_total", 0) for item in metrics)
+            objective[key].update({
+                "per_image_matched": per_image_matched,
+                "per_image_total": per_image_total,
+                "per_image_accuracy": per_image_matched / per_image_total if per_image_total else 0.0,
+            })
         if key == "diagnoses":
             tp = sum(item["true_positive"] for item in metrics)
             fp = sum(item["false_positive"] for item in metrics)
@@ -94,13 +108,17 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "average_score": None,
         "scoring_note": "No final clinical score: review open answers and approve task scoring weights first.",
     }
-    if any(row.get("task_code") in {"A5.1", "A5.2", "A5.3"} for row in rows):
+    if any(row.get("task_code") in TOTALLED_CLINICAL_TASKS for row in rows):
         scored = [row for row in rows if row.get("scoring_status") == "scored"]
         result["fully_scored"] = len(scored)
         result["unscored"] = total - len(scored)
+        # Invalid answers are counted as unscored, not as a medical score of 0.
+        result["invalid_unscored"] = sum(
+            1 for row in rows if row.get("scoring_status") == "invalid"
+        )
         f1_values = [row.get("objective_metrics", {}).get("diagnoses", {}).get("f1") for row in rows]
         f1_values = [value for value in f1_values if value is not None]
-        if any(row.get("task_code") in {"A5.1", "A5.2"} for row in rows):
+        if any(row.get("task_code") in F1_CLINICAL_TASKS for row in rows):
             result["diagnosis_f1_mean"] = sum(f1_values) / len(f1_values) if f1_values else None
         if scored:
             result["scored_total_points"] = sum(row["case_points"] for row in scored)

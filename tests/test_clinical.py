@@ -48,7 +48,11 @@ class ClinicalProtocolTests(unittest.TestCase):
                     self.assertEqual(prompt, build_clinical_prompt(changed))
                     row = run.evaluate_case(case, build_clinical_mock_response(case), run.TASK_SPECS[code]["answer_parser"])
                     self.assertIsNone(row["parse_error"])
-                    if code == "A5.3" and row["scoring_status"] == "scored":
+                    if code == "A6.1":
+                        # A6.1 is objective-only and now always scored when valid.
+                        self.assertEqual(row["scoring_status"], "scored")
+                        self.assertIsInstance(row["case_score"], float)
+                    elif code == "A5.3" and row["scoring_status"] == "scored":
                         self.assertEqual(row["case_score"], 0)
                     else:
                         self.assertIsNone(row["case_score"])
@@ -57,7 +61,10 @@ class ClinicalProtocolTests(unittest.TestCase):
                     count += 1
             summary = summarize_fields(rows, keys)
             self.assertEqual(summary["valid"], len(rows))
-            self.assertIsNone(summary["score_rate"])
+            if code == "A6.1":
+                self.assertIsNotNone(summary["score_rate"])
+            else:
+                self.assertIsNone(summary["score_rate"])
             self.assertIn(code, evaluate.TASK_FIELD_KEYS)
         self.assertEqual(count, 352)
 
@@ -148,7 +155,11 @@ class ClinicalProtocolTests(unittest.TestCase):
             row = run.evaluate_case(case, json.dumps(answer, ensure_ascii=False), run.TASK_SPECS[code]["answer_parser"])
             self.assertIsNone(row["parse_error"])
             self.assertTrue(all(item["exact_match"] for item in row["objective_metrics"].values()))
-            self.assertIsNone(row["case_score"])
+            if code == "A6.1":
+                self.assertEqual(row["scoring_status"], "scored")
+                self.assertEqual(row["case_score"], 100)
+            else:
+                self.assertIsNone(row["case_score"])
         case = load_cases("A5.3")[0]
         row = run.evaluate_case(case, '{"sufficiency":"充足"}', run.TASK_SPECS["A5.3"]["answer_parser"])
         self.assertTrue(row["objective_metrics"]["sufficiency"]["exact_match"])
