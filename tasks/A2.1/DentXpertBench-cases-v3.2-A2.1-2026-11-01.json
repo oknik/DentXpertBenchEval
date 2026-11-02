@@ -1,0 +1,1686 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:0268f3a8358743219349dc9e2e788da5",
+      "case_code": "case115",
+      "task_code": "A2.1",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "69dcc2235685b16b1f27c2b9382b054f4d95805e1811a9c8560ad76dc2877871",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate3_0001.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:04a1406592b14e83bba3c64a16a3076b",
+      "case_code": "case131",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "ad698eccbb3862e29c73b951e02d11d2b1fb48ac6899fd859500e75767126454",
+            "modality": "intraoral_photograph",
+            "width": 3197,
+            "height": 2396,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-941-00_1730781405268_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:12016d11cb854fb19612f4b59a903257",
+      "case_code": "case127",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "f285b1160f49016e658a99e262d840c7f990cdef79b5ed4e392c4c6037885621",
+            "modality": "intraoral_photograph",
+            "width": 2548,
+            "height": 1432,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/test/images/anonymous-maxillaryView-1727239069618.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:130e2630479a472c9f0b0f6922390333",
+      "case_code": "case121",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "aeadcd475ecf80750b59cd40ed8731ae8751f4a9c911655659eb204523a14e28",
+            "modality": "intraoral_photograph",
+            "width": 1768,
+            "height": 993,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-008-815-01_1729938651639_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:15bae01da5964f1b83b8becf1707e303",
+      "case_code": "case138",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "3b86425bc92673a44d5d887d7dbee49d67c89b7ae2c809b58fa0648a7b700645",
+            "modality": "intraoral_photograph",
+            "width": 1540,
+            "height": 1154,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-008-1131-01_1732527801310_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:19914a2c1e694c2484cb499bc8b8b5b3",
+      "case_code": "case129",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "de9da83c1934ff04cb96f82416e50af6f38c307e414dfe228688902a773177a9",
+            "modality": "intraoral_photograph",
+            "width": 2707,
+            "height": 1520,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Maxillary_Occlusal/anonymous-maxillaryView-1727253743355.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:24e39a3c3ce542079cb9cdf1cc94af18",
+      "case_code": "case117",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "bb86a7869839d4b78ac0ab61fa140becd45219c9383d1604e0c02177bb62bc49",
+            "modality": "intraoral_photograph",
+            "width": 1676,
+            "height": 1256,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-853-01_1730194922506_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:24e53c817da04599b297b8ed07428c3f",
+      "case_code": "case116",
+      "task_code": "A2.1",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "af70447acdb4e789a437a9c937be42f73929ff2b041600432abea3a78000fe08",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate6_0007.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2f5119f9ef434bc6b7da455397b02b82",
+      "case_code": "case109",
+      "task_code": "A2.1",
+      "dataset_id": "C010",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "6a5fecb52a0cfcc1255d7b5da9d71e92669ee98e1a1042fc654d206561e1eef0",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_168.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:34e3b00777c340728ba0a9f31b0fe7b8",
+      "case_code": "case143",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "02b3a44ca152e425844f6ef53a9766363006679391438b77d06a45f648e4137f",
+            "modality": "intraoral_photograph",
+            "width": 2228,
+            "height": 1670,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003_007_465_01_1728570918885_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:36fbd67e2b9d467cb41181b987c9b428",
+      "case_code": "case104",
+      "task_code": "A2.1",
+      "dataset_id": "C014",
+      "schema_version": "0.6.1",
+      "title": "A2.1 · 牙列识别 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "d8bcbb212ad09a093e6b93841c93432fd3fe13a8f80236c41fede871d5e0f3a5",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/067.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4c1c60214d424bd0a717cf0f03e9e4b2",
+      "case_code": "case124",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "0c17fe20e8b1a2c11457b217644b837ba751ce1c373154202c8731db8200d20b",
+            "modality": "intraoral_photograph",
+            "width": 1421,
+            "height": 1065,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-956-00_1730802283299_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4cac9d9f370a43df82d074c0feb31011",
+      "case_code": "case110",
+      "task_code": "A2.1",
+      "dataset_id": "C010",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "ccedf271b612387887de1624b28629b8949f1761915d77822f4770c9b311301f",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_404.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:589053ab83fe443990ad9747b58d0230",
+      "case_code": "case106",
+      "task_code": "A2.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "f85051742baf4cbbcc7a1aaf283cf004ae76308ebdf3b416d47f66149992880a",
+            "modality": "panoramic_radiograph",
+            "width": 2902,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_139.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5aa8b8a21c584b0e8c1015c6c43c05df",
+      "case_code": "case144",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "5740f3eee157b7a626d1714168463dbb540eb07083d873bbc1a57889b6c4eee2",
+            "modality": "intraoral_photograph",
+            "width": 1610,
+            "height": 904,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1238-01_1732952726258_Frontal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5d3d260db0334ec09716fe3a94c08de3",
+      "case_code": "case113",
+      "task_code": "A2.1",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "5480348f01a8d5dd948046dcf627f7b30d33966e1dbcafedd64f9db443f0ba8e",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Test/images/cate1_013.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "乳牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5f6c7ec53c5044cc95f2093c9183d6f1",
+      "case_code": "case107",
+      "task_code": "A2.1",
+      "dataset_id": "C010",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "f0ea25d3c14db77b89e27a7ce5445d4f6c8df0ae660b82b28ed64acdf70ff18c",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_369.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5ff09557841a4d38a8aa24f0fb77e7f1",
+      "case_code": "case119",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "76d780ca1d15f30dc04ede8abbc1a9b4894d85050f166b905f9fde58bedb34f0",
+            "modality": "intraoral_photograph",
+            "width": 1405,
+            "height": 789,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-850-01_1730122161166_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:75814cc3fbc64df3b091c1380db6a2e7",
+      "case_code": "case118",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "25976173cf2824c79a5fcff50be18440f4174bc31c8645264f26269ae0eb97e4",
+            "modality": "intraoral_photograph",
+            "width": 2581,
+            "height": 1451,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-maxillaryView-1726926386834.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:76e9d214dff34ae69c124227b6122fe1",
+      "case_code": "case112",
+      "task_code": "A2.1",
+      "dataset_id": "C010",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "3c9ba306434657edf06bbe31a66e841b6838a634903212f393bc7e2367891299",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_2131.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:82802fb59ccd457784fa4a03d23ab8fe",
+      "case_code": "case111",
+      "task_code": "A2.1",
+      "dataset_id": "C010",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "3a4714192350bdc91976e17abe2188c2cbe20c5775e92213fa69238b38b35f34",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_0508.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:86b1fa1a4f44415fb1b268048df996d8",
+      "case_code": "case120",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "fc4912ef741fc023fe8b910b515c823381d539d2176c7112b7f5857cd653978c",
+            "modality": "intraoral_photograph",
+            "width": 1547,
+            "height": 1159,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-008-624-01_1729089681358_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:899bb42491874e5cbd43f03734cfcf46",
+      "case_code": "case130",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "76e7cdf10c1c0fd81bd50fc8df35fd0629e1824aef6e84ae100071f2bc5ae285",
+            "modality": "intraoral_photograph",
+            "width": 2785,
+            "height": 2087,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-802-01_1729916116649_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:89c7e72000644d88bb0fa4883e8f3265",
+      "case_code": "case140",
+      "task_code": "A2.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "a9ec431d139e746a3ac14ecb43e1c1e38ecc5920e119c864a22f62760c693a57",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/126-M-32.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8ceb93e533004380a9b2da3af80423d8",
+      "case_code": "case137",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "bbd0d19f160b6a9d777af4dbb697720cf2e23d6b06509483117865287d5ebbd8",
+            "modality": "intraoral_photograph",
+            "width": 2038,
+            "height": 1528,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-mandibularView-1727241517838.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8e874b009d634620bd21691c33faa7b4",
+      "case_code": "case128",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "527125faea55822c52f35b13b7bca4f6beebf2df6ebd119fc2a7ce7a1f34b6fd",
+            "modality": "intraoral_photograph",
+            "width": 1043,
+            "height": 782,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-939-00_1730729761767_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:927dc63b93714ca2ac8724b8ac77d5df",
+      "case_code": "case114",
+      "task_code": "A2.1",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "ec6cf9c1186353e77db0a103c58c23ba5a5ff8fcb7b6e43da4593ef673ec74b4",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Pediatric dental disease detection dataset/Test/images/cate2_001.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "乳牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:92f5136900354b759c14ef815afcc974",
+      "case_code": "case125",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "c92f18ce1af7f2385d2f3977139fdda9171c14830024cb531666d2a726fcfd76",
+            "modality": "intraoral_photograph",
+            "width": 2924,
+            "height": 2193,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-maxillaryView-1727095283865.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a0b70e5267c942faab57bf521e96edcd",
+      "case_code": "case108",
+      "task_code": "A2.1",
+      "dataset_id": "C010",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "29bb339c76cbdd28f85fa113d66f9b9a909d75dd33107f66fc3cd104f3aa0308",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Labeled/Image/A_L_366.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:aaeaa62efa6a4867a1c76218c4cc5425",
+      "case_code": "case105",
+      "task_code": "A2.1",
+      "dataset_id": "C014",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "5e8b014f2ef7c9291e989f5a187d5689826b79d5eb2e8a6783c1509a5a3fd582",
+            "modality": "intraoral_photograph",
+            "width": 4083,
+            "height": 2719,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/008.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ba7ae499ffaa44e48f68f5ce758b1517",
+      "case_code": "case142",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "0b157f23ab14d74b980173458a72947378958162e7bb4032e2f921225f267621",
+            "modality": "intraoral_photograph",
+            "width": 1130,
+            "height": 847,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1417-00_1733917109783_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c12bdb80a2f144b4a10c98425edde568",
+      "case_code": "case126",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "1df3dfd3bc28aa296327604b21ed7511c89f3cff838ceca4fa1a3708f5305f51",
+            "modality": "intraoral_photograph",
+            "width": 2767,
+            "height": 2767,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003-007-897-00_1730347847593_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c3455eadae21403d9c01876c724ab389",
+      "case_code": "case139",
+      "task_code": "A2.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "b7693682a0e4dae46321d0f04f044f996136bce36e56b55ea62d5ac90e854df2",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1190-F-31.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:caec71c2dd204d248f733701b95c3224",
+      "case_code": "case122",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "186cbc07b4d96a9ce754e737dace0b24f1f6ece7b0a96b378edfdae6261bad22",
+            "modality": "intraoral_photograph",
+            "width": 3101,
+            "height": 2324,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1055-01_1731386400029_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cd8785648b0d4ed3bf3d537fdb35d9b1",
+      "case_code": "case133",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "ec7871f47000a7b0d3a3afaac44557f8e29a9f7937aaf1800a61accc0b2a5c36",
+            "modality": "intraoral_photograph",
+            "width": 3019,
+            "height": 2263,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-007-1343-01_1733556695047_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d848c68e8c2248a9b95e008b25a10af6",
+      "case_code": "case135",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "24936bfdce90a9c82f9a122d8a50d445a1f49e7efca680cf190e97469414a73b",
+            "modality": "intraoral_photograph",
+            "width": 2801,
+            "height": 1868,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-007-631-01_1729143366138_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e8ce64dc10e148cca9a70ba602fe21f0",
+      "case_code": "case141",
+      "task_code": "A2.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "784e090e1ef358530139e96b56894e51a64222c2b53031bbdca7cf7b7c99c7e6",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1263-F-26.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f46184f93d334124ba2447967d53c572",
+      "case_code": "case136",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "ab50661dc6a7002a2ccda609870f58789adf26ebea9228a4d58cbd60997e1868",
+            "modality": "intraoral_photograph",
+            "width": 2506,
+            "height": 1878,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-007-993-00_1730966079833_Mandibular_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f531b5dda1584dac9826b9b926b5f324",
+      "case_code": "case134",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "4f5d88128bd106456fcfff930475732130e4bb16e5fde1af8debff98c33441fe",
+            "modality": "intraoral_photograph",
+            "width": 3317,
+            "height": 2486,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Maxillary_Occlusal/anonymous_003-007-989-00_1730961461961_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fc13a54417b444dd9f3fefc58b14a0da",
+      "case_code": "case132",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "45a09b62e157d093d59378d80e4d9bd1dfc70c94c904563cb671a954d3cb8378",
+            "modality": "intraoral_photograph",
+            "width": 2983,
+            "height": 2236,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1278-01_1733290522713_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "恒牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fec8ad187f4a45f1980a74ee9a17cf0e",
+      "case_code": "case123",
+      "task_code": "A2.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A2.1 · 牙列识别 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断牙列阶段；不可评价时必须给出原因。",
+        "images": [
+          {
+            "sha256": "f9cfaf3002ef31c74198bef2c71f776a2ce62a2c51bc3d5858165ae553473c1b",
+            "modality": "intraoral_photograph",
+            "width": 3051,
+            "height": 2287,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1039-00_1731308349671_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "dentition_stage",
+            "name": "牙列阶段",
+            "value": "混合牙列"
+          },
+          {
+            "key": "unevaluable_reasons",
+            "name": "无法评价的原因",
+            "value": []
+          },
+          {
+            "key": "unevaluable_reason_other",
+            "name": "其他原因",
+            "value": ""
+          }
+        ]
+      }
+    }
+  ]
+}

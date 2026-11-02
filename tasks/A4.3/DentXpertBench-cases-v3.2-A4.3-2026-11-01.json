@@ -1,0 +1,2848 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:0040e9e5516e4352946321c6f25e1b30",
+      "case_code": "case548",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写无龋、浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "0b0884f6c551512284dcbe9a3a6c6f5dc1ac1e754601c3bdfdd0e7bacd494e5c",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.65.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.066878,
+              0.152242,
+              0.693761,
+              0.504873
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面无透射影"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:04ebc4064e154a19bc12aaa86ffef218",
+      "case_code": "case543",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "33a35dfe8f168617b7d8a30c172068c448e0136405c960cdcfd7e9f336973863",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/1258.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.573781,
+              0.080409,
+              0.781298,
+              0.744314
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影像接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:11b96ce1b5bf44bba776bdc97a01b840",
+      "case_code": "case547",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写无龋、浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "5d06e06c891c4f03aa2d6d88fe938f0a102ae98d7a948a13cbabfebe3f08d539",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/880.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.018755,
+              0.116309,
+              0.41732,
+              0.852047
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层，接近髓腔"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "远中无透射影"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:13d2c4d1904b41f2a659d0c71ae12926",
+      "case_code": "case532",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "db691daa85616f1ed22fbdfbe3841ae64d33a541f6829d167312f27f42b39dc1",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.68.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.393341,
+              0.345657,
+              0.558372,
+              0.882586
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面透射影达牙本质深层"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面透射影达牙本质深层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1aa17242c9cb46b4959460e12c6a7d40",
+      "case_code": "case542",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "d1abbd9789311787038389536f9aa8d419c41899cd832beb72615d55fc5568ef",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.75.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.061535,
+              0.232781,
+              0.725818,
+              0.550585
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2244c7e010d74daca0539c3e34f23c72",
+      "case_code": "case528",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.17.0",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "03a35dd4fa8877c518033d83c7cf43528a56bad606b97fffa892c8f4d6cba971",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.55.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.423709,
+              0.406295,
+              0.565921,
+              0.799714
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓腔"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:22f2c81207434e3f9dc8b2b7511a256c",
+      "case_code": "case534",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "c3e0b6fb5f51986afb7fad4eeefb19a6200042fe9965381d7fd37cb0955dc016",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.89.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.538967,
+              0.262586,
+              0.708508,
+              0.816349
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal",
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影突破牙釉质，未达牙本质深层"
+                  }
+                ]
+              },
+              {
+                "target_surface": "mesial",
+                "grade_value": "浅龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影范围局限于牙釉质"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:27b2dcb98215423a9a0d321f5b644f7b",
+      "case_code": "case537",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "0a033699914cd922d49294aefabbfb21965526fa6338d3d21bd26a382063ea15",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.60.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.515669,
+              0.24217,
+              0.699104,
+              0.799415
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal",
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层"
+                  }
+                ]
+              },
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2a1bc12715a941b38e6a951711539c15",
+      "case_code": "case529",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "2b5fde798c75933e26ed3706398a41f49b6b433b5dd0137bc01631cfd1f867fc",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.48.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.079015,
+              0.453888,
+              0.784909,
+              0.777173
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal",
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓腔"
+                  }
+                ]
+              },
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙近中面透射影像已达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2c1468032b804a04b25aea8b552fe43b",
+      "case_code": "case523",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "ae3173e6c5594a2e34c7001771f6ff0871449e3cc81d5b4dc4e44ae0cb159afe",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Validation/Images/113.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.271912,
+              0.1805,
+              0.503146,
+              0.848899
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓角"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3ca97dd0c23e4eaa879ab261607b0665",
+      "case_code": "case546",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写无龋、浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "dfed6deca9c45cb1a0d536ae3aeb16d4d47f715fbe89a5affc6ea5d119faf6f5",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1135.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.608368,
+              0.120533,
+              0.830707,
+              0.919396
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面完整无透射影像"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4b437e0b25664418bd7b33ace5c5d2c4",
+      "case_code": "case530",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "d532c9d659107d192a10582dec44ebd434640c39f3aa3b9696922dab472dfa3c",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.126.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.533148,
+              0.344063,
+              0.711059,
+              0.878398
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4fedffef6f9b40f58c52ab02a36b8fb0",
+      "case_code": "case544",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "c33650b05490f21797f4f6d1daf41604d35e385f52327d8094c28bfb62b9cb80",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.18.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.220037,
+              0.428687,
+              0.61362,
+              0.663775
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层，接近髓腔"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层，接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5b1be4ef90fb46848776dedabbcbedc0",
+      "case_code": "case541",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "161d8d39a332efc9d3567327abc8ae205024d40533c78a545ba20890899546af",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.90.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.431966,
+              0.326381,
+              0.57444,
+              0.831384
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal",
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              },
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层，接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:60d126f1ce774990a17e460554cc0040",
+      "case_code": "case527",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "41f93565fe1ce53b3eb7f42ed4829f8b4b01b71ff3ce2f477d68ed77110acb3b",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/1.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.68215,
+              0.142038,
+              0.882436,
+              0.901913
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，根管系统慢行炎症刺激后发生钙化。"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:64629166568f42baa146607aeaa393fb",
+      "case_code": "case526",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "93ba7b13c9611e4d6b980e33499973e457d9a743185a337a2c91913e426c8e1e",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/1068.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.287037,
+              0.172184,
+              0.610813,
+              0.959086
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓角"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:67073944c225432faeceeb7f9ec3f687",
+      "case_code": "case533",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "a89a27608726d5217f1446f7f57c75851f486b937b60062580c385c2a3fb049c",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.12.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.414493,
+              0.397568,
+              0.539666,
+              0.764504
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:67a031fc52654e9d9afc2bbb303284cc",
+      "case_code": "case539",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "2f03735346dba495a81b6e6fb69feaaa6711dc2f2c41d491f37c785fc36c2f3c",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.14.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.28872,
+              0.331033,
+              0.654875,
+              0.457284
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:74982a92563741518e0565616914fd53",
+      "case_code": "case538",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "f1e076b919ae6fc90f0130890dc4e25ea77d7c9d8a6b52500ae29216b56710bc",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.149.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.061535,
+              0.554938,
+              0.702666,
+              0.768259
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:752a3882371c42d8b7322d8b2ec32081",
+      "case_code": "case517",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "2e6d6e6ba7a4d626491ac6b4e464bfbc51c9ca3ab77f2526ae889aa89894c3c2",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.31.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.042444,
+              0.34682,
+              0.763647,
+              0.627485
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像达牙本质深层，接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:83521c04d57f46bf8ab899f72b7331b2",
+      "case_code": "case524",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "70fcc68c053893ff2f09047ea72c18796d314cae26409b3616e08a6637182f62",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Validation/Images/894.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.48191,
+              0.11709,
+              0.805166,
+              0.911269
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓角"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:91c77fa04a6d4a9884a5a2269ef20b6c",
+      "case_code": "case531",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "50f036664f6723ef5efb072230755ae157d33aab9c994389ee4550b655d2c957",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.96.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.42467,
+              0.270157,
+              0.618026,
+              0.791331
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影突破牙釉质达牙本质浅层"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面透射影达牙本质深层、接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:91f9a2cc4d5945a0a2afd3421e30441e",
+      "case_code": "case522",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "e8749d805691a80f150dc7f79eda0bcf1412bc14c5739c3a22cb5fb43fc4978a",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/769.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.004498,
+              0.245988,
+              0.257755,
+              0.86657
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:954f2078bff24511a9515ed312b6fd22",
+      "case_code": "case550",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写无龋、浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "11b8343feda8fdbc151e91e533b7bb817ade4e15d591451f5c050ad7e08dee85",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.92.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.063316,
+              0.576705,
+              0.782807,
+              0.883625
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面光滑无透射影"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质深层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:97e6bc49881f472f8ae59548a8469edb",
+      "case_code": "case520",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "9d86fb4fe1e002394cbe6a4a713cf7d4f11a8168c6f8ba60f09f1d79296e74bf",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/840.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.105226,
+              0.122288,
+              0.368409,
+              0.786529
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "浅龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙近中面透射影像仅累及牙釉质"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a326a069531645a7aaca0ff4e904866e",
+      "case_code": "case545",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "0ebcbe880d3c71ae100fb609e3369c6a69ff5b4a5b029dc34776eaaea7d7f806",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.90.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.34292,
+              0.282846,
+              0.510327,
+              0.761728
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a5df0b81c4664681ad5b2da7d2572901",
+      "case_code": "case535",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "c88b5345fa67dcc161d1e2c404565c2a008392dc50538ea585a897c9ab84002e",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.87.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.608277,
+              0.356855,
+              0.745408,
+              0.809617
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面透射影已达釉牙本质界"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ac741455d5ac4411b094b6316c2ddad0",
+      "case_code": "case516",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据",
+        "images": [
+          {
+            "sha256": "42f543ba3a92a4ef5756dad632d6799086dc4b2b705199c277aef646330e66df",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.14.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.076463,
+              0.384242,
+              0.761096,
+              0.663868
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面投射影像已达牙本质深层，接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ac9d5407c3b34c48947de50e35bf7c4a",
+      "case_code": "case518",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "4187b80c2a5da0d3eb5640f49e83b2c3616260140935c8df80496c63d2b7bef6",
+            "modality": "periapical_radiograph",
+            "width": 727,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/873.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.546723,
+              0.136841,
+              0.923841,
+              0.814595
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙近中牙颈部透射影像已达牙本质深层，接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b6f4bd89023449f8a652ccf3eccc2ab5",
+      "case_code": "case536",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "8055e612af3141e616deb209d16b8da5489951de88df7fe0632fba1f9f2a39b1",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.79.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.275801,
+              0.109118,
+              0.481199,
+              0.715703
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层，但与髓腔还保持一定距离"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c06d61950e2f4d638c4a29a7dab0408f",
+      "case_code": "case525",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.1",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "65a8ed213213ff4afae39506668cf9b157bd95f38e45496f7cfd16c0e107f879",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/380.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.710785,
+              0.139959,
+              0.941233,
+              0.918545
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓腔"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d6a280697dd64294b3e3288880fd097a",
+      "case_code": "case540",
+      "task_code": "A4.3",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "1edc8b0359f9489ecdf3592e46f0c1f75a263c7cc6eec4ffc5913576a5c46303",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.8.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.113181,
+              0.167479,
+              0.734723,
+              0.422157
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "透射影达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:dba658a352cf4fbba8550fce1e6c5afc",
+      "case_code": "case549",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写无龋、浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "e005ed75626e179bf6cabaa8938422ac655d6c881bd153bff3404464151f77c3",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/631.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.502962,
+              0.269785,
+              0.782945,
+              0.977225
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "mesial",
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "mesial",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面完整"
+                  }
+                ]
+              },
+              {
+                "target_surface": "distal",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面完整"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:df854d06d1734843b965daa8cbb46404",
+      "case_code": "case521",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "2375d9f35df2e175dc3e4ec51e94adfc7003a742781ebcd2cec2e5fd7969597d",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/968.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.201148,
+              0.149315,
+              0.534695,
+              0.948691
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "中龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质浅层"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e2094d27e4544971ae66980655a90f41",
+      "case_code": "case519",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "1ed3cddd4de8d3c0f7fb2f8812de07c936b2125cda910d0a02e92272c69b243a",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1217.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.668313,
+              0.147236,
+              1,
+              0.817714
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "深龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "该牙远中面透射影像已达牙本质深层，接近髓角"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e64c310fa31e4083aeba75e4f2da6f92",
+      "case_code": "case551",
+      "task_code": "A4.3",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A4.3 · 龋损影像深度评估 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "框选一颗目标牙，按多个牙面分别填写无龋、浅龋、中龋或深龋及直接证据。",
+        "images": [
+          {
+            "sha256": "ddbd344282cd2fad5815a7061684df3a998ff164df3730e925a303fffe38a1fa",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/680.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "grading_system_code",
+            "name": "分级体系",
+            "value": "CARIES_RAD_DEPTH"
+          },
+          {
+            "key": "rubric_version",
+            "name": "分级量表版本",
+            "value": "CARIES_RAD_THREE_DEPTH_V1"
+          },
+          {
+            "key": "evidence_required",
+            "name": "是否要求结构化证据",
+            "value": true
+          },
+          {
+            "key": "target_bbox",
+            "name": "目标牙框 T1",
+            "value": [
+              0.349795,
+              0.067349,
+              0.657776,
+              0.885803
+            ]
+          },
+          {
+            "key": "target_surfaces",
+            "name": "目标牙面",
+            "value": [
+              "distal"
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "surface_grades",
+            "name": "各牙面龋损程度",
+            "value": [
+              {
+                "target_surface": "distal",
+                "grade_value": "无龋",
+                "supporting_evidence": [
+                  {
+                    "evidence_code": "RADIOLUCENCY_DEPTH",
+                    "description": "牙面无龋坏"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

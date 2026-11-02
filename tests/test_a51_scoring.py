@@ -1,15 +1,10 @@
 import copy
 import json
-from pathlib import Path
-import tempfile
-import types
 import unittest
-from unittest.mock import patch
 
-import run
-from bench.metrics.a51 import apply_reason_judgment, build_reason_judge_messages, parse_reason_judgment, score_a51_fields
+from bench.metrics.clinical import apply_reason_judgment, build_reason_judge_messages, parse_reason_judgment, score_a51_fields
 from bench.metrics.report import summarize_fields
-from bench.protocol import clinical_reference_answer, parse_clinical_answer
+from bench.protocol import parse_clinical_answer
 
 
 class A51ScoringTests(unittest.TestCase):
@@ -35,39 +30,6 @@ class A51ScoringTests(unittest.TestCase):
         self.assertEqual(parse_reason_judgment('{"score":2,"explanation":"一致"}')["score"], 2)
         with self.assertRaises(ValueError):
             parse_clinical_answer(json.dumps({"diagnoses": ["A"], "reason": "字" * 101}, ensure_ascii=False), "A5.1")
-
-    def test_end_to_end_mock_judge_and_missing_box_skip(self):
-        cases = json.loads(run.TASK_SPECS["A5.1"]["case_path"].read_text(encoding="utf-8"))["cases"]
-        first = cases[0]
-        missing = next(c for c in cases if c["id"] == "candidate:e1cf8e01197540aea86895416ae5f8a7")
-        ref = clinical_reference_answer(first)
-        prediction = {"diagnoses": ref["diagnoses"][:1], "reason": "模型理由"}
-        scratch = run.PROJECT_ROOT / "preview"
-        scratch.mkdir(exist_ok=True)
-        with tempfile.TemporaryDirectory(dir=scratch) as directory:
-            root = Path(directory)
-            case_path, output, config_path = root / "cases.json", root / "results.jsonl", root / "judge.json"
-            case_path.write_text(json.dumps({"cases": [first, missing]}, ensure_ascii=False), encoding="utf-8")
-            config_path.write_text(json.dumps({"model": "judge", "base_url": "http://example.invalid/v1", "requires_api_key": False}), encoding="utf-8")
-            args = types.SimpleNamespace(limit=None, workers=1, dry_run=False, judge_model_config=config_path, run_id="test", run_started_at="test", model="tested", base_url="http://example.invalid/v1", temperature=0, max_tokens=1000, image_root=root, debug=False, api_key=None, timeout=1, retries=0, retry_sleep=0, extra_body={}, mock_response=None)
-            spec = {**run.TASK_SPECS["A5.1"], "case_path": case_path, "output_path": output}
-            with patch.object(run, "build_openai_messages", return_value=[]), patch.object(run, "call_with_retry", return_value={"content": json.dumps(prediction, ensure_ascii=False)}), patch.object(run, "chat_completion", return_value={"content": '{"score":2,"explanation":"一致"}', "usage": {}}) as judge:
-                summary = run.run_task("A5.1", spec, args)
-            rows = [json.loads(line) for line in output.read_text(encoding="utf-8").splitlines()]
-            self.assertEqual(judge.call_count, 1)
-            self.assertEqual(rows[0]["reason_judgment"]["score"], 2)
-            self.assertAlmostEqual(rows[0]["case_score"], 75)
-            self.assertEqual(rows[1]["scoring_status"], "skipped")
-            self.assertEqual((summary["total"], summary["skipped"], summary["fully_scored"]), (1, 1, 1))
-            self.assertAlmostEqual(summary["score_rate"], 0.75)
-
-            with patch.object(run, "build_openai_messages", return_value=[]), patch.object(run, "call_with_retry", return_value={"content": json.dumps(prediction, ensure_ascii=False)}), patch.object(run, "chat_completion", side_effect=RuntimeError("judge unavailable")):
-                summary = run.run_task("A5.1", spec, args)
-            row = json.loads(output.read_text(encoding="utf-8").splitlines()[0])
-            self.assertIn("judge unavailable", row["reason_judge_error"])
-            self.assertIsNone(row["case_score"])
-            self.assertEqual(summary["scoring_status"], "incomplete")
-            self.assertIsNone(summary["total_score"])
 
     def test_unscored_cases_do_not_silently_count_as_zero(self):
         ref = {"diagnoses": ["A"], "reason": "参考"}

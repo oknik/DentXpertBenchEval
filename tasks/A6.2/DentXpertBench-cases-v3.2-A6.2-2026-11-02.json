@@ -1,0 +1,5015 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:16b6ceed1ac54be2bb3e43b26a547e5d",
+      "case_code": "case788",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：儿童口腔科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C02] 年龄：7岁\n[C03] 51、61近中邻面窝洞，冷热（-），叩（-），松动（-），龈（-）。54、64远中邻𬌗面窝洞，探诊敏感，冷热稍敏感，叩（-），松动（-）。\n选项 D01：乳牙龋病\n选项 D02：年轻恒牙龋病\n选项 D03：牙髓炎\n选项 D04：根尖周炎\n选项 D05：牙外伤\n选项 D06：乳牙滞留\n选项 D07：牙齿萌出异常\n选项 D08：多生牙\n选项 D09：先天缺牙\n选项 D10：牙釉质发育不全",
+        "images": [
+          {
+            "sha256": "2f7a862d257e86ad21cde64cc4ba1297a3a42b2701457ad34e7a25c0d6eb54f3",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 335,
+            "path": "COde-Dataset-C018/Images/Photographs/1376-002-04.jpg"
+          },
+          {
+            "sha256": "2c2016653022f64929c3e88c9e1298e73c3b24c4190cca6f6c556eedd8e0c043",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1376-001-02.jpg"
+          },
+          {
+            "sha256": "8d08cff9260bd9c41b644abc6d9c6ab665196605a46c7872b7678a35fbc22c54",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 211,
+            "path": "COde-Dataset-C018/Images/Radiographs/1376-002-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1376-002-04.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1376-001-02.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/1376-002-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "年龄：7岁"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "51、61近中邻面窝洞，冷热（-），叩（-），松动（-），龈（-）。54、64远中邻𬌗面窝洞，探诊敏感，冷热稍敏感，叩（-），松动（-）。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "乳牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "年轻恒牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙髓炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "根尖周炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙外伤",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "乳牙滞留",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙齿萌出异常",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "多生牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "先天缺牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙釉质发育不全",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "多颗牙龋坏，无牙髓症状。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1f96e96c7e1b47b78fe0640f4251df07",
+      "case_code": "case785",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：儿童口腔科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C01] 10岁\n[C03] 54、55、75、84、85松动（-），14、15、35、44、45未萌出，64、65已脱落，24、25已萌出，74已脱落，34未萌出且间隙不足。33远中扭转且近中倾斜，43唇侧异位萌出。36、46𬌗面窝沟深染，探针可探入，冷热（-），叩（-），松动（-），龈（-）。\n选项 D01：乳牙龋病\n选项 D02：年轻恒牙龋病\n选项 D03：牙髓炎\n选项 D04：根尖周炎\n选项 D05：牙外伤\n选项 D06：乳牙滞留\n选项 D07：牙齿萌出异常\n选项 D08：多生牙\n选项 D09：先天缺牙\n选项 D10：牙釉质发育不全",
+        "images": [
+          {
+            "sha256": "c70439feade51328cb08333280e05ffb2328585b3ea9d6fd39f224f3598acb05",
+            "modality": "intraoral_photograph",
+            "width": 2309,
+            "height": 1730,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-007-946-00_1730786337286_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "63c4db22d7f8b49e6b7fce3ffb39ec48c8ed92b00ce47f64370a530d3ea6e9aa",
+            "modality": "intraoral_photograph",
+            "width": 3436,
+            "height": 2575,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-946-00_1730786337286_Maxillary_Occlusal_View.jpg"
+          },
+          {
+            "sha256": "a0403e2e89bf9d357cb2a4c65649348eb25492f4bab85b698b2e486412ca56f3",
+            "modality": "intraoral_photograph",
+            "width": 1767,
+            "height": 1767,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Right_Lateral/anonymous_003-007-946-00_1730786337286_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-007-946-00_1730786337286_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-946-00_1730786337286_Maxillary_Occlusal_View.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Right_Lateral/anonymous_003-007-946-00_1730786337286_Right_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "10岁"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "54、55、75、84、85松动（-），14、15、35、44、45未萌出，64、65已脱落，24、25已萌出，74已脱落，34未萌出且间隙不足。33远中扭转且近中倾斜，43唇侧异位萌出。36、46𬌗面窝沟深染，探针可探入，冷热（-），叩（-），松动（-），龈（-）。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "乳牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "年轻恒牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙髓炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "根尖周炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙外伤",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "乳牙滞留",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙齿萌出异常",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "多生牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "先天缺牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙釉质发育不全",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07",
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "36、46龋病，33异位萌出，25早萌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2899b49b5d194377862ac873deef9277",
+      "case_code": "case779",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 年龄：44岁\n[C02] 患者记录：复诊病历|诊断：牙龈炎(K05.105)。|治疗：全口龈上洁治。\n[C03] 主诉：全口牙齿色素结石附着数月。\n[C04] 现病史：患者刷牙出血数月，自觉存在牙结石与色素附着，现来洁治\n[C05] 口腔检查：全口卫生情况：一般，探诊易出血，未及牙周袋，牙石(+)，着色(+)上颌前牙腭侧较为明显，牙龈稍红肿，无附着丧失。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "b222ab00e211a64b34e22aa81859c869a0fd3b0a716bf896fa3f58c1205a1c84",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/4072-002-03.jpg"
+          },
+          {
+            "sha256": "5fe291fac7adde8b0dee27f75ed1443366bdfee12b21045255aa571c658632a0",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 335,
+            "path": "COde-Dataset-C018/Images/Photographs/4072-002-07.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/4072-002-03.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/4072-002-07.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：44岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "患者记录：复诊病历|诊断：牙龈炎(K05.105)。|治疗：全口龈上洁治。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "主诉：全口牙齿色素结石附着数月。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "history",
+                "text": "现病史：患者刷牙出血数月，自觉存在牙结石与色素附着，现来洁治"
+              },
+              {
+                "evidence_id": "C05",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：全口卫生情况：一般，探诊易出血，未及牙周袋，牙石(+)，着色(+)上颌前牙腭侧较为明显，牙龈稍红肿，无附着丧失。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D04"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "牙龈探诊出血，未探及深牙周袋，口内照见牙龈退缩"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:388d5170928c40de8d12cb1fc70263a4",
+      "case_code": "case784",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：儿童口腔科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 11岁\n[C03] 换牙后发现牙齿不齐2年。\n[C04] 31轻微远中扭转，32舌侧异位萌出，42舌侧异位萌出，43近中倾斜萌出。\n选项 D01：乳牙龋病\n选项 D02：年轻恒牙龋病\n选项 D03：牙髓炎\n选项 D04：根尖周炎\n选项 D05：牙外伤\n选项 D06：乳牙滞留\n选项 D07：牙齿萌出异常\n选项 D08：多生牙\n选项 D09：先天缺牙\n选项 D10：牙釉质发育不全",
+        "images": [
+          {
+            "sha256": "04679fafb8d026de2044d339b44c3ae96723a374fa1b2b658f9ad643a2af7c69",
+            "modality": "intraoral_photograph",
+            "width": 2517,
+            "height": 1678,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-009-1198-00_1732783792820_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "171a5184c39cf2590d25d27cb27888db1ca334edfe9a5479ea6d55e2e58c4886",
+            "modality": "intraoral_photograph",
+            "width": 1618,
+            "height": 1078,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003-009-1198-00_1732783792820_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-009-1198-00_1732783792820_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003-009-1198-00_1732783792820_Frontal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "11岁"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "换牙后发现牙齿不齐2年。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "31轻微远中扭转，32舌侧异位萌出，42舌侧异位萌出，43近中倾斜萌出。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "乳牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "年轻恒牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙髓炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "根尖周炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙外伤",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "乳牙滞留",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙齿萌出异常",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "多生牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "先天缺牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙釉质发育不全",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "牙齿异位萌出"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3bdcc5bf55994e55b4de10bf20a626cc",
+      "case_code": "case807",
+      "task_code": "A6.2",
+      "dataset_id": "C008",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔黏膜科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 口腔清洁习惯：清洁工具：牙刷；清洁材料：牙膏；刷牙方式：横刷与竖刷结合；刷牙频次：每日一次；刷牙时长：少于2分钟；更换牙刷间隔（月）：2\n选项 D01：复发性阿弗他溃疡\n选项 D02：创伤性溃疡\n选项 D03：口腔白斑\n选项 D04：口腔红斑\n选项 D05：口腔扁平苔藓\n选项 D06：口腔疱疹\n选项 D07：口腔黏膜色素沉着\n选项 D08：义齿性口炎\n选项 D09：沟纹舌",
+        "images": [
+          {
+            "sha256": "04ddbf7462229fc4de08926a334210f2b73f4ac68a73c3190e18a2f2112b36e0",
+            "modality": "oral_mucosa_photograph",
+            "width": 1634,
+            "height": 2191,
+            "path": "SMART-OM-C008/02. Variation from normal/01. Unannotated/01. Dorsal tongue/SMITA00213_R_DT.jpg"
+          },
+          {
+            "sha256": "41f6fd50497e39d3ceb2ca486b6651aed1b837cb2acd8aaefac11ec450408ef3",
+            "modality": "oral_mucosa_photograph",
+            "width": 1770,
+            "height": 1133,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/SMITA00213_R_LA.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_MEDICINE"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/02. Variation from normal/01. Unannotated/01. Dorsal tongue/SMITA00213_R_DT.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/SMITA00213_R_LA.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "口腔清洁习惯：清洁工具：牙刷；清洁材料：牙膏；刷牙方式：横刷与竖刷结合；刷牙频次：每日一次；刷牙时长：少于2分钟；更换牙刷间隔（月）：2"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "复发性阿弗他溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "创伤性溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "口腔白斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "口腔红斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "口腔扁平苔藓",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "口腔疱疹",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "口腔黏膜色素沉着",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "义齿性口炎",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "沟纹舌",
+                "department_code": "ORAL_MEDICINE"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "舌体可见清晰色素沉着"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3d4437ca4fb844218c6035ebb22edb11",
+      "case_code": "case805",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔颌面外科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 患者诉智齿多年前陆续萌出，近几年未见进一步萌出，平时无明显疼痛，否认反复牙龈肿痛及张口受限史。\n选项 D01：阻生牙\n选项 D02：冠周炎\n选项 D03：颌骨囊肿\n选项 D04：颌骨骨髓炎\n选项 D05：颌骨骨折\n选项 D06：错颌畸形",
+        "images": [
+          {
+            "sha256": "70dd2adb49fcd2612a8fb558679b9d57659b239b410e419ca5f20fc43a002cd1",
+            "modality": "intraoral_photograph",
+            "width": 1210,
+            "height": 907,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1016-00_1731064728396_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "a5088fba19db6ff8764e9496ddee0f631b34edee68c3310a4c69ab1c9d53fa37",
+            "modality": "intraoral_photograph",
+            "width": 1633,
+            "height": 1224,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1016-00_1731064728396_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1016-00_1731064728396_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1016-00_1731064728396_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "患者诉智齿多年前陆续萌出，近几年未见进一步萌出，平时无明显疼痛，否认反复牙龈肿痛及张口受限史。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "阻生牙",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "冠周炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "颌骨囊肿",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "颌骨骨髓炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "颌骨骨折",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "错颌畸形",
+                "department_code": "ORAL_SURGERY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "口内可见18，28完全萌出，38，48露尖"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3f29e581868f4b57b0782c972bf9a8dc",
+      "case_code": "case797",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔正畸科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[M04] 题面影像\n[C01] 年龄：13岁\n[C02] 性别：男\n[C03] 主诉：牙列不齐、上颌门牙前途多年余。\n[C04] 口腔检查：口外正面观：面部左右基本对称，面高比例协调，颏部居中。侧面观：基本直面型(下颌后缩)。口内查：替牙列，磨牙关系：II类，尖牙关系：II类。上颌牙弓卵圆形，牙弓狭窄，中线基本对齐，上前牙唇倾。下颌牙弓卵圆形，深SPEE曲线，中线右偏约1mm。口腔卫生良。\n选项 D01：牙列拥挤\n选项 D02：牙列间隙\n选项 D03：深覆合\n选项 D04：深覆盖\n选项 D05：前牙反合\n选项 D06：后牙反合\n选项 D07：开合\n选项 D08：牙齿异位萌出\n选项 D09：多生牙\n选项 D10：先天缺牙\n选项 D11：骨性错合",
+        "images": [
+          {
+            "sha256": "60bcc735bfa822c333e6a0e1a0beb997059f246105903c9607b2e7945e52ddc3",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 335,
+            "path": "COde-Dataset-C018/Images/Photographs/2926-001-04.jpg"
+          },
+          {
+            "sha256": "e4f45ce0e59d7415276303dce8c2caa9da08d48f46492214d2d519f183041f40",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/2926-001-11.jpg"
+          },
+          {
+            "sha256": "97978370b99ab647a195d5ccc4fad3d4420c72be054feace8bb5e3288135a649",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/2926-001-03.jpg"
+          },
+          {
+            "sha256": "36df1e8635ac6af5a934f5726c409ceca534bcca685eb3f420b788140af7e300",
+            "modality": "oral_radiograph",
+            "width": 416,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Radiographs/2926-001-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2926-001-04.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2926-001-11.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2926-001-03.jpg"
+              },
+              {
+                "evidence_id": "M04",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/2926-001-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：13岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "性别：男"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "主诉：牙列不齐、上颌门牙前途多年余。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：口外正面观：面部左右基本对称，面高比例协调，颏部居中。侧面观：基本直面型(下颌后缩)。口内查：替牙列，磨牙关系：II类，尖牙关系：II类。上颌牙弓卵圆形，牙弓狭窄，中线基本对齐，上前牙唇倾。下颌牙弓卵圆形，深SPEE曲线，中线右偏约1mm。口腔卫生良。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙列拥挤",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列间隙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "深覆合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "深覆盖",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "前牙反合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "后牙反合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "开合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "牙齿异位萌出",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "多生牙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "先天缺牙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D11",
+                "diagnosis": "骨性错合",
+                "department_code": "ORTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D03",
+              "D04",
+              "D11"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "下颌拥挤，侧位片可提供深覆合、深覆盖及骨性错颌诊断"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:49e5bbec0a7648e0bad4493f2641ab55",
+      "case_code": "case787",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：儿童口腔科\n[M01] 题面影像：右上\n[M02] 题面影像\n[C01] 年龄：13岁\n[C02] 牙齿不齐发现3年。\n[C03] 患儿换牙后牙齿不齐，影响美观\n选项 D01：乳牙龋病\n选项 D02：年轻恒牙龋病\n选项 D03：牙髓炎\n选项 D04：根尖周炎\n选项 D05：牙外伤\n选项 D06：乳牙滞留\n选项 D07：牙齿萌出异常\n选项 D08：多生牙\n选项 D09：先天缺牙\n选项 D10：牙釉质发育不全",
+        "images": [
+          {
+            "sha256": "a3eb6ba960105259ce77ba9adea7df9c3b60f06b903f2c815cccdf6331e46587",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 298,
+            "path": "COde-Dataset-C018/Images/Photographs/2876-002-01.jpg"
+          },
+          {
+            "sha256": "d7889203d94bb1e8a79fe4723c8e71e853c720f9907fd246aff79668ef64b782",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 397,
+            "path": "COde-Dataset-C018/Images/Radiographs/2876-002-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "右上",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2876-002-01.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/2876-002-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：13岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "牙齿不齐发现3年。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "患儿换牙后牙齿不齐，影响美观"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "乳牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "年轻恒牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙髓炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "根尖周炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙外伤",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "乳牙滞留",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙齿萌出异常",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "多生牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "先天缺牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙釉质发育不全",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "右上中切牙、右上侧切牙、右上尖牙异位萌出。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4bdfd41c57ef4402a9f175b974cb9bf1",
+      "case_code": "case812",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙体牙髓科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 年龄：38岁\n[C02] 性别：女\n[C03] 患者记录：复诊病历|诊断：牙列拥挤。残根。34慢性根尖周炎。|治疗：34、45、47残根拔除。种植23 24 26恢复4颗。咬合较紧，需要前牙抬高。下颌4-3抬高咬合牙冠修复。上前牙轻微扭转，患者述有做贴面意向。\n[C04] 既往史：自述体健，无特殊，否认药物过敏史。\n[C05] 口腔检查：11，21邻面发黑，探稍不适，冷+，13,22号牙齿，牙菌斑附着，软组织无异常。11,12,21,31,32,41,42号牙齿，牙齿不齐。软组织无异常。23,24,25,26号牙齿，创口一期愈合。点位愈合良好，口腔卫生正常。34,45,47号牙齿，残根。14,15,16,17,35,36,37号牙齿，冠修复，无异常。38号牙齿，部分萌出。\n[C06] 影像检查记录：34号牙齿，残根根尖存低密度透射影。38号牙齿，智齿水平阻生。\n选项 D01：龋病\n选项 D02：可复性牙髓炎\n选项 D03：不可复性牙髓炎\n选项 D04：牙髓坏死\n选项 D05：根尖周炎\n选项 D06：根尖周脓肿\n选项 D07：牙隐裂\n选项 D08：牙体折裂\n选项 D09：楔状缺损\n选项 D10：牙本质敏感",
+        "images": [
+          {
+            "sha256": "a9e46ab1d488e6340e4d2fcf91695e90b41535e043c38fdae1490af85ba03687",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1292-002-02.jpg"
+          },
+          {
+            "sha256": "7c543a0f72cd89ed4671c13289ab806e19495f2eb4941056439066c09e0046bf",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1292-002-06.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1292-002-02.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1292-002-06.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：38岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "性别：女"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "patient_info",
+                "text": "患者记录：复诊病历|诊断：牙列拥挤。残根。34慢性根尖周炎。|治疗：34、45、47残根拔除。种植23 24 26恢复4颗。咬合较紧，需要前牙抬高。下颌4-3抬高咬合牙冠修复。上前牙轻微扭转，患者述有做贴面意向。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "history",
+                "text": "既往史：自述体健，无特殊，否认药物过敏史。"
+              },
+              {
+                "evidence_id": "C05",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：11，21邻面发黑，探稍不适，冷+，13,22号牙齿，牙菌斑附着，软组织无异常。11,12,21,31,32,41,42号牙齿，牙齿不齐。软组织无异常。23,24,25,26号牙齿，创口一期愈合。点位愈合良好，口腔卫生正常。34,45,47号牙齿，残根。14,15,16,17,35,36,37号牙齿，冠修复，无异常。38号牙齿，部分萌出。"
+              },
+              {
+                "evidence_id": "C06",
+                "fact_type": "imaging_exam",
+                "text": "影像检查记录：34号牙齿，残根根尖存低密度透射影。38号牙齿，智齿水平阻生。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "龋病",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "可复性牙髓炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "不可复性牙髓炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙髓坏死",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "根尖周炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "根尖周脓肿",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙隐裂",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "牙体折裂",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "楔状缺损",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙本质敏感",
+                "department_code": "ENDODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D05"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "没有自发痛，仅靠冷+无法确认为牙髓炎，只能算龋病。根尖周阴影提示根尖周炎症"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4ede932c44214b2da2224aaa9bd68155",
+      "case_code": "case806",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔黏膜科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 全口牙龈变色\n选项 D01：复发性阿弗他溃疡\n选项 D02：创伤性溃疡\n选项 D03：口腔白斑\n选项 D04：口腔红斑\n选项 D05：口腔扁平苔藓\n选项 D06：口腔疱疹\n选项 D07：口腔黏膜色素沉着\n选项 D08：义齿性口炎\n选项 D09：沟纹舌",
+        "images": [
+          {
+            "sha256": "c28f5a389e7e24be2536a024c236c19ea0441adc67ec1a69764e54d109fcb8fd",
+            "modality": "intraoral_photograph",
+            "width": 1704,
+            "height": 1277,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003_103_390_01_1728205027431_Frontal_View.jpg"
+          },
+          {
+            "sha256": "30d36fe0e7ccf3087d5fb70fce1d03ec5776fdb4dab7baa048d43a94c77e6f72",
+            "modality": "intraoral_photograph",
+            "width": 1482,
+            "height": 1111,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_103_390_01_1728205027431_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_MEDICINE"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003_103_390_01_1728205027431_Frontal_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_103_390_01_1728205027431_Right_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "全口牙龈变色"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "复发性阿弗他溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "创伤性溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "口腔白斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "口腔红斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "口腔扁平苔藓",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "口腔疱疹",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "口腔黏膜色素沉着",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "义齿性口炎",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "沟纹舌",
+                "department_code": "ORAL_MEDICINE"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "全口牙槽嵴顶牙龈变色，符合诊断"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6fb2e6d1d62846f5adb05d6234c950b3",
+      "case_code": "case809",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔颌面外科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 右下后牙肿痛1天\n[C02] 47远中牙龈冲洗时有食物残渣及少量脓性分泌物。47叩诊（−），冷诊反应正常，其余牙周探诊未见明显异常。\n选项 D01：阻生牙\n选项 D02：冠周炎\n选项 D03：颌骨囊肿\n选项 D04：颌骨骨髓炎\n选项 D05：颌骨骨折\n选项 D06：错颌畸形",
+        "images": [
+          {
+            "sha256": "2a0d87c11492db73c87132fff813469136b8816a25e8ff92f67f3f72f1142aa1",
+            "modality": "intraoral_photograph",
+            "width": 1474,
+            "height": 1105,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003_103_438_00_1728479133729_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "03a4b67728199b1ef7c580a16f0a332eca855c8c55499f1dc29872cc4b0f5232",
+            "modality": "intraoral_photograph",
+            "width": 1052,
+            "height": 788,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003_103_438_00_1728479133729_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003_103_438_00_1728479133729_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003_103_438_00_1728479133729_Right_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙肿痛1天"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "47远中牙龈冲洗时有食物残渣及少量脓性分泌物。47叩诊（−），冷诊反应正常，其余牙周探诊未见明显异常。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "阻生牙",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "冠周炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "颌骨囊肿",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "颌骨骨髓炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "颌骨骨折",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "错颌畸形",
+                "department_code": "ORAL_SURGERY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02",
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "48部分萌出，口内露尖"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:768a443293c0420bbdec062ca5265281",
+      "case_code": "case796",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔正畸科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[M04] 题面影像\n[C01] 主诉：牙列不齐、门牙前突多年余。\n[C02] 现病史：自替牙后牙列不齐、门牙前突多年。\n[C03] 既往史：体健。\n[C04] 口腔检查：口外正面观：面部左右基本对称，面高比例协调，颏部基本居中。侧面观：凸面型。口内查：替牙列，磨牙关系：II类，尖牙关系：II类。下颌中线右偏约1.5mm。口腔卫生良。TMJ检查：未见明显异常。\n选项 D01：牙列拥挤\n选项 D02：牙列间隙\n选项 D03：深覆合\n选项 D04：深覆盖\n选项 D05：前牙反合\n选项 D06：后牙反合\n选项 D07：开合\n选项 D08：牙齿异位萌出\n选项 D09：多生牙\n选项 D10：先天缺牙\n选项 D11：骨性错合",
+        "images": [
+          {
+            "sha256": "4de340ed867965b3bfc02a690cd70fa182b32cc824ceebafce2e42bd5b63d517",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0130-001-06.jpg"
+          },
+          {
+            "sha256": "1522effbd5fea62e4c23bfd4e0a930f0f2d93bbfb62abdd6ec794e295d4def63",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0130-001-07.jpg"
+          },
+          {
+            "sha256": "13551a3f1066531c3b545ef4d062531551c79017fe0fceff69ce441fd213c916",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 335,
+            "path": "COde-Dataset-C018/Images/Photographs/0130-001-01.jpg"
+          },
+          {
+            "sha256": "eceae5d7ee3db51213b03160067ea3a2ddb067bd394d5d86a16055a5d75c6b4f",
+            "modality": "oral_radiograph",
+            "width": 416,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Radiographs/0130-001-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0130-001-06.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0130-001-07.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0130-001-01.jpg"
+              },
+              {
+                "evidence_id": "M04",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0130-001-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "主诉：牙列不齐、门牙前突多年余。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "现病史：自替牙后牙列不齐、门牙前突多年。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "既往史：体健。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：口外正面观：面部左右基本对称，面高比例协调，颏部基本居中。侧面观：凸面型。口内查：替牙列，磨牙关系：II类，尖牙关系：II类。下颌中线右偏约1.5mm。口腔卫生良。TMJ检查：未见明显异常。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙列拥挤",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列间隙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "深覆合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "深覆盖",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "前牙反合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "后牙反合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "开合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "牙齿异位萌出",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "多生牙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "先天缺牙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D11",
+                "diagnosis": "骨性错合",
+                "department_code": "ORTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D03"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "口内像判定牙列拥挤，侧位片可判定深覆合，并排除深覆盖及骨性错颌"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7e9dcfd9ad124f8da7c6304ace4190a8",
+      "case_code": "case781",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 年龄：45岁\n[C03] 主诉：全口牙齿刷牙出血，牙齿松动移位数月，要求洁牙。\n[C04] 现病史：渐觉。牙齿松动移位数月，刷牙有出血，无明显疼痛。\n[C05] 口腔检查：全口牙龈中重度退缩，牙周探易出血，松动度I度，探及牙周袋，深度5 mm。全口卫生情况差；软垢指数(DI):1，牙石指数(Cl):(+++)，出血指数：4=探诊后出血溢满并溢出龈沟，牙龈红肿，牙龈呈暗红色，附着龈点彩消失。辅助检查：X片显示全口牙齿中重度牙槽骨吸收。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "505e575cff5adfa82b9a657fd0d1285b57919f7b6127e9a8675d8e1137978bff",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/3945-001-02.jpg"
+          },
+          {
+            "sha256": "aabd48a6acd89c41eb27566b4cc9e81c9f6f4c0fd2d13fcc44f8cbe58e8d2945",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1620-001-03.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/3945-001-02.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1620-001-03.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：45岁"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "主诉：全口牙齿刷牙出血，牙齿松动移位数月，要求洁牙。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "history",
+                "text": "现病史：渐觉。牙齿松动移位数月，刷牙有出血，无明显疼痛。"
+              },
+              {
+                "evidence_id": "C05",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：全口牙龈中重度退缩，牙周探易出血，松动度I度，探及牙周袋，深度5 mm。全口卫生情况差；软垢指数(DI):1，牙石指数(Cl):(+++)，出血指数：4=探诊后出血溢满并溢出龈沟，牙龈红肿，牙龈呈暗红色，附着龈点彩消失。辅助检查：X片显示全口牙齿中重度牙槽骨吸收。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "全口牙龈中重度退缩，牙周探易出血，松动度I度，探及牙周袋，深度5 mm。全口卫生情况差；软垢指数(DI):1，牙石指数(Cl):(+++)，出血指数：4=探诊后出血溢满并溢出龈沟，牙龈红肿，牙龈呈暗红色，附着龈点彩消失。辅助检查：X片显示全口牙齿中重度牙槽骨吸收。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8e4e025340f140a78cf0e2dea0607e1a",
+      "case_code": "case786",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔种植科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 35种植体周围牙龈红肿，探诊出血，无溢脓，种植体周袋 0mm，无松动。\n选项 D01：牙列缺损\n选项 D02：牙列缺失\n选项 D03：牙槽嵴萎缩\n选项 D04：种植体周围黏膜炎\n选项 D05：种植体周围炎\n选项 D06：种植体松动\n选项 D07：种植体折裂",
+        "images": [
+          {
+            "sha256": "d75aea0b1efbdccf64a2543ff74ef89f19a78d58bdc7a9c620dc9c203124a497",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 298,
+            "path": "COde-Dataset-C018/Images/Photographs/4010-001-10.jpg"
+          },
+          {
+            "sha256": "c2b10c5097e885d8f0de4a5e72e44a2ec210d70fdebf899bf7384a0f9c036800",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 385,
+            "path": "COde-Dataset-C018/Images/Radiographs/4010-003-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/4010-001-10.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/4010-003-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "35种植体周围牙龈红肿，探诊出血，无溢脓，种植体周袋 0mm，无松动。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙列缺损",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列缺失",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙槽嵴萎缩",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "种植体周围炎",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "种植体松动",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体折裂",
+                "department_code": "IMPLANTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D04"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "患者35 牙为种植修复，属于牙列缺损；临床检查见种植体周围牙龈红肿、探诊出血，无种植体周袋、无松动，无种植体周围骨吸收相关表现，符合种植体周围黏膜炎，未达到种植体周围炎诊断标准。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9d3c14f0b840489186616e5a15b5f478",
+      "case_code": "case813",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙体牙髓科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 后牙自觉进食时偶有不适数日余\n[C03] 26 27合面深染，松-，叩-，冷+，探+\n选项 D01：龋病\n选项 D02：可复性牙髓炎\n选项 D03：不可复性牙髓炎\n选项 D04：牙髓坏死\n选项 D05：根尖周炎\n选项 D06：根尖周脓肿\n选项 D07：牙隐裂\n选项 D08：牙体折裂\n选项 D09：楔状缺损\n选项 D10：牙本质敏感",
+        "images": [
+          {
+            "sha256": "e2aa2a0ebb81018c2e9435d0d6ff54a3689651837d8e128c1969e33de26fcbd0",
+            "modality": "intraoral_photograph",
+            "width": 2248,
+            "height": 1499,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-787-01_1729839045536_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "e53c85b01694100b346b05d8cb0f2d6a3d8df304606a5001361d53ee981421bd",
+            "modality": "intraoral_photograph",
+            "width": 3446,
+            "height": 2583,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-007-787-01_1729839045536_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-787-01_1729839045536_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-007-787-01_1729839045536_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "后牙自觉进食时偶有不适数日余"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "26 27合面深染，松-，叩-，冷+，探+"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "龋病",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "可复性牙髓炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "不可复性牙髓炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙髓坏死",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "根尖周炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "根尖周脓肿",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙隐裂",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "牙体折裂",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "楔状缺损",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙本质敏感",
+                "department_code": "ENDODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "合面龋洞，探诊不适，冷诊不适"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:aa9e311adb39497aa910cccbc507234b",
+      "case_code": "case798",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔正畸科\n[M01] 题面影像\n[M03] 题面影像\n[M04] 题面影像\n[C01] 年龄：13岁\n[C02] 性别：女\n[C03] 主诉：前牙“地包天”多年余。\n[C04] 现病史：自替牙后牙齿“地包天”多年，要求改善。\n[C05] 口腔检查：口外正面观：面部左右基本对称，颏部聚中，面高比例协调。侧面观：凸面型(下颌前突)。口内查：替牙列，磨牙关系：I类，尖牙关系：右侧I类，左侧III类。多颗乳牙龋坏。TMJ检查：未见明显异常。\n选项 D01：牙列拥挤\n选项 D02：牙列间隙\n选项 D03：深覆合\n选项 D04：深覆盖\n选项 D05：前牙反合\n选项 D06：后牙反合\n选项 D07：开合\n选项 D08：牙齿异位萌出\n选项 D09：多生牙\n选项 D10：先天缺牙\n选项 D11：骨性错合",
+        "images": [
+          {
+            "sha256": "9104fb576dc411ccf3b889206a6815302f5b5791da97cf77cefa2ca7c0878bb6",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1592-002-01.jpg"
+          },
+          {
+            "sha256": "d5688b0932fd8fab9013ce2009beb1312caed14247e9e8f1c109ad489ac1f2b3",
+            "modality": "oral_radiograph",
+            "width": 415,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Radiographs/1592-002-01.jpg"
+          },
+          {
+            "sha256": "aae761e44a732ddac99184a642bab82c2256ad9c90d1e1cf73b0aa04421ddc07",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 335,
+            "path": "COde-Dataset-C018/Images/Photographs/1592-001-04.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1592-002-01.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/1592-002-01.jpg"
+              },
+              {
+                "evidence_id": "M04",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1592-001-04.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：13岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "性别：女"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "主诉：前牙“地包天”多年余。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "history",
+                "text": "现病史：自替牙后牙齿“地包天”多年，要求改善。"
+              },
+              {
+                "evidence_id": "C05",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：口外正面观：面部左右基本对称，颏部聚中，面高比例协调。侧面观：凸面型(下颌前突)。口内查：替牙列，磨牙关系：I类，尖牙关系：右侧I类，左侧III类。多颗乳牙龋坏。TMJ检查：未见明显异常。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙列拥挤",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列间隙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "深覆合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "深覆盖",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "前牙反合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "后牙反合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "开合",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "牙齿异位萌出",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "多生牙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "先天缺牙",
+                "department_code": "ORTHODONTICS"
+              },
+              {
+                "option_id": "D11",
+                "diagnosis": "骨性错合",
+                "department_code": "ORTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D11",
+              "D05"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "病史、检查与影像综合判断"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b1da5f43132c40bbaa76425d11095a39",
+      "case_code": "case780",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C01] 主诉：全口牙齿色素附着数月，要求洁牙。\n[C02] 口腔检查：口腔环境一般，结石+、色素+++。前牙区牙龈红肿。\n[C03] 现病史：牙齿不干净，无疼痛不适。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "892980c1069e87f60730befcffdc8357e86410579b17a7926fb14f4005e9c916",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0228-001-05.jpg"
+          },
+          {
+            "sha256": "0d7e28e70c5e5ce00491af374ffb60f1d5a5c23427de01c27cb6a272fa008e14",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0228-001-03.jpg"
+          },
+          {
+            "sha256": "49bef4928399e68ac95b127c491db468aaa853cfabb3c7a623a3c0301ba8915c",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0629-001-04.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0228-001-05.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0228-001-03.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0629-001-04.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "主诉：全口牙齿色素附着数月，要求洁牙。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：口腔环境一般，结石+、色素+++。前牙区牙龈红肿。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "现病史：牙齿不干净，无疼痛不适。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "牙齿色素附着数月，前牙牙龈红肿"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b2869e4b7f71440bb6e63663797a7433",
+      "case_code": "case800",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 35颊侧牙龈见瘘管，冷（-），叩（+），松I度。pd2-4mm.\n[C02] 35牙槽骨吸收为根长的1/3.\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "fb62dc5f92f121a12a363b0b19cb2bcb5c94e93c6fcb6d98259ce5de5da00e81",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 344,
+            "path": "COde-Dataset-C018/Images/Radiographs/0052-002-02.jpg"
+          },
+          {
+            "sha256": "482a58023a90236ba0ea0fc6ef05cd4cf78cc6ed260fa1995fd540fd5812bcd2",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 344,
+            "path": "COde-Dataset-C018/Images/Radiographs/0052-002-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0052-002-02.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0052-002-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "35颊侧牙龈见瘘管，冷（-），叩（+），松I度。pd2-4mm."
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "35牙槽骨吸收为根长的1/3."
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02",
+              "D06"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "影像学显示35牙槽骨吸收为根长的1/3."
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b50bde1b2b0740dfa3f18a1b1da29f1a",
+      "case_code": "case801",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 牙槽骨普遍轻度吸收。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "7082cbd31bd33090f1bcafb7e80b26564ccdb610fc69f8a562f6fb6a2ddd6e79",
+            "modality": "intraoral_photograph",
+            "width": 1001,
+            "height": 562,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003-008-885-01_1730285059890_Frontal_View.jpg"
+          },
+          {
+            "sha256": "536a3282ac310e2bd09dde27fc4ac9c2e4c5987507f06eca8b5ccb6b706b34da",
+            "modality": "intraoral_photograph",
+            "width": 1351,
+            "height": 759,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-008-885-01_1730285059890_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003-008-885-01_1730285059890_Frontal_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-008-885-01_1730285059890_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨普遍轻度吸收。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "影像学检查显示牙槽骨吸收。牙龈红肿。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b62fd694acb34510824a7c4e768a7465",
+      "case_code": "case791",
+      "task_code": "A6.2",
+      "dataset_id": "C008",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔黏膜科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 影像覆盖口腔部位：舌背、舌腹、左颊黏膜、右颊黏膜、上唇、下唇、上牙弓、下牙弓\n[C02] 口腔清洁习惯：清洁工具：牙刷；清洁材料：牙膏；刷牙方式：横刷与竖刷结合；刷牙频次：每日一次；刷牙时长：2至4分钟；更换牙刷间隔（月）：3\n[C03] 既往牙科病史：有无既往牙科病史：否\n[C04] 义齿使用：是否使用义齿：否\n选项 D01：复发性阿弗他溃疡\n选项 D02：创伤性溃疡\n选项 D03：口腔白斑\n选项 D04：口腔红斑\n选项 D05：口腔扁平苔藓\n选项 D06：口腔疱疹\n选项 D07：口腔黏膜色素沉着\n选项 D08：义齿性口炎\n选项 D09：沟纹舌",
+        "images": [
+          {
+            "sha256": "6cf37a87adace52b62dc816cf3517d838754891aee150aa03972640f0a096fa6",
+            "modality": "oral_mucosa_photograph",
+            "width": 603,
+            "height": 425,
+            "path": "SMART-OM-C008/02. Variation from normal/01. Unannotated/04. Right buccal mucosa/SMITA00184_W_RB.jpeg"
+          },
+          {
+            "sha256": "4d1c0ed88a1b294ce1f3da1942e499e4937765283fb6774f43ade501e80b483d",
+            "modality": "oral_mucosa_photograph",
+            "width": 486,
+            "height": 627,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/03. Left buccal mucosa/SMITA00184_W_LB.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_MEDICINE"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/02. Variation from normal/01. Unannotated/04. Right buccal mucosa/SMITA00184_W_RB.jpeg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/03. OPMD/01. Unannotated/03. Left buccal mucosa/SMITA00184_W_LB.jpeg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "影像覆盖口腔部位：舌背、舌腹、左颊黏膜、右颊黏膜、上唇、下唇、上牙弓、下牙弓"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "口腔清洁习惯：清洁工具：牙刷；清洁材料：牙膏；刷牙方式：横刷与竖刷结合；刷牙频次：每日一次；刷牙时长：2至4分钟；更换牙刷间隔（月）：3"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "既往牙科病史：有无既往牙科病史：否"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "history",
+                "text": "义齿使用：是否使用义齿：否"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "复发性阿弗他溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "创伤性溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "口腔白斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "口腔红斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "口腔扁平苔藓",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "口腔疱疹",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "口腔黏膜色素沉着",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "义齿性口炎",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "沟纹舌",
+                "department_code": "ORAL_MEDICINE"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "左颊粘膜可见一色素沉淀"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c2226615526d44169be081856a6a3639",
+      "case_code": "case782",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 年龄：71岁\n[C02] 主诉：全口牙龈刺激出血数月。\n[C03] 既往史：患者否认高血压病史，否认有心脏病病史，否认糖尿病。患者否认有青霉素等药物或金属等物质过敏史。患者自述长期饮用咖啡等容易着色饮品。\n[C04] 口腔检查：全口牙龈红肿，探易出血，未及牙周袋。牙石(+),色素(+)。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "501e9e017c9ca76a7878bfa846b829828b9e925ddabb64fef82830cd82622c83",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0389-004-03.jpg"
+          },
+          {
+            "sha256": "5cf581053c156581d5fba2acde3a0c47fd7f93f257450137f1f802843d165515",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0389-004-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0389-004-03.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0389-004-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：71岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "主诉：全口牙龈刺激出血数月。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "既往史：患者否认高血压病史，否认有心脏病病史，否认糖尿病。患者否认有青霉素等药物或金属等物质过敏史。患者自述长期饮用咖啡等容易着色饮品。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：全口牙龈红肿，探易出血，未及牙周袋。牙石(+),色素(+)。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "全口牙龈红肿，探易出血，未及牙周袋。牙石(+),色素(+)。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c25370951ebb465c8f0f3a5d222b2c86",
+      "case_code": "case803",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔颌面外科\n[M01] 题面影像：下颌，右下后牙\n[M02] 题面影像\n[C01] 右下后牙反复肿痛3年\n[C02] 47远中牙龈冲洗时有食物残渣及少量脓性分泌物。47叩诊（−），冷诊反应正常，其余牙周探诊未见明显异常。\n选项 D01：阻生牙\n选项 D02：冠周炎\n选项 D03：颌骨囊肿\n选项 D04：颌骨骨髓炎\n选项 D05：颌骨骨折\n选项 D06：错颌畸形",
+        "images": [
+          {
+            "sha256": "b2e26141713d1d75ca70eceb228746ca4c06bdeb036a00365072f710439bd40b",
+            "modality": "intraoral_photograph",
+            "width": 2133,
+            "height": 1599,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1317-00_1733463430876_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "ac5ff1209827d8cd543a9cb9ca7f767d1665ceaf749b1ee63a101e434e9f793d",
+            "modality": "intraoral_photograph",
+            "width": 1520,
+            "height": 1520,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1317-00_1733463430876_Left_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "下颌",
+                "evaluation_scope": "右下后牙",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1317-00_1733463430876_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1317-00_1733463430876_Left_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙反复肿痛3年"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "47远中牙龈冲洗时有食物残渣及少量脓性分泌物。47叩诊（−），冷诊反应正常，其余牙周探诊未见明显异常。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "阻生牙",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "冠周炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "颌骨囊肿",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "颌骨骨髓炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "颌骨骨折",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "错颌畸形",
+                "department_code": "ORAL_SURGERY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "48部分萌出，口内露尖，结合主诉可明确诊断"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c809dbdc3bb2468285738b52b2136b71",
+      "case_code": "case783",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 年龄：67岁\n[C02] 性别：女\n[C03] 患者记录：初诊病历|诊断：牙龈炎(K05.105)。不良修复体。|治疗：全口龈上洁治。\n[C04] 口腔检查：全口牙龈红肿，探易出血，未及牙周袋。牙石(+),色素(+)。27号牙齿，金属冠修复，牙龈萎缩，近中大量食物嵌塞，周围牙龈红肿。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "4be92a193f785762266e3df12360cc29520a9944d875a45a99de03b0644c1bb5",
+            "modality": "intraoral_photograph",
+            "width": 336,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Photographs/1820-001-04.jpg"
+          },
+          {
+            "sha256": "2915ccd8af83f4691a53464add5b4c9d3b493ee9fb82af05235664341a22977f",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 381,
+            "path": "COde-Dataset-C018/Images/Radiographs/1820-001-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1820-001-04.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/1820-001-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：67岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "性别：女"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "patient_info",
+                "text": "患者记录：初诊病历|诊断：牙龈炎(K05.105)。不良修复体。|治疗：全口龈上洁治。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：全口牙龈红肿，探易出血，未及牙周袋。牙石(+),色素(+)。27号牙齿，金属冠修复，牙龈萎缩，近中大量食物嵌塞，周围牙龈红肿。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02",
+              "D04"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "牙龈退缩，牙龈出血，附着丧失"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ca3e18421c664cd79374e4f9f0381e92",
+      "case_code": "case793",
+      "task_code": "A6.2",
+      "dataset_id": "C008",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔修复科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C01] 临床检查：\n15 16 17 12 11 24 25 26 27 45 41 31 32缺失，44 43 42 33 34 35 36 部分牙本质暴露，存在牙体磨耗，患牙无叩痛松动，牙龈无红肿\n选项 D01：牙体缺损\n选项 D02：牙列缺损\n选项 D03：牙列缺失\n选项 D04：残根\n选项 D05：残冠\n选项 D06：牙体磨耗\n选项 D07：咬合创伤",
+        "images": [
+          {
+            "sha256": "cb46f7ed570151223f062fac1cd386256943ed9f1a2df18ec0c455419d855207",
+            "modality": "oral_mucosa_photograph",
+            "width": 1497,
+            "height": 1251,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/07. Upper arch/SMITA00283_R_UA.jpg"
+          },
+          {
+            "sha256": "e1db3025f2ba7e10a3132ae9f27742db2d2d4f2cce81680ecc0d3148d05486c9",
+            "modality": "oral_mucosa_photograph",
+            "width": 1371,
+            "height": 1269,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/03. Left buccal mucosa/SMITA00283_R_LB.jpg"
+          },
+          {
+            "sha256": "ec7dc5bc20a940813273c852f3493eac65fb4268543a9d7b36fe98b5f95bc891",
+            "modality": "oral_mucosa_photograph",
+            "width": 1338,
+            "height": 1278,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA00283_R_VT.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/07. Upper arch/SMITA00283_R_UA.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/03. Left buccal mucosa/SMITA00283_R_LB.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA00283_R_VT.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "临床检查：\n15 16 17 12 11 24 25 26 27 45 41 31 32缺失，44 43 42 33 34 35 36 部分牙本质暴露，存在牙体磨耗，患牙无叩痛松动，牙龈无红肿"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙体缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙列缺失",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "残根",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "残冠",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙体磨耗",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "咬合创伤",
+                "department_code": "PROSTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02",
+              "D06"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "综合临床检查，15 16 17 12 11 24 25 26 27 45 41 31 32 牙缺失，牙列完整性受损，为牙列缺损；44 43 42 33 34 35 36 牙部分牙本质暴露，存在牙体磨耗，患牙无叩痛松动，牙龈无红肿，支持牙列缺损、牙体磨耗两项诊断。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cc817aaa5423491f88d31bef6c2c9c84",
+      "case_code": "case810",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C01] 口腔检查：41号牙齿，缺失，牙龈未愈合。31,32,42号牙齿，松Ⅱ到Ⅲ度，叩-,冷测试敏感。\n[C02] 主诉：下前牙松动数日。\n[C03] 牙槽骨吸收至根中1/2.\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "bfe3003ef3d9af4161a6e8dfbb273cac64871bb2f360ab3044d906edc142fbd1",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1239-001-01.jpg"
+          },
+          {
+            "sha256": "80b0172af9ad488a0b5d960383e0e1d2bda77b86e7689b4340b72c7a1f26d609",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1239-002-02.jpg"
+          },
+          {
+            "sha256": "c40155a2583a31343bee04e2db9d9fb3723224bcb223636a478258f15bfd124d",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1239-001-03.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1239-001-01.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1239-002-02.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1239-001-03.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：41号牙齿，缺失，牙龈未愈合。31,32,42号牙齿，松Ⅱ到Ⅲ度，叩-,冷测试敏感。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "主诉：下前牙松动数日。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨吸收至根中1/2."
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "基于松动及牙槽骨吸收破坏诊断牙周炎。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d428ca7b71754b0eab7536cd2759317e",
+      "case_code": "case811",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙体牙髓科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 左侧后牙偶有冷热不适数日余\n[C02] 无自发痛，夜间痛，偶有咬物不适\n[C03] 36 46合面深染，松-，叩不适，冷+，探不适，合面裂纹\n选项 D01：龋病\n选项 D02：可复性牙髓炎\n选项 D03：不可复性牙髓炎\n选项 D04：牙髓坏死\n选项 D05：根尖周炎\n选项 D06：根尖周脓肿\n选项 D07：牙隐裂\n选项 D08：牙体折裂\n选项 D09：楔状缺损\n选项 D10：牙本质敏感",
+        "images": [
+          {
+            "sha256": "ab2163a5de21ca235a094f39c11cd555626748f22c8c9f64e4b6544f0988ff7a",
+            "modality": "intraoral_photograph",
+            "width": 2299,
+            "height": 1533,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-786-00_1729836270232_Mandibular_View.jpg"
+          },
+          {
+            "sha256": "9ecc886bebf2600cfba2574c85ef907b3353fba4b1b9875018cc52ea9b7507ca",
+            "modality": "intraoral_photograph",
+            "width": 1231,
+            "height": 1231,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Right_Lateral/anonymous_003-007-786-00_1729836270232_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-786-00_1729836270232_Mandibular_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Right_Lateral/anonymous_003-007-786-00_1729836270232_Right_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左侧后牙偶有冷热不适数日余"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "无自发痛，夜间痛，偶有咬物不适"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "36 46合面深染，松-，叩不适，冷+，探不适，合面裂纹"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "龋病",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "可复性牙髓炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "不可复性牙髓炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙髓坏死",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "根尖周炎",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "根尖周脓肿",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙隐裂",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "牙体折裂",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "楔状缺损",
+                "department_code": "ENDODONTICS"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙本质敏感",
+                "department_code": "ENDODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "合面深染，裂纹，叩不适"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d45fe3bbb2074865a069e0b79e3074f2",
+      "case_code": "case794",
+      "task_code": "A6.2",
+      "dataset_id": "C008",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔修复科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 41 42 44 45 46 47 37缺失\n34 36缺损齐龈，无叩痛，无松动，牙龈未见红肿。\n43 32 33 35牙尖磨平，牙体磨耗，32 33 部分区域牙本质暴露，无叩痛，无松动，牙龈未见红肿。\n选项 D01：牙体缺损\n选项 D02：牙列缺损\n选项 D03：牙列缺失\n选项 D04：残根\n选项 D05：残冠\n选项 D06：牙体磨耗\n选项 D07：咬合创伤",
+        "images": [
+          {
+            "sha256": "6188b288bde1c8cb027ac449a3bf0744b37af0d2c6833864b928f92596d2f84b",
+            "modality": "oral_mucosa_photograph",
+            "width": 1678,
+            "height": 1294,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/SMITA00047_R_LA.JPG"
+          },
+          {
+            "sha256": "1057eb87c3c45a12b7b48df2d57c77514152bcb90d896cccd6046f0ff28b26c6",
+            "modality": "oral_mucosa_photograph",
+            "width": 1664,
+            "height": 898,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00047_R_UL.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/SMITA00047_R_LA.JPG"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00047_R_UL.JPG"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "41 42 44 45 46 47 37缺失\n34 36缺损齐龈，无叩痛，无松动，牙龈未见红肿。\n43 32 33 35牙尖磨平，牙体磨耗，32 33 部分区域牙本质暴露，无叩痛，无松动，牙龈未见红肿。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙体缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙列缺失",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "残根",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "残冠",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙体磨耗",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "咬合创伤",
+                "department_code": "PROSTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02",
+              "D05",
+              "D04",
+              "D06",
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "综合病史，41、42、44、45、46、47、37 牙缺失，存在牙列缺损；34、36 缺损齐龈，牙体硬组织缺损，为残根；43、32、33、35 牙牙尖磨平，32、33 部分牙本质暴露，存在牙体磨耗，患牙无叩痛松动，牙龈无红肿，支持牙体缺损、牙列缺损、残根、残冠、牙体磨耗五项诊断。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d8a6800b88eb4465909dd930c4e87703",
+      "case_code": "case789",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：儿童口腔科\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[M04] 题面影像\n[C01] 年龄：13岁\n[C02] 发现牙齿不齐2年。\n[C03] 13、43唇侧异位萌出，龈无红肿。\n选项 D01：乳牙龋病\n选项 D02：年轻恒牙龋病\n选项 D03：牙髓炎\n选项 D04：根尖周炎\n选项 D05：牙外伤\n选项 D06：乳牙滞留\n选项 D07：牙齿萌出异常\n选项 D08：多生牙\n选项 D09：先天缺牙\n选项 D10：牙釉质发育不全",
+        "images": [
+          {
+            "sha256": "027771d361d6f6c623ec2856ae8e99397c480f4715559c9cb1113fa21ecb8273",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 298,
+            "path": "COde-Dataset-C018/Images/Photographs/0172-001-05.jpg"
+          },
+          {
+            "sha256": "2dba7933b107c7b144bcd3eb7fe20dcad3c34248aa836b4347319c408dae2df3",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 298,
+            "path": "COde-Dataset-C018/Images/Photographs/0172-003-04.jpg"
+          },
+          {
+            "sha256": "5e651019b6adc716eabb646a676d9cad882a1f9a7aa548b3b225197959304384",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 298,
+            "path": "COde-Dataset-C018/Images/Photographs/0172-003-03.jpg"
+          },
+          {
+            "sha256": "3593cbb5d5c571d6373ffa24529bf5342560a9746b03eb53c81768e72feb657c",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 275,
+            "path": "COde-Dataset-C018/Images/Radiographs/0172-001-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0172-001-05.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0172-003-04.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0172-003-03.jpg"
+              },
+              {
+                "evidence_id": "M04",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0172-001-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：13岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "发现牙齿不齐2年。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "13、43唇侧异位萌出，龈无红肿。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "乳牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "年轻恒牙龋病",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙髓炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "根尖周炎",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙外伤",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "乳牙滞留",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "牙齿萌出异常",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "多生牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "先天缺牙",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              },
+              {
+                "option_id": "D10",
+                "diagnosis": "牙釉质发育不全",
+                "department_code": "PEDIATRIC_DENTISTRY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D07"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "牙齿异位萌出，全景片上未见多生牙。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d99b9071becd4ae08eef6058723bc911",
+      "case_code": "case795",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔种植科\n[M02] 题面影像\n[M03] 题面影像\n[C01] 35 36种植上部结构，种植体周围黏膜充血红肿，探诊出血，无溢脓，探诊深度 3mm，种植体无松动。\n选项 D01：牙列缺损\n选项 D02：牙列缺失\n选项 D03：牙槽嵴萎缩\n选项 D04：种植体周围黏膜炎\n选项 D05：种植体周围炎\n选项 D06：种植体松动\n选项 D07：种植体折裂",
+        "images": [
+          {
+            "sha256": "fa2a4c91955581242cb6a51ec6961e1bae00ae93361eae8c5151ef3e9a15c922",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 380,
+            "path": "COde-Dataset-C018/Images/Radiographs/3817-001-03.jpg"
+          },
+          {
+            "sha256": "15c27f6e0a07f1ca2c837d90cf20a4bbd10447b7c0dc4056d294493e7224b239",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/3817-001-03.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/3817-001-03.jpg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/3817-001-03.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "35 36种植上部结构，种植体周围黏膜充血红肿，探诊出血，无溢脓，探诊深度 3mm，种植体无松动。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙列缺损",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列缺失",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙槽嵴萎缩",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "种植体周围炎",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "种植体松动",
+                "department_code": "IMPLANTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体折裂",
+                "department_code": "IMPLANTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D04",
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "临床检查示 35、36 为种植上部结构，患牙缺失存在牙列缺损；种植体周围黏膜充血红肿，探诊出血，探诊深度 3mm，种植体无松动，无骨吸收征象，符合种植体周围黏膜炎，支持两项诊断。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:dd1fb8b7a80441cca1009cddd25b91d9",
+      "case_code": "case792",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔修复科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 临床检查：34 36牙备体，无叩痛，无松动，周围牙龈无红肿。35  37缺失。\n选项 D01：牙体缺损\n选项 D02：牙列缺损\n选项 D03：牙列缺失\n选项 D04：残根\n选项 D05：残冠\n选项 D06：牙体磨耗\n选项 D07：咬合创伤",
+        "images": [
+          {
+            "sha256": "50cd5a6cb64f889ae981e9f35b0b002a54a3b6e8e5711150062af3a30fd4c373",
+            "modality": "intraoral_photograph",
+            "width": 336,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Photographs/3919-001-01.jpg"
+          },
+          {
+            "sha256": "dfac3df4853d2a3707f45d962a4a2c2ea8e55f7bdfdc3d529aaa1b7cdae31f5b",
+            "modality": "intraoral_photograph",
+            "width": 336,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Photographs/3919-001-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/3919-001-01.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/3919-001-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "临床检查：34 36牙备体，无叩痛，无松动，周围牙龈无红肿。35  37缺失。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙体缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙列缺失",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "残根",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "残冠",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙体磨耗",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "咬合创伤",
+                "department_code": "PROSTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02",
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "合临床检查，34、36 为牙备体，牙体组织经预备后存在牙体缺损；35、37 牙缺失，牙列完整性被破坏，存在牙列缺损。基牙无叩痛、无松动，周围牙龈无红肿，支持牙体缺损、牙列缺损两项诊断。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e8fce43b48ab4033aafb4dc7fdda532f",
+      "case_code": "case804",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔黏膜科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 男 23\n选项 D01：复发性阿弗他溃疡\n选项 D02：创伤性溃疡\n选项 D03：口腔白斑\n选项 D04：口腔红斑\n选项 D05：口腔扁平苔藓\n选项 D06：口腔疱疹\n选项 D07：口腔黏膜色素沉着\n选项 D08：义齿性口炎\n选项 D09：沟纹舌",
+        "images": [
+          {
+            "sha256": "b8c5e4a180887b38fb767bf6e20fe0f7024d0cd625cad24690550f3ac0919701",
+            "modality": "intraoral_photograph",
+            "width": 727,
+            "height": 408,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1369-01_1733737211760_Right_Lateral_View.jpg"
+          },
+          {
+            "sha256": "f396b68776344f8ce2cc7669575a8213573e6b3dc46d36ecf87c833c7c491f87",
+            "modality": "intraoral_photograph",
+            "width": 894,
+            "height": 502,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1369-01_1733737211760_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_MEDICINE"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1369-01_1733737211760_Right_Lateral_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1369-01_1733737211760_Frontal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "男 23"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "复发性阿弗他溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "创伤性溃疡",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "口腔白斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "口腔红斑",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "口腔扁平苔藓",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "口腔疱疹",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "口腔黏膜色素沉着",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "义齿性口炎",
+                "department_code": "ORAL_MEDICINE"
+              },
+              {
+                "option_id": "D09",
+                "diagnosis": "沟纹舌",
+                "department_code": "ORAL_MEDICINE"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "12颊侧牙龈可见溃疡，位置明确"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ecfde8c3759f42f9b7907c1636700a13",
+      "case_code": "case802",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 年龄：69岁\n[C03] 全口牙列咀嚼无力一周。\n[C04] 口腔卫生状况不佳，菌斑牙石++，龈暗红水肿，bop(+),pd3-5mm,24松I度。\n[C05] 牙槽骨普遍吸收为根长的1/3.\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "a60958b13fa9079db782d7bfa15ffad3f6b40eae713e64f8115324e76f11f19c",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 381,
+            "path": "COde-Dataset-C018/Images/Photographs/0682-001-02.jpg"
+          },
+          {
+            "sha256": "67a7e88c4846ac1f97492155da0c5bab0ae896d764d37807fbc86e1bbdc76ba1",
+            "modality": "intraoral_photograph",
+            "width": 347,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Photographs/0682-001-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0682-001-02.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0682-001-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：69岁"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "全口牙列咀嚼无力一周。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "口腔卫生状况不佳，菌斑牙石++，龈暗红水肿，bop(+),pd3-5mm,24松I度。"
+              },
+              {
+                "evidence_id": "C05",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨普遍吸收为根长的1/3."
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "根据影像学检查牙槽骨吸收影像及临床检查牙龈暗红，探诊易出血，深牙周袋综合诊断为慢性牙周炎。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ed851f3f6c6f438ba954b54a2204f9f9",
+      "case_code": "case799",
+      "task_code": "A6.2",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 牙槽骨未见吸收。\n选项 D01：牙龈炎\n选项 D02：牙周炎\n选项 D03：牙周脓肿\n选项 D04：牙龈退缩\n选项 D05：牙龈增生\n选项 D06：牙周牙髓联合病变\n选项 D07：种植体周围黏膜炎\n选项 D08：种植体周围炎",
+        "images": [
+          {
+            "sha256": "e493f18d53cd48941ddf5a38e37d8726a76b3f6c54acefe81ffc8123694e99b5",
+            "modality": "intraoral_photograph",
+            "width": 1432,
+            "height": 804,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_005-007-1024-00_1731215533901_Frontal_View.jpg"
+          },
+          {
+            "sha256": "b3c107f0831719863e09f473db6cb9397ffab7e9e5886943b2e3fc23327edb43",
+            "modality": "intraoral_photograph",
+            "width": 2919,
+            "height": 2188,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_005-007-1024-00_1731215533901_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_005-007-1024-00_1731215533901_Frontal_View.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_005-007-1024-00_1731215533901_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨未见吸收。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙龈炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙周炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙周脓肿",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "牙龈退缩",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "牙龈增生",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙周牙髓联合病变",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "种植体周围黏膜炎",
+                "department_code": "PERIODONTOLOGY"
+              },
+              {
+                "option_id": "D08",
+                "diagnosis": "种植体周围炎",
+                "department_code": "PERIODONTOLOGY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "龈缘轻度水肿，影像学未见牙槽骨吸收。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fbaf32f024574cdeb78313acc8a706db",
+      "case_code": "case808",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔颌面外科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 患者记录：初诊病历|诊断：1.安氏II类错颌；2.骨性II类错颌(高角)；3.I度深覆颌；4.14 24已拔除、13-15 23-25间缝隙、上前牙舌倾；5.34 44已拔除、33-35 43-45间缝隙、下颌深SPEE曲线、下颌中线右偏约1mm；6.面部右侧偏丰满；7.颧骨修整术后、正颌术后。|治疗：全口直丝弓矫治(云印美)。1.排齐整平牙列、关闭拔牙间隙，对齐中线。2.维持面型。\n[C03] 口腔检查：口外正面观：面部右侧偏丰满，颏部基本居中，面高比例协调。侧面观：基本直面型。口内查：恒牙列，磨牙关系：右侧II类，左侧I类，尖牙关系：右侧II类，左侧I类，前牙I度深覆颌。上颌牙弓卵圆形，中线基本对齐，14 24已拔除，13-15 23-25间缝隙，上前牙舌倾。下颌牙弓卵圆形，中线右偏约1mm,下颌深SPEE曲线，34 44已拔除，33-35 43-45间缝隙。口腔卫生良。TMJ检查：未见明显异常。\n选项 D01：阻生牙\n选项 D02：冠周炎\n选项 D03：颌骨囊肿\n选项 D04：颌骨骨髓炎\n选项 D05：颌骨骨折\n选项 D06：错颌畸形",
+        "images": [
+          {
+            "sha256": "062b093c0c114d9cefc124fb732feb36212c5406fe0f56b982f3afd83ba26258",
+            "modality": "oral_radiograph",
+            "width": 416,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Radiographs/1539-001-01.jpg"
+          },
+          {
+            "sha256": "19aaf750885f3c2cbe05aa8b825eb10d9b83134f63c9d47fdd6b8ec7f9261b71",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/0985-001-05.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/1539-001-01.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/0985-001-05.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "患者记录：初诊病历|诊断：1.安氏II类错颌；2.骨性II类错颌(高角)；3.I度深覆颌；4.14 24已拔除、13-15 23-25间缝隙、上前牙舌倾；5.34 44已拔除、33-35 43-45间缝隙、下颌深SPEE曲线、下颌中线右偏约1mm；6.面部右侧偏丰满；7.颧骨修整术后、正颌术后。|治疗：全口直丝弓矫治(云印美)。1.排齐整平牙列、关闭拔牙间隙，对齐中线。2.维持面型。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：口外正面观：面部右侧偏丰满，颏部基本居中，面高比例协调。侧面观：基本直面型。口内查：恒牙列，磨牙关系：右侧II类，左侧I类，尖牙关系：右侧II类，左侧I类，前牙I度深覆颌。上颌牙弓卵圆形，中线基本对齐，14 24已拔除，13-15 23-25间缝隙，上前牙舌倾。下颌牙弓卵圆形，中线右偏约1mm,下颌深SPEE曲线，34 44已拔除，33-35 43-45间缝隙。口腔卫生良。TMJ检查：未见明显异常。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "阻生牙",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "冠周炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "颌骨囊肿",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "颌骨骨髓炎",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "颌骨骨折",
+                "department_code": "ORAL_SURGERY"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "错颌畸形",
+                "department_code": "ORAL_SURGERY"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D06"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "ANB角显著偏小，符合骨性II类错颌畸形"
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fd4dbf9329874fc0ab4a4e875fe05583",
+      "case_code": "case790",
+      "task_code": "A6.2",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.2 · 跨图/跨模态诊断 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "仅根据已纳入的影像和事实，从所选科室的完整诊断选项中选择所有符合本题的诊断，可选一项或多项；最后给出一条总的诊断理由。总理由应综合同一患者的多张影像。\n科室场景：口腔修复科\n[M01] 题面影像\n[M02] 题面影像\n[C02] 口腔检查：24,26号牙齿，备牙外形完好，叩(-)。25缺失。缺牙间隙存。牙龈无红肿扪痛。\n选项 D01：牙体缺损\n选项 D02：牙列缺损\n选项 D03：牙列缺失\n选项 D04：残根\n选项 D05：残冠\n选项 D06：牙体磨耗\n选项 D07：咬合创伤",
+        "images": [
+          {
+            "sha256": "bd8050b21752f6639407d7d18481423a754eccd05594d85579f8f11cd66ce4c0",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/2498-005-01.jpg"
+          },
+          {
+            "sha256": "21d6e0d6e34b756aba568531dd234a5dca6820089a513c29e8f39289617dde2c",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/2498-005-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2498-005-01.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2498-005-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：24,26号牙齿，备牙外形完好，叩(-)。25缺失。缺牙间隙存。牙龈无红肿扪痛。"
+              }
+            ]
+          },
+          {
+            "key": "diagnosis_options",
+            "name": "诊断选项",
+            "value": [
+              {
+                "option_id": "D01",
+                "diagnosis": "牙体缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D02",
+                "diagnosis": "牙列缺损",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D03",
+                "diagnosis": "牙列缺失",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D04",
+                "diagnosis": "残根",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D05",
+                "diagnosis": "残冠",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D06",
+                "diagnosis": "牙体磨耗",
+                "department_code": "PROSTHODONTICS"
+              },
+              {
+                "option_id": "D07",
+                "diagnosis": "咬合创伤",
+                "department_code": "PROSTHODONTICS"
+              }
+            ]
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "selected_option_ids",
+            "name": "诊断（不定项选择）",
+            "value": [
+              "D01",
+              "D02"
+            ]
+          },
+          {
+            "key": "diagnostic_reason",
+            "name": "总理由",
+            "value": "临床检查示 24、26 为预备后基牙，存在牙体缺损；25 牙缺失，牙列完整性破坏，符合牙列缺损，支持上述两项诊断。"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -13,6 +13,11 @@ REGION_EQUIVALENT_CHILDREN = {
     "右侧后牙区": ("右上后牙区", "右下后牙区"),
 }
 
+# A2.4 periapical periodontal annotation no longer includes root-apex
+# landmarks. Keep accepting legacy answers, but exclude this obsolete point
+# from both sides of the comparison so it cannot affect the score.
+IGNORED_A24_STRUCTURE_CODES = {"ROOT_APEX"}
+
 
 def score_a22_fields(
     pred: dict[str, Any] | None,
@@ -77,8 +82,16 @@ def score_a24_fields(
     scoring: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Score cephalometric/periapical keypoints by normalized distance."""
-    pred_by_key = {structure_key(item): item["coordinate"] for item in pred.get("structures", [])} if pred else {}
-    ref_by_key = {structure_key(item): item["coordinate"] for item in ref.get("structures", [])}
+    pred_by_key = {
+        structure_key(item): item["coordinate"]
+        for item in (pred.get("structures", []) if pred else [])
+        if item.get("structure_code") not in IGNORED_A24_STRUCTURE_CODES
+    }
+    ref_by_key = {
+        structure_key(item): item["coordinate"]
+        for item in ref.get("structures", [])
+        if item.get("structure_code") not in IGNORED_A24_STRUCTURE_CODES
+    }
 
     distances = {}
     tolerance = scoring_field_parameter(scoring, "distance_tolerance", 0.05)
@@ -421,7 +434,10 @@ def score_a34_fields(
             else:
                 site = item.get("site") if isinstance(item.get("site"), dict) else {}
                 if site.get("type") == "tooth":
-                    expanded.extend((item["finding_code"], int(fdi)) for fdi in site.get("fdi", []))
+                    expanded.extend(
+                        (item["finding_code"], fdi if str(fdi).lower() == "x" else int(fdi))
+                        for fdi in site.get("fdi", [])
+                    )
                 else:
                     regions = item.get("region_code", item.get("region_codes", site.get("region_codes", [])))
                     if isinstance(regions, str):

@@ -66,12 +66,20 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
     objective = {}
     for key in keys:
         metrics = [row["objective_metrics"][key] for row in rows if key in row.get("objective_metrics", {})]
-        correct = sum(item["exact_match"] for item in metrics)
-        objective[key] = {"correct": correct, "total": len(metrics), "accuracy": correct / len(metrics)}
-        if key == "diagnoses":
-            tp = sum(item["true_positive"] for item in metrics)
-            fp = sum(item["false_positive"] for item in metrics)
-            fn = sum(item["false_negative"] for item in metrics)
+        match_metrics = [item for item in metrics if isinstance(item, dict) and "exact_match" in item]
+        if match_metrics:
+            correct = sum(item["exact_match"] for item in match_metrics)
+            objective[key] = {
+                "correct": correct,
+                "total": len(match_metrics),
+                "accuracy": correct / len(match_metrics),
+            }
+        else:
+            objective[key] = {"values": metrics, "total": len(metrics)}
+        if key == "diagnoses" and match_metrics:
+            tp = sum(item["true_positive"] for item in match_metrics)
+            fp = sum(item["false_positive"] for item in match_metrics)
+            fn = sum(item["false_negative"] for item in match_metrics)
             objective[key].update({
                 "micro_precision": tp / (tp + fp) if tp + fp else 0.0,
                 "micro_recall": tp / (tp + fn) if tp + fn else 0.0,
@@ -94,13 +102,13 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "average_score": None,
         "scoring_note": "No final clinical score: review open answers and approve task scoring weights first.",
     }
-    if any(row.get("task_code") in {"A5.1", "A5.2", "A5.3"} for row in rows):
+    if any(row.get("task_code") in {"A5.1", "A5.2", "A5.3", "A6.2", "A7.1"} for row in rows):
         scored = [row for row in rows if row.get("scoring_status") == "scored"]
         result["fully_scored"] = len(scored)
         result["unscored"] = total - len(scored)
         f1_values = [row.get("objective_metrics", {}).get("diagnoses", {}).get("f1") for row in rows]
         f1_values = [value for value in f1_values if value is not None]
-        if any(row.get("task_code") in {"A5.1", "A5.2"} for row in rows):
+        if any(row.get("task_code") in {"A5.1", "A5.2", "A6.2"} for row in rows):
             result["diagnosis_f1_mean"] = sum(f1_values) / len(f1_values) if f1_values else None
         if scored:
             result["scored_total_points"] = sum(row["case_points"] for row in scored)
@@ -115,5 +123,15 @@ def summarize_clinical(rows: list[dict[str, Any]]) -> dict[str, Any]:
         else:
             result["scoring_status"] = "incomplete"
         result["scoring_note"] = "Totals exclude skipped cases and remain null until all attempted cases are scored."
+        if any(row.get("task_code") == "A7.1" for row in rows):
+            result["rubric"] = "a71_treatment_plan_v1"
+            dimension_totals = {}
+            for row in scored:
+                for key, value in row.get("a71_dimension_scores", {}).items():
+                    dimension_totals[key] = dimension_totals.get(key, 0) + value
+            if dimension_totals:
+                result["a71_dimension_average"] = {
+                    key: value / len(scored) for key, value in dimension_totals.items()
+                }
     return result
 

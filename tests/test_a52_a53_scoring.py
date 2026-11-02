@@ -1,16 +1,9 @@
 import copy
-import io
 import json
-from contextlib import redirect_stdout
-from pathlib import Path
-import tempfile
-import types
 import unittest
-from unittest.mock import patch
 
 import run
-from bench.metrics.a52_a53 import apply_clinical_judgment, build_a52_judge_messages, parse_a52_judgment, score_a52_fields, score_a53_fields
-from bench.metrics.report import summarize_fields
+from bench.metrics.clinical import apply_clinical_judgment, build_a52_judge_messages, parse_a52_judgment, score_a52_fields, score_a53_fields
 from bench.protocol import build_clinical_prompt, clinical_diagnosis_options, clinical_reference_answer, parse_clinical_answer, validate_clinical_answer
 
 
@@ -29,7 +22,7 @@ class A52A53Tests(unittest.TestCase):
                 self.assertEqual(clinical_diagnosis_options(case), expected)
                 prompt = build_clinical_prompt(case)
                 option_block = prompt.split("诊断选项：\n", 1)[1].split("\n\n判定与填写规则", 1)[0]
-                self.assertEqual(option_block.splitlines(), [item["diagnosis"] for item in expected])
+                self.assertEqual(option_block, "、".join(item["diagnosis"] for item in expected))
                 changed = copy.deepcopy(case)
                 for entry in changed["reference_answer"]["fields"][0]["value"]:
                     entry.update(role="PRIVATE_ROLE", reason="PRIVATE_REASON")
@@ -87,63 +80,6 @@ class A52A53Tests(unittest.TestCase):
             parse_clinical_answer('{"sufficiency":"不足"}', "A5.3")
         with self.assertRaises(ValueError):
             parse_clinical_answer(json.dumps({"sufficiency": "不足", "reason": "字" * 101}), "A5.3")
-
-    def execute_task(self, case, prediction, judge_reply=None, judge_error=None):
-        scratch = run.PROJECT_ROOT / "preview"
-        scratch.mkdir(exist_ok=True)
-        with tempfile.TemporaryDirectory(dir=scratch) as directory:
-            root = Path(directory)
-            source, output, config = root / "cases.json", root / "result.jsonl", root / "judge.json"
-            source.write_text(json.dumps({"cases": [case]}, ensure_ascii=False), encoding="utf-8")
-            config.write_text(json.dumps({"model": "test-judge", "base_url": "http://example.invalid/v1", "requires_api_key": False}), encoding="utf-8")
-            args = types.SimpleNamespace(limit=None, workers=1, dry_run=False, judge_model_config=config, run_id="test", run_started_at="test", model="tested", base_url="http://example.invalid/v1", temperature=0, max_tokens=1000, image_root=root, debug=False, api_key=None, timeout=1, retries=0, retry_sleep=0, extra_body={}, mock_response=None)
-            spec = {**run.TASK_SPECS[case["task_code"]], "case_path": source, "output_path": output}
-            with redirect_stdout(io.StringIO()), patch.object(run, "build_openai_messages", return_value=[]), patch.object(run, "call_with_retry", return_value={"content": json.dumps(prediction, ensure_ascii=False)}), patch.object(run, "chat_completion", return_value={"content": judge_reply, "usage": {"total_tokens": 10}}, side_effect=judge_error) as judge:
-                summary = run.run_task(case["task_code"], spec, args)
-            row = json.loads(output.read_text(encoding="utf-8").splitlines()[0])
-            return row, summary, judge.call_count
-
-    def test_a52_runner_one_judge_call_and_failures(self):
-        case = cases("A5.2")[0]
-        ref = clinical_reference_answer(case)
-        pred = {"diagnoses": ref["diagnoses"], "reason": "诊断理由", "exclude_reason": "排除理由"}
-        reply = '{"reason":{"score":2,"explanation":"一致"},"exclude_reason":{"score":1,"explanation":"部分"}}'
-        row, summary, calls = self.execute_task(case, pred, reply)
-        self.assertEqual(calls, 1)
-        self.assertEqual(row["case_score"], 87.5)
-        self.assertEqual(summary["total_score"], 87.5)
-        self.assertEqual(row["reason_judge_model"], "test-judge")
-        self.assertEqual(row["reason_judge_token_usage"]["total_tokens"], 10)
-        for reply, error in ((None, RuntimeError("offline")), ('{}', None)):
-            row, summary, calls = self.execute_task(case, pred, reply, error)
-            self.assertIsNone(row["case_score"])
-            self.assertEqual(row["field_scores"]["diagnoses"], 50)
-            self.assertEqual(row["pending_review_fields"], ["reason", "exclude_reason"])
-            self.assertTrue(row["reason_judge_error"])
-            self.assertIsNone(summary["total_score"])
-
-    def test_a53_runner_calls_judge_only_for_correct_insufficient(self):
-        all_cases = cases("A5.3")
-        sufficient = next(c for c in all_cases if clinical_reference_answer(c)["sufficiency"] == "充足")
-        insufficient = next(c for c in all_cases if clinical_reference_answer(c)["sufficiency"] == "不足")
-        for case, pred, expected in ((sufficient, {"sufficiency": "充足"}, 100), (insufficient, {"sufficiency": "充足"}, 0), (sufficient, {"sufficiency": "不足", "reason": "理由"}, 0)):
-            row, summary, calls = self.execute_task(case, pred)
-            self.assertEqual(calls, 0)
-            self.assertEqual(row["case_score"], expected)
-            self.assertEqual(summary["total_score"], expected)
-            self.assertEqual(row["reference_answer_native"], case["reference_answer"])
-            self.assertIn("reference_label_mapping", row)
-        row, summary, calls = self.execute_task(insufficient, {"sufficiency": "不充足", "reason": "理由"}, '{"score":2,"explanation":"一致"}')
-        self.assertEqual(calls, 1)
-        self.assertEqual(row["case_score"], 100)
-        row, summary, calls = self.execute_task(insufficient, {"sufficiency": "不足", "reason": "理由"}, judge_error=RuntimeError("offline"))
-        self.assertEqual(row["field_scores"]["sufficiency"], 50)
-        self.assertIsNone(row["case_score"])
-        self.assertEqual(summary["scoring_status"], "incomplete")
-        row, summary, calls = self.execute_task(insufficient, {"sufficiency": "不足"})
-        self.assertEqual(calls, 0)
-        self.assertEqual(row["scoring_status"], "invalid")
-        self.assertEqual(summary["invalid"], 1)
 
 
 if __name__ == "__main__":

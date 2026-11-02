@@ -1,0 +1,1588 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:030aed79fcaf44bc96ddaca3940fdd36",
+      "case_code": "case84",
+      "task_code": "A1.3",
+      "dataset_id": "C017",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "0763ea5fa920e2999f1074e1b653ede5307fc48786ec99e529b100afa287983a",
+            "modality": "panoramic_radiograph",
+            "width": 2786,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000727_83039a94.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORAL_SURGERY",
+              "goal_code": "SURGERY_ANATOMIC_RELATIONSHIP",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区",
+                  "左下后牙区"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_LIMITED_FOV_CBCT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:06e4a840d18745e58a8272bca04e5849",
+      "case_code": "case81",
+      "task_code": "A1.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.1",
+      "title": "A1.3 · 输入充分性 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "2a5f11ac411f544a3c356786f93332085019a4afd7a3e7ca8d403f1e92911c2f",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/169.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PERIODONTOLOGY",
+              "goal_code": "PERIO_BONE_LOSS",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "全口"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_LIMITED_FOV_CBCT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:085644715aa4448fb4388ad5bd5c8b94",
+      "case_code": "case95",
+      "task_code": "A1.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "834e8d0382e7473c5deec85b0b1e2c1e2a688384fdac760d56474e1d9d943ba1",
+            "modality": "intraoral_photograph",
+            "width": 1611,
+            "height": 1207,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Maxillary_Occlusal/anonymous_003-008-1134-00_1732531184012_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_PULPAL_STATUS",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "16"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "PULP_VITALITY_TEST"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:08609b15cb294c4788ca0b00b8046732",
+      "case_code": "case98",
+      "task_code": "A1.3",
+      "dataset_id": "C017",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "70270c49d67e1fc960587c14390dba28ee45cb80f27b55e157c598453ca366bc",
+            "modality": "panoramic_radiograph",
+            "width": 2789,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000924_f91b651d.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "IMPLANTOLOGY",
+              "goal_code": "IMPLANT_EXISTING_POSITION",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:128983afddaf4956ae5fcc412e8fba4b",
+      "case_code": "case89",
+      "task_code": "A1.3",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C005",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "954e5d0002a5716faa4ddefb10a2056cc5054989325c08d5dc8daa54526705e8",
+            "modality": "cephalometric_radiograph",
+            "width": 1976,
+            "height": 2201,
+            "path": "Aariz-C005/train/Cephalograms/cks2ip8g62b670yufdmwv2tou.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORTHODONTICS",
+              "goal_code": "ORTHO_CVM",
+              "site": {
+                "type": "not_applicable"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "RETAKE_SAME_REGION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2e2470910e114a2ba00c17fad16c5d64",
+      "case_code": "case102",
+      "task_code": "A1.3",
+      "dataset_id": "C004",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "68cff01e16b6d901c2817846f6f26bdfacdd9f276efb0564cec1d2d4f9430867",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate5_0012.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "GENERAL",
+              "goal_code": "GENERAL_DENTITION_OVERVIEW",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3dd35123c2a74ba18a6499c7af0fdc1b",
+      "case_code": "case76",
+      "task_code": "A1.3",
+      "dataset_id": "C004",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "87974ef9955ee3f346f240e971344e555fdac26c7886c0c5d16da0a6289964fb",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Test/images/cate1_008.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PEDIATRIC_DENTISTRY",
+              "goal_code": "PED_TOOTH_GERM_ERUPTION",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "全口"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4ca1dfd959314f7a9ac58c8b7cd9ea4c",
+      "case_code": "case86",
+      "task_code": "A1.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "0f9f279524ba642e1203725bcd9c7bb04c5704e2ae8b72a542bfa60fd938d02a",
+            "modality": "intraoral_photograph",
+            "width": 5374,
+            "height": 3462,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/146.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORTHODONTICS",
+              "goal_code": "ORTHO_SAGITTAL_RELATION",
+              "site": {
+                "type": "not_applicable"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "OTHER_REVIEW",
+              "other_text": "补充侧位片"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:557e5f7232944d509c46f6fbcfd8ac0b",
+      "case_code": "case91",
+      "task_code": "A1.3",
+      "dataset_id": "C002",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "044647eba1ac5b74fa5b4f47c982b0d8ddd9134cad6d0d0730cdfdf0609ae6d6",
+            "modality": "panoramic_radiograph",
+            "width": 2876,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_228.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORAL_SURGERY",
+              "goal_code": "SURGERY_IMPACTED_POSITION",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "13"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_LIMITED_FOV_CBCT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5a0f77967da0407e8d6586ab757a6799",
+      "case_code": "case75",
+      "task_code": "A1.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.1",
+      "title": "A1.3 · 输入充分性 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "d699799669ceff5d5f6a87925ca4f00d845e107eb470a2f0aecffe2a2a5e7cb3",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1324-F-27.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PROSTHODONTICS",
+              "goal_code": "PROS_PLAN_SUFFICIENCY",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_STANDARDIZED_ORAL_PHOTOS"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6248036c5e52403e9706dd43d7dcb416",
+      "case_code": "case92",
+      "task_code": "A1.3",
+      "dataset_id": "C002",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "5c673d50d224b03f2d4909f7865718771fedef1014c40343cdcbd5cce7e07c2d",
+            "modality": "panoramic_radiograph",
+            "width": 1976,
+            "height": 976,
+            "path": "DENTEX-C002/input/test_86.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_ROOT_MORPHOLOGY",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_TARGETED_PERIAPICAL",
+              "target_fdi": [
+                "46"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6fe0528618604e92b1feb7e89c7e93c0",
+      "case_code": "case100",
+      "task_code": "A1.3",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "2a42503040a6be163ce81f7d17f32668d0698a6e84e40fb9a654edaf1062f185",
+            "modality": "oral_mucosa_photograph",
+            "width": 1107,
+            "height": 1203,
+            "path": "SMART-OM-C008/02. Variation from normal/01. Unannotated/04. Right buccal mucosa/SMITA00113_R_RB.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORAL_MEDICINE",
+              "goal_code": "MUCOSA_SITE_EXTENT",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右颊黏膜"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7b7a2ff8640b4ba99d402ae2db7f5c1f",
+      "case_code": "case82",
+      "task_code": "A1.3",
+      "dataset_id": "C017",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "e6d571c2adabd96069273864ccb85d36ae11e16d688e59f70c8c2115ceada669",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000911_3bd02bd3.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "IMPLANTOLOGY",
+              "goal_code": "IMPLANT_PREOP_BONE",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左侧后牙区"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_LIMITED_FOV_CBCT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7fb180c92b264f2b9ab4b4268eaae63f",
+      "case_code": "case90",
+      "task_code": "A1.3",
+      "dataset_id": "C002",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "0ea4769d666eb28a51387ab4f93f22e65077a6d6d02b0a83434388a80b09838e",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_140.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORAL_SURGERY",
+              "goal_code": "SURGERY_IMPACTED_POSITION",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "35",
+                  "45"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_LIMITED_FOV_CBCT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8032e23735724cca81a840c31cdec220",
+      "case_code": "case85",
+      "task_code": "A1.3",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "983b9a5e3123950d0d3bd40036b179b2e0b29ed1cfa15308a0797d52d548dbb9",
+            "modality": "oral_mucosa_photograph",
+            "width": 710,
+            "height": 800,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/04. Right buccal mucosa/SMITA00070_R_RB.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_CARIES_ASSESSMENT",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_TARGETED_PERIAPICAL",
+              "target_fdi": [
+                "46"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:872c4a3045004409be74640bc6627dd4",
+      "case_code": "case103",
+      "task_code": "A1.3",
+      "dataset_id": "C008",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "d8717ea1704aba7fb8a150e5e10810b60acc3cacffde9b5302006a8a062c7875",
+            "modality": "oral_mucosa_photograph",
+            "width": 1566,
+            "height": 1031,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/08. Lower arch/SMITA00210_R_LA.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PERIODONTOLOGY",
+              "goal_code": "OTHER_REVIEW",
+              "custom_site_mode": "region",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下牙弓"
+                ]
+              },
+              "custom_goal_text": "牙周初检"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "PERIODONTAL_PROBING"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9def0d2a4c49432faf090db0cf621ee6",
+      "case_code": "case96",
+      "task_code": "A1.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "4b9c6ba757c90f281e502cd82d47d691c70ee20fa2566301d9de104542ffea99",
+            "modality": "intraoral_photograph",
+            "width": 1447,
+            "height": 813,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1307-00_1733399296706_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_PERIAPICAL_ASSESSMENT",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_TARGETED_PERIAPICAL",
+              "target_fdi": [
+                "46"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9fed01b20b52416ead846cb25cab2c3b",
+      "case_code": "case101",
+      "task_code": "A1.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "de5b1327f38132df99475b372be9884c9c0d7b6b8bcc9628d92b652912690063",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/602-F-24.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PERIODONTOLOGY",
+              "goal_code": "PERIO_FULL_MOUTH_SUPPORT",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a914633baf4941faa0725802e785344b",
+      "case_code": "case80",
+      "task_code": "A1.3",
+      "dataset_id": "C010",
+      "schema_version": "0.7.1",
+      "title": "A1.3 · 输入充分性 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "30ef26bda94df34a8c0591024bf61e2d8faa18ef28ff6c3da11c15dc06cd52c1",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_0392.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_CARIES_ASSESSMENT",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "全口"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_STANDARDIZED_ORAL_PHOTOS"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a9f7ce25f87543439c4df386d43940c9",
+      "case_code": "case79",
+      "task_code": "A1.3",
+      "dataset_id": "C008",
+      "schema_version": "0.7.1",
+      "title": "A1.3 · 输入充分性 · C008",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "de36e1ab144561a25ebf623a515aae5c602c37672525aed1178771da712ac895",
+            "modality": "oral_mucosa_photograph",
+            "width": 899,
+            "height": 941,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/02. Ventral tongue/SMITA00346_R_VT.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORAL_MEDICINE",
+              "goal_code": "MUCOSA_MORPHOLOGY",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "舌腹"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b6f5ba3ac33f4c96b5bc59f7d1718437",
+      "case_code": "case74",
+      "task_code": "A1.3",
+      "dataset_id": "C002",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "aa2cf403b9de010b69362afbffd059e58db435e360bd6b798fa2f928a2fba801",
+            "modality": "panoramic_radiograph",
+            "width": 2799,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_138.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORAL_SURGERY",
+              "goal_code": "SURGERY_IMPACTED_POSITION",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "18"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_LIMITED_FOV_CBCT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cedf6c23b8284c6986259ee14a8ee8b9",
+      "case_code": "case87",
+      "task_code": "A1.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "04a4d8c9b1fb47b3040aa218856104338f9aedd0f9766fbe12b5c20662c0e4aa",
+            "modality": "intraoral_photograph",
+            "width": 1609,
+            "height": 904,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1261-00_1733123016185_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORTHODONTICS",
+              "goal_code": "ORTHO_RECORD_COMPLETENESS",
+              "site": {
+                "type": "not_applicable"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "RETAKE_SAME_REGION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d6c3aff5e6354018848987050188834b",
+      "case_code": "case97",
+      "task_code": "A1.3",
+      "dataset_id": "C004",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "c2724d3ab254be76fc6a34539b8a6b20262c0e416b696b28eaf787ff1c5bd29b",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Train/images/cate4_001.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PEDIATRIC_DENTISTRY",
+              "goal_code": "PED_DENTITION_STAGE",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d98e0d6f9f3d413697dc5efef3be245e",
+      "case_code": "case93",
+      "task_code": "A1.3",
+      "dataset_id": "C002",
+      "schema_version": "0.17.0",
+      "title": "A1.3 · 输入充分性 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "9280bb8b118e6403f277b55c40322ca5d4d87a9651c9627419a84027621c7f32",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_91.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_ROOT_CANAL_TREATMENT",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "ADD_TARGETED_PERIAPICAL",
+              "target_fdi": [
+                "36"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:dbf18b0aa1cd45fb98d44403e5f4efb2",
+      "case_code": "case83",
+      "task_code": "A1.3",
+      "dataset_id": "C017",
+      "schema_version": "0.7.1",
+      "title": "A1.3 · 输入充分性 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "f1fbc9bf2f3c120f08c06c45eab9d8c31f37f55e0abffe2c5f2893d143d18f2a",
+            "modality": "panoramic_radiograph",
+            "width": 2794,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_1/patient_image_000707_57dded03.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_PERIAPICAL_ASSESSMENT",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e82d1fd5548c41caa2f072a517467b84",
+      "case_code": "case94",
+      "task_code": "A1.3",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "860e06ce5ea4b21e4442e5aa286788e5be0cd484e227cd81166527a2ac9d5a8c",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/712.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_CARIES_ASSESSMENT",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "CLINICAL_EXAM_FIRST"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f20188a63f304293a254eabafa11cc24",
+      "case_code": "case78",
+      "task_code": "A1.3",
+      "dataset_id": "C007",
+      "schema_version": "0.7.1",
+      "title": "A1.3 · 输入充分性 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "d5575020ffb3d545969c9cab17ad8990e7666fe7792214f125c0ccf4978e7b72",
+            "modality": "periapical_radiograph",
+            "width": 886,
+            "height": 1171,
+            "path": "DenPAR-C007/Training/Images/76.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PERIODONTOLOGY",
+              "goal_code": "PERIO_BONE_LOSS",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌前牙区"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f682b14820814bfcb09aff328e15c02f",
+      "case_code": "case99",
+      "task_code": "A1.3",
+      "dataset_id": "C007",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "6545f709988677c7b4d377de81cc5f1423996351e569bd12b33fc505c6a4622e",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1114.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "PROSTHODONTICS",
+              "goal_code": "PROS_ABUTMENT_SUPPORT",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "CLINICAL_EXAM_FIRST"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:febbcbe5c2714a3390cd956df7f83f89",
+      "case_code": "case77",
+      "task_code": "A1.3",
+      "dataset_id": "C006",
+      "schema_version": "0.17.0",
+      "title": "A1.3 · 输入充分性 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "087a15c2cca6954790fbdd835dc7561244b7d986f1b091de40201da69784adca",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.52.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ENDODONTICS",
+              "goal_code": "ENDO_CARIES_ASSESSMENT",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌前牙区"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "不足"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "CLINICAL_EXAM_FIRST"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fff2b812e5814fc88d81c8d0623e0843",
+      "case_code": "case88",
+      "task_code": "A1.3",
+      "dataset_id": "C005",
+      "schema_version": "0.7.5",
+      "title": "A1.3 · 输入充分性 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "针对一个明确的临床用途判断当前输入是否充分。",
+        "images": [
+          {
+            "sha256": "148e331978073a0aa00ae5f13a26f921ee1fbb9866564fae01ccd4854cc02c5c",
+            "modality": "cephalometric_radiograph",
+            "width": 2091,
+            "height": 1592,
+            "path": "Aariz-C005/train/Cephalograms/cl5lc0isd12a4072uef0q4937.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "specified_purpose",
+            "name": "指定用途",
+            "value": {
+              "department_code": "ORTHODONTICS",
+              "goal_code": "ORTHO_VERTICAL_PATTERN",
+              "site": {
+                "type": "not_applicable"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "sufficiency",
+            "name": "充分性",
+            "value": "充分"
+          },
+          {
+            "key": "minimum_necessary_action",
+            "name": "最低必要行动",
+            "value": {
+              "action_code": "NO_ADDITIONAL_ACTION"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

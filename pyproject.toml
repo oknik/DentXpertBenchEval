@@ -5,6 +5,7 @@ description = "Evaluation toolkit for DentXpertBench oral multimodal benchmark t
 requires-python = ">=3.10"
 dependencies = [
     "Pillow>=10.0",
+    "tokenizers>=0.20",
 ]
 
 [tool.pytest.ini_options]

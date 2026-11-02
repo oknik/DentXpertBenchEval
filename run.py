@@ -1,5 +1,4 @@
 import argparse
-from functools import partial
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import http.client
 import json
@@ -15,21 +14,7 @@ from typing import Any
 
 from bench.media import image_to_data_url
 from bench.models import chat_completion
-from bench.protocol import (
-    A11_FIELD_KEYS,
-    A12_FIELD_KEYS,
-    A13_FIELD_KEYS,
-    A21_FIELD_KEYS,
-    A22_FIELD_KEYS,
-    A23_FIELD_KEYS,
-    A24_FIELD_KEYS,
-    A31_FIELD_KEYS,
-    A32_FIELD_KEYS,
-    A33_FIELD_KEYS,
-    A34_FIELD_KEYS,
-    A41_FIELD_KEYS,
-    A42_FIELD_KEYS,
-    A43_FIELD_KEYS,
+from bench.prompt_builders import (
     build_a11_prompt,
     build_a12_prompt,
     build_a13_prompt,
@@ -41,6 +26,13 @@ from bench.protocol import (
     build_a32_prompt,
     build_a33_prompt,
     build_a34_prompt,
+    build_a41_prompt,
+    build_a42_prompt,
+    build_a43_prompt,
+)
+from bench.protocol import (
+    TASK_FIELD_KEYS,
+    CLINICAL_FIELD_KEYS,
     select_a24_cephalometric_structures,
     select_a24_periapical_target_fdis,
     fields_to_dict,
@@ -55,15 +47,23 @@ from bench.protocol import (
     parse_a32_answer,
     parse_a33_answer,
     parse_a34_answer,
-    build_a41_prompt,
     parse_a41_answer,
-    build_a42_prompt,
     parse_a42_answer,
-    build_a43_prompt,
     parse_a43_answer,
-    CLINICAL_FIELD_KEYS,
-    build_clinical_prompt,
-    parse_clinical_answer,
+    build_a51_prompt,
+    build_a52_prompt,
+    build_a53_prompt,
+    build_a61_prompt,
+    build_a62_prompt,
+    build_a63_prompt,
+    build_a71_prompt,
+    parse_a51_answer,
+    parse_a52_answer,
+    parse_a53_answer,
+    parse_a61_answer,
+    parse_a62_answer,
+    parse_a63_answer,
+    parse_a71_answer,
     clinical_media,
     clinical_reference_answer,
     validate_clinical_answer,
@@ -80,143 +80,76 @@ from bench.metrics.classification import (
     score_fields,
 )
 from bench.metrics.localization import score_a22_fields, score_a24_fields, score_a31_fields, score_a32_fields, score_a33_fields, score_a34_fields
-from bench.metrics.report import summarize_fields
-from bench.metrics.clinical import score_clinical_fields
-from bench.metrics.a51 import score_a51_fields, build_reason_judge_messages, parse_reason_judgment, apply_reason_judgment
-from bench.metrics.a52_a53 import score_a52_fields, score_a53_fields, build_a52_judge_messages, parse_a52_judgment, apply_clinical_judgment
+from bench.metrics.clinical import (
+    score_a51_fields,
+    build_reason_judge_messages,
+    parse_reason_judgment,
+    apply_reason_judgment,
+    score_a52_fields,
+    score_a53_fields,
+    build_a52_judge_messages,
+    parse_a52_judgment,
+    apply_clinical_judgment,
+    score_a61_fields,
+    score_a62_fields,
+    score_a63_fields,
+    score_a71_fields,
+    build_a71_judge_messages,
+    parse_a71_judgment,
+    apply_a71_judgment,
+)
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 REPO_ROOT = PROJECT_ROOT.parent
 DEFAULT_IMAGE_ROOT = REPO_ROOT / "公开数据集/公开数据集"
-DEFAULT_MODEL_CONFIG_PATH = PROJECT_ROOT / "configs/model-deepseek-flash.json"
-TASK_SPECS = {
-    "A1.1": {
-        "case_path": PROJECT_ROOT / "tasks/A1.1/DentXpertBench-cases-v3.2-A1.1-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a1_1_eval_results.jsonl",
-        "field_keys": A11_FIELD_KEYS,
-        "prompt_builder": build_a11_prompt,
-        "answer_parser": parse_a11_answer,
-        "scorer": score_a11_fields,
-    },
-    "A1.2": {
-        "case_path": PROJECT_ROOT / "tasks/A1.2/DentXpertBench-cases-v3.2-A1.2-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a1_2_eval_results.jsonl",
-        "field_keys": A12_FIELD_KEYS,
-        "prompt_builder": build_a12_prompt,
-        "answer_parser": parse_a12_answer,
-        "scorer": score_a12_fields,
-    },
-    "A1.3": {
-        "case_path": PROJECT_ROOT / "tasks/A1.3/DentXpertBench-cases-v3.2-A1.3-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a1_3_eval_results.jsonl",
-        "field_keys": A13_FIELD_KEYS,
-        "prompt_builder": build_a13_prompt,
-        "answer_parser": parse_a13_answer,
-        "scorer": score_a13_fields,
-    },
-    "A2.1": {
-        "case_path": PROJECT_ROOT / "tasks/A2.1/DentXpertBench-cases-v3.2-A2.1-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a2_1_eval_results.jsonl",
-        "field_keys": A21_FIELD_KEYS,
-        "prompt_builder": build_a21_prompt,
-        "answer_parser": parse_a21_answer,
-        "scorer": score_a21_fields,
-    },
-    "A2.2": {
-        "case_path": PROJECT_ROOT / "tasks/A2.2/DentXpertBench-cases-v3.2-A2.2-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a2_2_eval_results.jsonl",
-        "field_keys": A22_FIELD_KEYS,
-        "prompt_builder": build_a22_prompt,
-        "answer_parser": parse_a22_answer,
-        "scorer": score_a22_fields,
-    },
-    "A2.3": {
-        "case_path": PROJECT_ROOT / "tasks/A2.3/DentXpertBench-cases-v3.2-A2.3-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a2_3_eval_results.jsonl",
-        "field_keys": A23_FIELD_KEYS,
-        "prompt_builder": build_a23_prompt,
-        "answer_parser": parse_a23_answer,
-        "scorer": score_a23_fields,
-    },
-    "A2.4": {
-        "case_path": PROJECT_ROOT / "tasks/A2.4/DentXpertBench-cases-v3.2-A2.4-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a2_4_eval_results.jsonl",
-        "field_keys": A24_FIELD_KEYS,
-        "prompt_builder": build_a24_prompt,
-        "answer_parser": parse_a24_answer,
-        "scorer": score_a24_fields,
-    },
-    "A3.1": {
-        "case_path": PROJECT_ROOT / "tasks/A3.1/DentXpertBench-cases-v3.2-A3.1-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a3_1_eval_results.jsonl",
-        "field_keys": A31_FIELD_KEYS,
-        "prompt_builder": build_a31_prompt,
-        "answer_parser": parse_a31_answer,
-        "scorer": score_a31_fields,
-    },
-    "A3.2": {
-        "case_path": PROJECT_ROOT / "tasks/A3.2/DentXpertBench-cases-v3.2-A3.2-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a3_2_eval_results.jsonl",
-        "field_keys": A32_FIELD_KEYS,
-        "prompt_builder": build_a32_prompt,
-        "answer_parser": parse_a32_answer,
-        "scorer": score_a32_fields,
-    },
-    "A3.3": {
-        "case_path": PROJECT_ROOT / "tasks/A3.3/DentXpertBench-cases-v3.2-A3.3-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a3_3_eval_results.jsonl",
-        "field_keys": A33_FIELD_KEYS,
-        "prompt_builder": build_a33_prompt,
-        "answer_parser": parse_a33_answer,
-        "scorer": score_a33_fields,
-    },
-    "A3.4": {
-        "case_path": PROJECT_ROOT / "tasks/A3.4/DentXpertBench-cases-v3.2-A3.4-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a3_4_eval_results.jsonl",
-        "field_keys": A34_FIELD_KEYS,
-        "prompt_builder": build_a34_prompt,
-        "answer_parser": parse_a34_answer,
-        "scorer": score_a34_fields,
-    },
-    "A4.1": {
-        "case_path": PROJECT_ROOT / "tasks/A4.1/DentXpertBench-cases-v3.2-A4.1-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a4_1_eval_results.jsonl",
-        "field_keys": A41_FIELD_KEYS,
-        "prompt_builder": build_a41_prompt,
-        "answer_parser": parse_a41_answer,
-        "scorer": score_fields,
-    },
-    "A4.2": {
-        "case_path": PROJECT_ROOT / "tasks/A4.2/DentXpertBench-cases-v3.2-A4.2-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a4_2_eval_results.jsonl",
-        "field_keys": A42_FIELD_KEYS,
-        "prompt_builder": build_a42_prompt,
-        "answer_parser": parse_a42_answer,
-        "scorer": score_fields,
-    },
-    "A4.3": {
-        "case_path": PROJECT_ROOT / "tasks/A4.3/DentXpertBench-cases-v3.2-A4.3-2026-10-29.json",
-        "output_path": PROJECT_ROOT / "results/a4_3_eval_results.jsonl",
-        "field_keys": A43_FIELD_KEYS,
-        "prompt_builder": build_a43_prompt,
-        "answer_parser": parse_a43_answer,
-        "scorer": score_a43_fields,
-    },
-}
-
-for _code, _keys in CLINICAL_FIELD_KEYS.items():
-    TASK_SPECS[_code] = {
-        "case_path": PROJECT_ROOT / f"tasks/{_code}/DentXpertBench-cases-v3.2-{_code}-2026-10-29.json",
-        "output_path": PROJECT_ROOT / f"results/{_code.lower().replace('.', '_')}_eval_results.jsonl",
-        "field_keys": _keys,
-        "prompt_builder": build_clinical_prompt,
-        "answer_parser": partial(parse_clinical_answer, task_code=_code),
-        "scorer": partial(score_clinical_fields, task_code=_code),
+DEFAULT_MODEL_CONFIG_PATH = PROJECT_ROOT / "configs/model-gpt-6-luna.json"
+def _task_spec(
+    task_code: str,
+    case_date: str,
+    prompt_builder: Any,
+    answer_parser: Any,
+    scorer: Any,
+) -> tuple[str, dict[str, Any]]:
+    """Build the same task contract for every benchmark family."""
+    task_slug = task_code.lower().replace(".", "_")
+    case_path = PROJECT_ROOT / "tasks" / task_code / (
+        f"DentXpertBench-cases-v3.2-{task_code}-{case_date}.json"
+    )
+    return task_code, {
+        "case_path": case_path,
+        "output_path": PROJECT_ROOT / "results" / f"{task_slug}_eval_results.jsonl",
+        "field_keys": TASK_FIELD_KEYS[task_code],
+        "prompt_builder": prompt_builder,
+        "answer_parser": answer_parser,
+        "scorer": scorer,
     }
-TASK_SPECS["A5.1"]["scorer"] = score_a51_fields
-TASK_SPECS["A5.2"]["scorer"] = score_a52_fields
-TASK_SPECS["A5.3"]["scorer"] = score_a53_fields
+
+
+_TASK_DEFINITIONS = (
+    ("A1.1", "2026-11-01", build_a11_prompt, parse_a11_answer, score_a11_fields),
+    ("A1.2", "2026-11-01", build_a12_prompt, parse_a12_answer, score_a12_fields),
+    ("A1.3", "2026-11-01", build_a13_prompt, parse_a13_answer, score_a13_fields),
+    ("A2.1", "2026-11-01", build_a21_prompt, parse_a21_answer, score_a21_fields),
+    ("A2.2", "2026-11-01", build_a22_prompt, parse_a22_answer, score_a22_fields),
+    ("A2.3", "2026-11-01", build_a23_prompt, parse_a23_answer, score_a23_fields),
+    ("A2.4", "2026-11-01", build_a24_prompt, parse_a24_answer, score_a24_fields),
+    ("A3.1", "2026-11-01", build_a31_prompt, parse_a31_answer, score_a31_fields),
+    ("A3.2", "2026-11-01", build_a32_prompt, parse_a32_answer, score_a32_fields),
+    ("A3.3", "2026-11-01", build_a33_prompt, parse_a33_answer, score_a33_fields),
+    ("A3.4", "2026-11-01", build_a34_prompt, parse_a34_answer, score_a34_fields),
+    ("A4.1", "2026-11-01", build_a41_prompt, parse_a41_answer, score_fields),
+    ("A4.2", "2026-11-01", build_a42_prompt, parse_a42_answer, score_fields),
+    ("A4.3", "2026-11-01", build_a43_prompt, parse_a43_answer, score_a43_fields),
+    ("A5.1", "2026-11-02", build_a51_prompt, parse_a51_answer, score_a51_fields),
+    ("A5.2", "2026-11-01", build_a52_prompt, parse_a52_answer, score_a52_fields),
+    ("A5.3", "2026-11-01", build_a53_prompt, parse_a53_answer, score_a53_fields),
+    ("A6.1", "2026-11-01", build_a61_prompt, parse_a61_answer, score_a61_fields),
+    ("A6.2", "2026-11-02", build_a62_prompt, parse_a62_answer, score_a62_fields),
+    ("A6.3", "2026-11-01", build_a63_prompt, parse_a63_answer, score_a63_fields),
+    ("A7.1", "2026-11-01", build_a71_prompt, parse_a71_answer, score_a71_fields),
+)
+TASK_SPECS = dict(_task_spec(*definition) for definition in _TASK_DEFINITIONS)
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
@@ -241,15 +174,32 @@ def load_model_config(config_path: Path) -> dict[str, Any]:
     return config
 
 
-def debug_log(enabled: bool, message: str) -> None:
-    if enabled:
-        print(f"[debug] {message}")
-
-
-def resolve_max_tokens(args: argparse.Namespace, task_code: str | None = None) -> int | None:
+def resolve_max_tokens(args: argparse.Namespace) -> int | None:
     if args.max_tokens is not None:
         return args.max_tokens
     return None
+
+
+def resolve_a24_periapical_model_image(case: dict[str, Any], image_index: int = 0) -> Path:
+    """Resolve the pre-annotated red-box image used for A2.4 periapical cases."""
+    if case.get("task_code") != "A2.4":
+        raise ValueError("annotated A2.4 image lookup requires task A2.4")
+    modality = case.get("input", {}).get("images", [{}])[image_index].get("modality")
+    if modality != "periapical_radiograph":
+        raise ValueError("annotated A2.4 image lookup requires a periapical radiograph")
+
+    safe_id = re.sub(r"[^\w.-]", "_", str(case.get("id", "")))
+    preview_dir = PROJECT_ROOT / "preview" / "a2.4_model_input"
+    candidates = sorted(
+        path for path in preview_dir.glob(f"{safe_id}.*")
+        if path.is_file() and path.suffix.lower() in {".jpg", ".jpeg", ".png", ".webp"}
+    )
+    if not candidates:
+        raise FileNotFoundError(
+            f"A2.4 annotated periodontal image not found for {case.get('id')}: "
+            f"expected {preview_dir / (safe_id + '.[jpg|jpeg|png|webp]')}"
+        )
+    return candidates[0]
 
 
 def build_openai_messages(
@@ -261,13 +211,11 @@ def build_openai_messages(
     '''
     从 case 提取图片路径和任务信息，构造 prompt，返回图片和文本组成的 messages 列表
     '''
-    debug_log(debug, "call build_openai_messages(case, image_root)")
-    debug_log(debug, f"call {getattr(prompt_builder, '__name__', 'prompt_builder')}(case)")
     prompt = prompt_builder(case)
     if debug:
-        print("[debug] prompt begin")
+        print("[protocol] prompt begin")
         print(prompt)
-        print("[debug] prompt end")
+        print("[protocol] prompt end")
 
     code = case.get("task_code")
     images = case["input"].get("images", [])
@@ -276,10 +224,13 @@ def build_openai_messages(
         raise ValueError(f"task {code} requires input images")
     content = [{"type": "text", "text": prompt}]
     for index, image_meta in enumerate(images):
-        image_path = image_root / image_meta["path"]
-        if not image_path.is_file():
-            raise FileNotFoundError(f"image not found: {image_path}")
-        model_image_path = image_path
+        if code == "A2.4" and image_meta.get("modality") == "periapical_radiograph":
+            model_image_path = resolve_a24_periapical_model_image(case, index)
+        else:
+            image_path = image_root / image_meta["path"]
+            if not image_path.is_file():
+                raise FileNotFoundError(f"image not found: {image_path}")
+            model_image_path = image_path
         bbox = None
         if code in {"A4.2", "A4.3"}:
             bbox = get_case_bbox(case)
@@ -315,7 +266,7 @@ def call_with_retry(
     '''
     调用 chat_completion()，也就是调用 api
     '''
-    max_tokens = resolve_max_tokens(args, task_code)
+    max_tokens = resolve_max_tokens(args)
 
     last_error: Exception | None = None
     for attempt in range(args.retries + 1):
@@ -383,10 +334,20 @@ def evaluate_case(
     run_metadata: dict[str, Any] | None = None,
     token_usage: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
-    debug_log(debug, "call evaluate_case(case, response)")
-    debug_log(debug, "call fields_to_dict(reference_answer.fields)")
     task_code = case.get("task_code")
-    ref = clinical_reference_answer(case) if task_code in CLINICAL_FIELD_KEYS else fields_to_dict(case["reference_answer"]["fields"], task_code)
+    reference_parse_error = None
+    try:
+        ref = clinical_reference_answer(case) if task_code in CLINICAL_FIELD_KEYS else fields_to_dict(case["reference_answer"]["fields"], task_code)
+    except Exception as exc:
+        # Keep malformed benchmark annotations visible instead of aborting an
+        # entire batch. Model answers remain strictly parsed below; an invalid
+        # model value becomes pred=None and is scored as incorrect.
+        reference_parse_error = str(exc)
+        ref = {
+            field.get("key"): field.get("value")
+            for field in case.get("reference_answer", {}).get("fields", [])
+            if field.get("key")
+        }
     if task_code == "A2.4":
         modality = case.get("input", {}).get("images", [{}])[0].get("modality")
         if modality == "periapical_radiograph":
@@ -404,9 +365,7 @@ def evaluate_case(
                 ref["structures"] = [
                     item for item in ref["structures"] if item.get("structure_code") in target_structures
                 ]
-    debug_log(debug, f"reference_answer={json.dumps(ref, ensure_ascii=False)}")
     try:
-        debug_log(debug, f"call {getattr(answer_parser, '__name__', 'answer_parser')}(response)")
         pred = answer_parser(response)
         if task_code == "A2.4" and modality == "periapical_radiograph" and pred:
             pred["structures"] = [
@@ -415,18 +374,11 @@ def evaluate_case(
             ]
         if task_code in CLINICAL_FIELD_KEYS:
             validate_clinical_answer(pred, case)
-        debug_log(debug, f"parsed model_answer={json.dumps(pred, ensure_ascii=False)}")
         parse_error = None
     except Exception as exc:
         pred = None
         parse_error = str(exc)
-        debug_log(debug, f"parse error={parse_error}")
-        response_text = response or ""
-        debug_log(debug, f"raw response length={len(response_text)}")
-        if response_text:
-            debug_log(debug, f"raw response preview={response_text[:500]}")
 
-    debug_log(debug, "call score_fields(model_answer, reference_answer)")
     field_keys = TASK_SPECS.get(task_code, {}).get("field_keys")
     scorer = TASK_SPECS.get(task_code, {}).get("scorer", score_fields)
     scoring = resolve_scoring(case)
@@ -435,7 +387,6 @@ def evaluate_case(
         score = scorer(pred, ref, case_points=case_points, field_keys=field_keys, scoring=scoring)
     else:
         score = scorer(pred, ref, case_points=case_points, scoring=scoring)
-    debug_log(debug, f"score={json.dumps(score, ensure_ascii=False)}")
     return {
         "id": case.get("id"),
         "task_code": case.get("task_code"),
@@ -444,6 +395,7 @@ def evaluate_case(
         "image_path": next((item.get("path") for item in case["input"].get("images", [])), None),
         "image_paths": [item["path"] for item in case["input"].get("images", [])],
         "reference_answer": ref,
+        "reference_parse_error": reference_parse_error,
         "reference_answer_native": case["reference_answer"],
         "model_response": response,
         "token_usage": token_usage or {},
@@ -451,6 +403,55 @@ def evaluate_case(
         "parse_error": parse_error,
         "run_metadata": run_metadata or {},
         **score,
+    }
+
+
+def parse_answer(case: dict[str, Any], response: str | None, answer_parser: Any) -> tuple[Any, str | None]:
+    """Parse one visible model answer without calculating a score."""
+    task_code = case.get("task_code")
+    try:
+        pred = answer_parser(response)
+        if task_code == "A2.4":
+            modality = case.get("input", {}).get("images", [{}])[0].get("modality")
+            if modality == "periapical_radiograph" and pred:
+                pred["structures"] = [
+                    {key: value for key, value in item.items() if key != "fdi"}
+                    for item in pred.get("structures", [])
+                ]
+        if task_code in CLINICAL_FIELD_KEYS:
+            validate_clinical_answer(pred, case)
+        return pred, None
+    except Exception as exc:
+        return None, str(exc)
+
+
+def build_answer_record(
+    case: dict[str, Any],
+    response: str | None,
+    thinking: Any,
+    answer_parser: Any,
+    run_metadata: dict[str, Any],
+    token_usage: dict[str, Any] | None,
+    request_parameters: dict[str, Any],
+) -> dict[str, Any]:
+    parsed_answer, parse_error = parse_answer(case, response, answer_parser)
+    return {
+        "id": case.get("id"),
+        "case_code": case.get("case_code"),
+        "task_code": case.get("task_code"),
+        "dataset_id": case.get("dataset_id"),
+        "difficulty": case.get("difficulty"),
+        "image_path": next((item.get("path") for item in case["input"].get("images", [])), None),
+        "image_paths": [item["path"] for item in case["input"].get("images", [])],
+        "raw_response": response,
+        "model_response": response,
+        "thinking": thinking,
+        "parsed_answer": parsed_answer,
+        "model_answer": parsed_answer,
+        "parse_error": parse_error,
+        "token_usage": token_usage or {},
+        "request_parameters": request_parameters,
+        "run_metadata": run_metadata,
     }
 
 
@@ -559,6 +560,51 @@ def save_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:
     with path.open("w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row, ensure_ascii=False) + "\n")
+
+
+def load_jsonl(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+
+    rows: list[dict[str, Any]] = []
+    for line_number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+        except json.JSONDecodeError as exc:
+            raise ValueError(f"invalid JSONL in {path} at line {line_number}: {exc}") from exc
+        if not isinstance(row, dict):
+            raise ValueError(f"invalid JSONL object in {path} at line {line_number}")
+        rows.append(row)
+    return rows
+
+
+def result_identity(row: dict[str, Any]) -> tuple[str, str]:
+    case_code = str(row.get("case_code") or "").strip()
+    case_id = str(row.get("id") or "").strip()
+    if not case_code and not case_id:
+        raise ValueError("result row must contain case_code or id")
+    return case_code, case_id
+
+
+def merge_result_rows(
+    existing_rows: list[dict[str, Any]],
+    updated_rows: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Replace matching case results in place without creating duplicates."""
+    merged: list[dict[str, Any]] = []
+    positions: dict[tuple[str, str], int] = {}
+
+    for row in [*existing_rows, *updated_rows]:
+        identity = result_identity(row)
+        position = positions.get(identity)
+        if position is None:
+            positions[identity] = len(merged)
+            merged.append(row)
+        else:
+            merged[position] = row
+    return merged
 
 
 def build_mock_response(case: dict[str, Any]) -> str:
@@ -675,7 +721,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--task", choices=[*TASK_SPECS.keys(), "all"], default="A1.1")
     parser.add_argument("--cases", type=Path, default=None, help="Override the default case JSON path. Only valid for a single task.")
     parser.add_argument("--image-root", type=Path, default=DEFAULT_IMAGE_ROOT)
-    parser.add_argument("--judge-model-config", type=Path, default=PROJECT_ROOT / "configs/model-gpt-6-luna.json", help="A5.1-A5.3 reason judge config (independent of evaluated model).")
+    parser.add_argument("--judge-model-config", type=Path, default=PROJECT_ROOT / "configs/model-gpt-6-luna.json", help="Independent judge config for A5.1-A5.3, A6.2, and A7.1 open-text scoring.")
     parser.add_argument("--output", type=Path, default=None, help="Override the default output JSONL path. Only valid for a single task.")
     parser.add_argument(
         "--include-model-in-output",
@@ -689,13 +735,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--retry-sleep", type=float, default=None)
     parser.add_argument("--limit", type=int, default=None)
     parser.add_argument(
+        "--case-code", dest="case_codes", action="append", default=None,
+        help="Only run the specified case_code(s). Can be repeated.",
+    )
+    parser.add_argument(
+        "--id", dest="case_ids", action="append", default=None,
+        help="Only run the specified case id(s). Can be repeated.",
+    )
+    parser.add_argument(
         "--workers",
         type=int,
-        default=32,
-        help="Number of concurrent cases per task. Defaults to 32.",
+        default=8,
+        help="Number of concurrent cases per task. Defaults to 8.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Build prompts and check images without calling the model.")
-    parser.add_argument("--debug", action="store_true", help="Print function-level dry-run trace, prompt text, mock response, parsing, and scoring.")
+    parser.add_argument("--debug", action="store_true", help="Print the protocol prompt for inspection.")
     parser.add_argument("--mock-response", default=None, help="Mock LLM JSON response used in dry-run. Defaults to a correct answer generated from the reference.")
     return parser.parse_args()
 
@@ -723,15 +777,37 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
     '''
     case_path = Path(spec["case_path"])
     output_path = Path(spec["output_path"])
+    existing_results = [] if args.dry_run else load_jsonl(output_path)
     payload = json.loads(case_path.read_text(encoding="utf-8"))
-    cases = payload["cases"][: args.limit]
+    cases = payload["cases"]
+    case_codes = getattr(args, "case_codes", None)
+    case_ids = getattr(args, "case_ids", None)
+    if case_codes or case_ids:
+        wanted_codes = {str(value) for value in (case_codes or [])}
+        wanted_ids = {str(value) for value in (case_ids or [])}
+        cases = [
+            case for case in cases
+            if (
+                str(case.get("case_code")) in wanted_codes
+                or str(case.get("id")) in wanted_ids
+            )
+        ]
+        all_codes = {str(case.get("case_code")) for case in payload["cases"]}
+        all_ids = {str(case.get("id")) for case in payload["cases"]}
+        missing_codes = wanted_codes - all_codes
+        missing_ids = wanted_ids - all_ids
+        missing = missing_codes | missing_ids
+        if missing:
+            raise SystemExit(f"Case selector not found for {task_code}: {', '.join(sorted(missing))}")
+    if args.limit is not None:
+        cases = cases[: args.limit]
     if args.workers < 1:
         raise SystemExit("--workers must be at least 1")
     workers = 1 if args.dry_run else min(args.workers, max(1, len(cases)))
     judge_config = None
     judge_key = None
     judge_setup_error = None
-    if task_code in {"A5.1", "A5.2", "A5.3"} and not args.dry_run:
+    if task_code in {"A5.1", "A5.2", "A5.3", "A6.2", "A7.1"} and not args.dry_run:
         try:
             judge_config = load_model_config(args.judge_model_config)
             key_env = str(judge_config.get("api_key_env", "SUBLYX_API_KEY"))
@@ -749,8 +825,19 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
         "model": args.model,
         "base_url": args.base_url,
         "temperature": args.temperature,
-        "max_tokens": resolve_max_tokens(args, task_code),
+        "max_tokens": resolve_max_tokens(args),
         "workers": workers,
+        "purpose": "model_answers",
+    }
+    request_parameters = {
+        "model": args.model,
+        "base_url": args.base_url,
+        "temperature": args.temperature,
+        "max_tokens": resolve_max_tokens(args),
+        "timeout": args.timeout,
+        "retries": args.retries,
+        "retry_sleep": args.retry_sleep,
+        "extra_body": args.extra_body,
     }
 
     def process_case(item: tuple[int, dict[str, Any]]) -> tuple[int, dict[str, Any]]:
@@ -760,77 +847,98 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
             return index, {"id": case["id"], "task_code": task_code, "model_answer": None, "case_score": None, "scoring_status": "skipped", "skip_reason": "diagnosis_bbox missing; awaiting annotation", "pending_review_fields": [], "objective_metrics": {}, "run_metadata": run_metadata}
         try:
             token_usage = None
-            debug_log(args.debug, f"{task_code} case {index}/{len(cases)} id={case['id']}")
-            messages = build_openai_messages(case, args.image_root, spec["prompt_builder"], debug=args.debug)
+            thinking = None
+            messages = build_openai_messages(
+                case,
+                args.image_root,
+                spec["prompt_builder"],
+                debug=args.debug,
+            )
             if args.dry_run:
                 response = args.mock_response if args.mock_response is not None else build_mock_response(case)
                 print(f"[dry-run] {task_code} {index}/{len(cases)} {case['id']} image ok")
-                if args.debug:
-                    print("[debug] would call call_with_retry(messages, args), skipped because --dry-run is set")
-                    print(f"[debug] resolved max_tokens={resolve_max_tokens(args, task_code)}")
-                    print(f"[debug] mock LLM response={response}")
             else:
                 print(f"[eval] {task_code} {index}/{len(cases)} {case['id']}")
-                debug_log(args.debug, f"resolved max_tokens={resolve_max_tokens(args, task_code)}")
                 call_result = call_with_retry(messages, args, task_code=task_code)
                 response = call_result.get("content", "") if call_result else None
+                thinking = call_result.get("thinking") if call_result else None
                 token_usage = call_result.get("usage") if call_result else None
-                if token_usage:
-                    print(
-                        f"[usage] {task_code} {case['id']} "
-                        f"input={token_usage.get('prompt_tokens', '?')} "
-                        f"thinking={token_usage.get('reasoning_tokens', '?')} "
-                        f"output={token_usage.get('visible_completion_tokens', token_usage.get('completion_tokens', '?'))} "
-                        f"total={token_usage.get('total_tokens', '?')}"
-                    )
-                elif call_result is not None:
-                    print(f"[usage] {task_code} {case['id']} unavailable (provider omitted usage)")
-            result = evaluate_case(
+            result = build_answer_record(
                 case,
                 response,
+                thinking,
                 spec["answer_parser"],
-                debug=args.debug,
-                run_metadata=run_metadata,
-                token_usage=token_usage if not args.dry_run else None,
+                run_metadata,
+                token_usage if not args.dry_run else None,
+                request_parameters,
             )
-            if task_code in {"A5.1", "A5.2", "A5.3"} and result.get("pending_review_fields") and result["model_answer"] is not None and not args.dry_run:
-                result["reason_judge_model"] = judge_config.get("model") if judge_config else None
-                result["reason_judge_error"] = judge_setup_error
+            judge_needed = (
+                task_code in {"A5.1", "A5.2", "A5.3", "A6.2", "A7.1"}
+                and not args.dry_run
+                and result.get("model_answer") is not None
+                and (task_code == "A7.1" or result.get("pending_review_fields"))
+            )
+            if judge_needed:
+                judge_error_key = f"{task_code.lower().replace('.', '')}_judge_error"
+                judge_model_key = f"{task_code.lower().replace('.', '')}_judge_model"
+                judge_response_key = f"{task_code.lower().replace('.', '')}_judge_raw_response"
+                judge_usage_key = f"{task_code.lower().replace('.', '')}_judge_token_usage"
                 if judge_setup_error:
-                    print(f"[judge-error] {case['id']}: {judge_setup_error}")
-                if not judge_setup_error and judge_config:
+                    result[judge_error_key] = judge_setup_error
+                elif judge_config:
+                    judge_generation = judge_config.get("generation", {})
+                    judge_args = argparse.Namespace(
+                        model=str(judge_config["model"]),
+                        api_key=judge_key,
+                        base_url=str(judge_config["base_url"]),
+                        temperature=judge_generation.get("temperature"),
+                        max_tokens=judge_generation.get("max_tokens"),
+                        timeout=int(judge_generation.get("timeout", args.timeout)),
+                        retries=int(judge_generation.get("retries", args.retries)),
+                        retry_sleep=float(judge_generation.get("retry_sleep", args.retry_sleep)),
+                        extra_body=judge_generation.get("extra_body", {}),
+                    )
                     try:
-                        generation = judge_config.get("generation", {})
-                        if task_code == "A5.2":
+                        if task_code == "A7.1":
+                            judge_messages = build_a71_judge_messages(result["reference_answer"], result["model_answer"])
+                            judge_task_code = "A7.1-judge"
+                        elif task_code == "A5.2":
                             judge_messages = build_a52_judge_messages(result["reference_answer"], result["model_answer"])
+                            judge_task_code = "A5.2-judge"
                         else:
-                            judge_messages = build_reason_judge_messages(result["reference_answer"]["reason"], result["model_answer"]["reason"])
-                        judgment_response = chat_completion(
-                            messages=judge_messages,
-                            model=str(judge_config["model"]), api_key=judge_key, base_url=str(judge_config["base_url"]),
-                            temperature=0, max_tokens=1024, timeout=min(int(generation.get("timeout", 120)), 120),
-                            extra_body=generation.get("extra_body", {}),
-                        )
-                        result["reason_judge_response"] = judgment_response.get("content")
-                        result["reason_judge_token_usage"] = judgment_response.get("usage") or {}
-                        if task_code == "A5.1":
-                            apply_reason_judgment(result, parse_reason_judgment(judgment_response.get("content")))
-                        else:
-                            judgment = parse_a52_judgment(judgment_response.get("content")) if task_code == "A5.2" else parse_reason_judgment(judgment_response.get("content"))
+                            judge_messages = build_reason_judge_messages(
+                                result["reference_answer"]["reason"],
+                                result["model_answer"]["reason"],
+                            )
+                            judge_task_code = f"{task_code}-judge"
+                        judge_call = call_with_retry(judge_messages, judge_args, task_code=judge_task_code)
+                        if not judge_call:
+                            raise ValueError(f"empty {judge_task_code} response")
+                        if task_code == "A7.1":
+                            judgment = parse_a71_judgment(judge_call.get("content"))
+                            apply_a71_judgment(result, judgment)
+                        elif task_code == "A5.2":
+                            judgment = parse_a52_judgment(judge_call.get("content"))
                             apply_clinical_judgment(result, judgment)
+                        else:
+                            judgment = parse_reason_judgment(judge_call.get("content"))
+                            apply_reason_judgment(result, judgment)
+                        result[judge_model_key] = judge_args.model
+                        result[judge_response_key] = judge_call.get("content")
+                        result[judge_usage_key] = judge_call.get("usage") or {}
                     except Exception as exc:
-                        result["reason_judge_error"] = str(exc)
-                        print(f"[judge-error] {case['id']}: {exc}")
+                        result[judge_error_key] = str(exc)
         except Exception as exc:
             # Never let one malformed case abort the whole task batch.
             print(f"[invalid] {task_code} {case.get('id', index)}: {exc}")
-            result = evaluate_case(
+            result = build_answer_record(
                 case,
                 None,
+                None,
                 spec["answer_parser"],
-                debug=args.debug,
-                run_metadata=run_metadata,
-                token_usage=None,
+                run_metadata,
+                None,
+                request_parameters,
             )
             result["parse_error"] = f"case processing error: {exc}"
         return index, result
@@ -843,19 +951,27 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
             index, result = future.result()
             results_by_index[index] = result
             if not args.dry_run:
-                save_jsonl(output_path, [results_by_index[i] for i in sorted(results_by_index)])
+                completed_results = [results_by_index[i] for i in sorted(results_by_index)]
+                save_jsonl(output_path, merge_result_rows(existing_results, completed_results))
 
-    results = [results_by_index[i] for i in sorted(results_by_index)]
+    completed_results = [results_by_index[i] for i in sorted(results_by_index)]
 
     if args.dry_run:
-        invalid = [row for row in results if row.get("scoring_status") != "skipped" and row["model_answer"] is None]
+        invalid = [row for row in completed_results if row.get("scoring_status") != "skipped" and row["model_answer"] is None]
         if invalid:
             raise SystemExit(f"Dry run failed for {task_code}: {len(invalid)}/{len(cases)} invalid cases. First error: {invalid[0]['parse_error']}")
-        skipped = sum(row.get("scoring_status") == "skipped" for row in results)
+        skipped = sum(row.get("scoring_status") == "skipped" for row in completed_results)
         print(f"Dry run passed for {task_code}: {len(cases) - skipped} cases, {skipped} skipped. No result files were written.")
         return None
 
-    summary = summarize_fields(results, spec["field_keys"])
+    results = merge_result_rows(existing_results, completed_results)
+    summary = {
+        "task_code": task_code,
+        "cases": len(results),
+        "parsed_cases": sum(row.get("parsed_answer") is not None for row in results),
+        "parse_errors": sum(row.get("parse_error") is not None for row in results),
+        "run_metadata": run_metadata,
+    }
     usage_rows = [row.get("token_usage", {}) for row in results if row.get("token_usage", {}).get("total_tokens") is not None]
     if usage_rows:
         totals = [int(row["total_tokens"]) for row in usage_rows]
@@ -891,9 +1007,9 @@ def run_task(task_code: str, spec: dict[str, Any], args: argparse.Namespace) -> 
     summary["run_metadata"] = run_metadata
     summary_path = output_path.with_suffix(".summary.json")
     summary_path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"[summary] {task_code}")
+    print(f"[answers] {task_code}")
     print(json.dumps(summary, ensure_ascii=False, indent=2))
-    print(f"Saved results to {output_path}")
+    print(f"Saved model answers to {output_path}")
     print(f"Saved summary to {summary_path}")
     return summary
 
@@ -925,17 +1041,13 @@ def main() -> None:
     args.run_id = datetime.now().astimezone().strftime("%Y%m%d_%H%M%S")
     tasks = resolve_tasks(args)
     if not args.output:
-        output_tag = ""
-        if args.include_model_in_output:
-            output_tag = "_" + "".join(
-                char if char.isalnum() or char in "-_" else "-"
-                for char in args.model
-            ).strip("-")
-        for _, spec in tasks:
-            default_output = Path(spec["output_path"])
-            spec["output_path"] = default_output.with_name(
-                f"{default_output.stem}_{args.run_id}{output_tag}{default_output.suffix}"
-            )
+        model_tag = "".join(
+            char if char.isalnum() or char in "-_" else "-"
+            for char in args.model
+        ).strip("-")
+        for task_code, spec in tasks:
+            task_tag = task_code.lower().replace(".", "_")
+            spec["output_path"] = PROJECT_ROOT / "results" / f"{task_tag}-{model_tag}.jsonl"
 
     for task_code, spec in tasks:
         run_task(task_code, spec, args)
