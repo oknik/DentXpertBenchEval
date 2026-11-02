@@ -1,0 +1,2342 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:1850be18b4fa4bae8fa78e80c27c9fbe",
+      "case_code": "case826",
+      "task_code": "A6.3",
+      "dataset_id": "C017",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：46种植体折裂\n科室场景：口腔种植科\n[M01] 题面影像\n[C01] 患者 1 周前自觉右下后牙种植修复体松动、咬合疼痛，无自发痛，既往 46 行种植修复，来院就诊。\n\n[C02] 影像可见 46 种植体本体连续性中断，存在折裂线。\n[C03] 右下后牙种植修复体松动伴咬合疼痛 1 周。\n[C04] 46 种植修复体松动， 叩诊不适，BOP（+）。",
+        "images": [
+          {
+            "sha256": "756e456373bb064212cf625ed45a45f935ac5834ab819fcedc82c8a9dfccb4c0",
+            "modality": "panoramic_radiograph",
+            "width": 2786,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000933_d33b6121.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000933_d33b6121.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "患者 1 周前自觉右下后牙种植修复体松动、咬合疼痛，无自发痛，既往 46 行种植修复，来院就诊。\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "影像可见 46 种植体本体连续性中断，存在折裂线。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "右下后牙种植修复体松动伴咬合疼痛 1 周。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "46 种植修复体松动， 叩诊不适，BOP（+）。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "46种植体折裂"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "CBCT",
+                "detail": "46 种植体本体连续性中断，存在折裂线。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2ac226741ae84296bf675543a98bcc2b",
+      "case_code": "case827",
+      "task_code": "A6.3",
+      "dataset_id": "C017",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：47种植体黏膜炎\n科室场景：口腔种植科\n[M01] 题面影像\n[C01] 右下后牙反复食物嵌塞1周\n[C02] 患者 1 周来右下后牙反复食物嵌塞，伴种植体周围牙龈易出血，无自发痛、无咬合痛。既往 47 行种植修复，来修复科就诊。\n[C03] 47 种植体周围黏膜充血红肿，无溢脓，无松动，叩 (-）。",
+        "images": [
+          {
+            "sha256": "cbbc98e6a0b290d72f5269f534259bf96c1cfbc70aaa7014f1f9e59300d8519e",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000941_d3154c55.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000941_d3154c55.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙反复食物嵌塞1周"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "患者 1 周来右下后牙反复食物嵌塞，伴种植体周围牙龈易出血，无自发痛、无咬合痛。既往 47 行种植修复，来修复科就诊。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "47 种植体周围黏膜充血红肿，无溢脓，无松动，叩 (-）。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "47种植体黏膜炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "X 线片：47 种植体周围牙槽骨水平正常，无骨吸收。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3332b8158d46434cb96fbb7f9f4a27bd",
+      "case_code": "case816",
+      "task_code": "A6.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：牙周牙髓综合症\n科室场景：牙周科\n[M01] 题面影像\n[C01] 下前牙疼痛一周，一天前出现夜间痛",
+        "images": [
+          {
+            "sha256": "a4160d0ca8881bf11ebb95389113f7779221983e179a15f519d3956454ecbcf4",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1168,
+            "path": "DenPAR-C007/Training/Images/1195.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1195.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "下前牙疼痛一周，一天前出现夜间痛"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "牙周牙髓综合症"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "32-42舌侧牙结石III°，牙龈退缩至根面1/2，未见明显龋坏，41松动度（III），叩痛（++）31.42松动度（II），牙龈红肿，31.41唇侧PD5mm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:33a37e90b17848a9bf61802966fbcbe6",
+      "case_code": "case830",
+      "task_code": "A6.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：25慢性牙髓炎\n科室场景：牙体牙髓科\n[M01] 题面影像\n[C01] 左上后牙有充填史，近日偶有不适，无明显自发痛夜间痛病史。\n[C02] 25合面充填物，边缘发黑，探稍敏感，叩不适。\n[C03] X片显示25合面充填物周低密度影及髓",
+        "images": [
+          {
+            "sha256": "8ace049d1e73dffdcc406d6d9989dbb628afe8fc55f36c987ea5ec9f863d323d",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1122.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1122.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "左上后牙有充填史，近日偶有不适，无明显自发痛夜间痛病史。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "25合面充填物，边缘发黑，探稍敏感，叩不适。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "X片显示25合面充填物周低密度影及髓"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "25慢性牙髓炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PULP_TEST",
+                "detail": "冷诊迟缓痛"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:35825eceda1f4e3a9e1217b8f4141a88",
+      "case_code": "case923",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：颌下腺导管结石\n科室场景：口腔颌面外科\n[M01] 题面影像\n[C01] 进食后舌底反复肿胀1周\n[C02] 左下颌下腺导管排溢困难",
+        "images": [
+          {
+            "sha256": "d155e065047031d53d8e5566d23f06a9e877d6359cdd8e3fb255b334b78cfc23",
+            "modality": "intraoral_photograph",
+            "width": 1368,
+            "height": 1025,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1182-00_1732708106125_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1182-00_1732708106125_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "进食后舌底反复肿胀1周"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "左下颌下腺导管排溢困难"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "颌下腺导管结石"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "OTHER_EXAMINATIONS",
+                "detail": "CBCT检查明确导管内有无结石"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4098d435569848489b8cc13ae9b3c222",
+      "case_code": "case829",
+      "task_code": "A6.3",
+      "dataset_id": "C002",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：37急性牙髓炎\n科室场景：牙体牙髓科\n[M01] 题面影像\n[C01] 37远中大面积缺损 及髓\n[C02] X光片显示47根尖周无明显阴影，冠部低密度影及髓\n[C03] 左下后牙冷热不适数月余",
+        "images": [
+          {
+            "sha256": "32630f36664a1bea83b1db308a50180db2bb88039b0076572bbbaefc9e8a5cc7",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_35.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "DENTEX-C002/input/test_35.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "37远中大面积缺损 及髓"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "X光片显示47根尖周无明显阴影，冠部低密度影及髓"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "左下后牙冷热不适数月余"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "37急性牙髓炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "patient_information",
+                "condition_code": "CHIEF_COMPLAINT",
+                "detail": "左下后牙夜间痛，自发痛"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4e756b4615f246f0997cef34705ffb25",
+      "case_code": "case924",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性根尖周炎\n科室场景：口腔颌面外科\n[M01] 题面影像\n[C01] 左上后牙肿痛数月",
+        "images": [
+          {
+            "sha256": "b4df1564c4b2627a8c298a576f6efe0f4616ae4e40e3d219c4a20b8e4b8e0c68",
+            "modality": "intraoral_photograph",
+            "width": 3061,
+            "height": 2294,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-007-1097-01_1732258152530_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-007-1097-01_1732258152530_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "左上后牙肿痛数月"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性根尖周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "26根尖有无低密度影"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5f9254d9820743cf91803b9296348cea",
+      "case_code": "case927",
+      "task_code": "A6.3",
+      "dataset_id": "C017",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性牙周炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 牙龈出血三天。\n[C02] 三天前患者觉牙龈出血，伴牙齿松动。",
+        "images": [
+          {
+            "sha256": "64b626949caafa77915936c2a3cf025189c9cdec5db29e25d05d024f2894cdd5",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000973_32bcd5ac.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000973_32bcd5ac.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙龈出血三天。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "三天前患者觉牙龈出血，伴牙齿松动。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "CAL2-7mm。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:634bc7ee714448a18fd447711287d874",
+      "case_code": "case825",
+      "task_code": "A6.3",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：16 15种植体松动\n科室场景：口腔种植科\n[M01] 题面影像\n[C01] 15、16 种植体周围探诊可伴出血、探诊深度增加。\n[C02] 右上后牙种植修复体松动，咬合无力1周\n[C03] 患者1周前自觉右上后牙种植修复体松动，咬合不适，无明显自发痛，来院就诊；既往 15、16 行种植修复。\n[C04] CBCT示：15、16 种植体周围牙槽骨吸收，骨结合破坏。",
+        "images": [
+          {
+            "sha256": "ab3564b0759f61fc02c2ed78853a03287172ff4d821fe95396d6c72f9319bfd0",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 346,
+            "path": "COde-Dataset-C018/Images/Radiographs/0408-001-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0408-001-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "15、16 种植体周围探诊可伴出血、探诊深度增加。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "右上后牙种植修复体松动，咬合无力1周"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "患者1周前自觉右上后牙种植修复体松动，咬合不适，无明显自发痛，来院就诊；既往 15、16 行种植修复。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "CBCT示：15、16 种植体周围牙槽骨吸收，骨结合破坏。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "16 15种植体松动"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "TOOTH_MOBILITY",
+                "detail": "15、16 种植体存在松动。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7094a8e342f7471885dc44a539f76f77",
+      "case_code": "case817",
+      "task_code": "A6.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请按患者信息、检查状况、补充图像三类，选择为达到该目标仍需补充的最低必要条件，并说明具体需要补充什么；无需判断充分性或解释理由。\n诊断目标：牙周脓肿\n科室场景：牙周科\n[M01] 题面影像\n[C01] 牙龈肿胀伴有疼痛三天",
+        "images": [
+          {
+            "sha256": "8f51656437edda4f06205bd84b89fc9db25c66f9a9804d2f7d1d26ef00cc0404",
+            "modality": "periapical_radiograph",
+            "width": 625,
+            "height": 859,
+            "path": "DenPAR-C007/Training/Images/543.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/543.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙龈肿胀伴有疼痛三天"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "牙周脓肿"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "口腔卫生较差，31.41.42松动（III），探诊溢脓，PD5-8mm"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:70b31b1563114df2b28f7abf9c86d4c1",
+      "case_code": "case819",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：46牙髓炎\n科室场景：儿童口腔科\n[M01] 题面影像",
+        "images": [
+          {
+            "sha256": "d38195fac6c93401744900243983cce0fc037b9b765544627319d62b7eab050d",
+            "modality": "intraoral_photograph",
+            "width": 1432,
+            "height": 1073,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-008-779-01_1729768960699_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-008-779-01_1729768960699_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": []
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "46牙髓炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PULP_TEST",
+                "detail": "牙髓症状，冷热诊刺激痛。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:752adee8ca6b43918fbc37da5110da3b",
+      "case_code": "case824",
+      "task_code": "A6.3",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：37种植体折裂\n科室场景：口腔种植科\n[M01] 题面影像\n[C01] 患者数日前自觉左下后牙种植修复体咬合不适，伴松动，无明显自发痛，遂就诊。\n[C02] 患者数日前自觉左下后牙种植修复体咬合不适，伴松动，无明显自发痛，遂就诊。\n[C03] 37松动，叩（+-）。",
+        "images": [
+          {
+            "sha256": "8881232dd67e0ad7b37a4d66b63c69a8cbf98097a592ab0c08396902cead672f",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 388,
+            "path": "COde-Dataset-C018/Images/Radiographs/0381-001-02.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0381-001-02.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "患者数日前自觉左下后牙种植修复体咬合不适，伴松动，无明显自发痛，遂就诊。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "患者数日前自觉左下后牙种植修复体咬合不适，伴松动，无明显自发痛，遂就诊。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "37松动，叩（+-）。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "37种植体折裂"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "CBCT",
+                "detail": "可见 37 种植体本体连续性中断，存在折裂线。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7d9e694a2f9d4ee696c401d8f406993e",
+      "case_code": "case930",
+      "task_code": "A6.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性牙周炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 口腔卫生状况不佳，菌斑牙石++，龈红肿明显，bop(+),pd3-5mm,无松动。\n[C02] 自觉下前牙牙缝增宽一年。",
+        "images": [
+          {
+            "sha256": "04a5e9b190892d407ac833f012108492a711c7e5c02b9ea82558a4221a85b65b",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/170.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/170.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "口腔卫生状况不佳，菌斑牙石++，龈红肿明显，bop(+),pd3-5mm,无松动。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "自觉下前牙牙缝增宽一年。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "牙槽骨普遍轻度水平吸收。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:801e09daddf4442b97e38e94414f6432",
+      "case_code": "case833",
+      "task_code": "A6.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：46急性根尖周炎\n科室场景：牙体牙髓科\n[M01] 题面影像\n[C01] 右下后牙曾于我院行充填治疗，偶有自发痛病史\n[C02] X片显示46充填物及髓，根尖周牙周膜增宽\n[C03] 右下后牙肿胀疼痛数日余\n[C04] 46合面充填物存，松2度，牙龈无特殊，冷-，电活力测试无反应",
+        "images": [
+          {
+            "sha256": "5e9003e05987586ec70c3a7c046ee352d9c913450876b3fd640be8294a165b6f",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/372.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Testing/Images/372.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "右下后牙曾于我院行充填治疗，偶有自发痛病史"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "X片显示46充填物及髓，根尖周牙周膜增宽"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙肿胀疼痛数日余"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "46合面充填物存，松2度，牙龈无特殊，冷-，电活力测试无反应"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "46急性根尖周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERCUSSION",
+                "detail": "叩诊疼痛剧烈"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:90aa1ddd81224664858a7debded02bfe",
+      "case_code": "case820",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：65乳牙深龋\n科室场景：儿童口腔科\n[M01] 题面影像",
+        "images": [
+          {
+            "sha256": "745058ced8a21bff66a53397abd29f0ae1c8088536cec41c6fa6d777e5c848ef",
+            "modality": "intraoral_photograph",
+            "width": 1621,
+            "height": 1215,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-maxillaryView-1727775813652.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-maxillaryView-1727775813652.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": []
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "65乳牙深龋"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PULP_TEST",
+                "detail": "探诊，冷热诊，叩诊，牙髓无刺激疼痛"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a4d271269a714607a2483b2f991defb5",
+      "case_code": "case834",
+      "task_code": "A6.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：青春期龈炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 刷牙出血一月\n[C02] 口腔卫生一般，软垢指数：1，牙龈红肿，出血指数：2",
+        "images": [
+          {
+            "sha256": "4dc9f250b3b148398b6483142468b47da107bc23c8e53581c7a47946d996127a",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate7_0002.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate7_0002.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "刷牙出血一月"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "口腔卫生一般，软垢指数：1，牙龈红肿，出血指数：2"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "青春期龈炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "patient_information",
+                "condition_code": "DEMOGRAPHICS",
+                "detail": "患者15岁，男"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a92206f4bbba4977a22ed5f2df5a5834",
+      "case_code": "case922",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：38冠周炎\n科室场景：口腔颌面外科\n[M01] 题面影像\n[C01] 左下后牙肿痛1周\n[C02] 26，27，36，37无叩痛，无松动，牙龈无红肿，37远中牙龈压痛",
+        "images": [
+          {
+            "sha256": "a03147337f7ca33b2a2b71f2d5a5a5f15785699c3892f073daff6fd30577524a",
+            "modality": "intraoral_photograph",
+            "width": 2544,
+            "height": 1907,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_004-007-1027-01_1731221247182_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_004-007-1027-01_1731221247182_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙肿痛1周"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "26，27，36，37无叩痛，无松动，牙龈无红肿，37远中牙龈压痛"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "38冠周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "是否有38埋伏阻生"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:abd71485fa1e4fa7bce6f38aecc56307",
+      "case_code": "case928",
+      "task_code": "A6.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性牙龈炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 口腔卫生状况不佳，菌斑牙石II度，龈缘及龈乳头红肿，探诊溢脓，bop(+),pd2-4mm.\n[C02] 牙龈红肿出血一日。",
+        "images": [
+          {
+            "sha256": "edc0c250bf1c1e0279e43abccff69825c9505208447d78dd9cd686eb58395d5c",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/053.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/053.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "口腔卫生状况不佳，菌斑牙石II度，龈缘及龈乳头红肿，探诊溢脓，bop(+),pd2-4mm."
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "牙龈红肿出血一日。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙龈炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "牙槽骨未见吸收。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b492d7767f1d4bb581527c8c20c91293",
+      "case_code": "case929",
+      "task_code": "A6.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性牙周炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 下门牙松动两周。\n[C02] 31，41牙槽骨吸收至根尖1/3，32，42牙槽骨吸收至根中1/2.",
+        "images": [
+          {
+            "sha256": "ab0307a915cfdb3b8e2539a6a94db1b5bd217ff99d0075ad6b181a3c672afc8a",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Testing/Images/87.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Testing/Images/87.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "下门牙松动两周。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "31，41牙槽骨吸收至根尖1/3，32，42牙槽骨吸收至根中1/2."
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "CAL3-5mm."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c4a78ce3d1784663b3eeb1adbabd6c33",
+      "case_code": "case931",
+      "task_code": "A6.3",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C018",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性牙周炎\n科室场景：牙周科\n[M01] 题面影像\n[M02] 题面影像\n[C01] 主诉：全口牙齿刷牙出血数月，要求洁牙。\n[C02] 现病史：渐觉 牙齿松动移位数月，刷牙有出血，无明显疼痛。\n[C03] 口腔检查：全口牙龈中重度退缩，牙周探易出血，松动度I度，探及牙周袋，深度5mm。全口卫生情况差；软垢指数(Dl):1,牙石指数(Cl):3,出血指数：4=探诊后出血溢满并溢出龈沟，牙龈红肿，牙龈呈暗红色，附着龈点彩消失。\n[C04] 牙槽骨吸收为根长的1/3-1/2.",
+        "images": [
+          {
+            "sha256": "8774f7292c1ef66fd418e630addea84748b190d058956c168539bf6c09a0648a",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/2165-001-05.jpg"
+          },
+          {
+            "sha256": "ee52bb55e83748a48abd5f9a263fff12834775f87ef883247ea0c80f256aa4ac",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/2165-001-04.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2165-001-05.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/2165-001-04.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "主诉：全口牙齿刷牙出血数月，要求洁牙。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "现病史：渐觉 牙齿松动移位数月，刷牙有出血，无明显疼痛。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "口腔检查：全口牙龈中重度退缩，牙周探易出血，松动度I度，探及牙周袋，深度5mm。全口卫生情况差；软垢指数(Dl):1,牙石指数(Cl):3,出血指数：4=探诊后出血溢满并溢出龈沟，牙龈红肿，牙龈呈暗红色，附着龈点彩消失。"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨吸收为根长的1/3-1/2."
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "全口牙龈中重度退缩，牙周探易出血，松动度I度，探及牙周袋，深度5mm，CAL2-4mm.全口卫生情况差；软垢指数(Dl):1,牙石指数(Cl):3,出血指数：4=探诊后出血溢满并溢出龈沟，牙龈红肿，牙龈呈暗红色，附着龈点彩消失，CAL"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c4bf4fe9d87643fe9b0e2008b37d5c1f",
+      "case_code": "case823",
+      "task_code": "A6.3",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：34种植体周围炎\n科室场景：口腔种植科\n[M01] 题面影像\n[C01] 左下后牙种植体红肿1月\n[C02] 34 种植修复体，种植体周围黏膜充血红肿，BOP（+），探诊深度≥6mm，溢脓。无松动。\n[C03] 患者 1 月前自觉左下后牙种植体周围牙龈红肿，偶有刷牙出血，无明显自发痛，未行特殊处理，症状持续存在，今来就诊。",
+        "images": [
+          {
+            "sha256": "1d152fc2f49ddbe015a5371a397aa959878e6845b75ed9e2a748b49c87c0b42a",
+            "modality": "oral_radiograph",
+            "width": 448,
+            "height": 381,
+            "path": "COde-Dataset-C018/Images/Radiographs/0341-001-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_radiograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Radiographs/0341-001-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙种植体红肿1月"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "34 种植修复体，种植体周围黏膜充血红肿，BOP（+），探诊深度≥6mm，溢脓。无松动。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "患者 1 月前自觉左下后牙种植体周围牙龈红肿，偶有刷牙出血，无明显自发痛，未行特殊处理，症状持续存在，今来就诊。"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "34种植体周围炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "CBCT",
+                "detail": "清晰显示 34 种植体周围牙槽骨吸收范围及骨缺损形态。"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d0b8a7f8d6964f9881eb89be2d80ba8c",
+      "case_code": "case921",
+      "task_code": "A6.3",
+      "dataset_id": "C005",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C005",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：颌骨畸形\n科室场景：口腔颌面外科\n[M01] 题面影像\n[C01] 下颌后缩数年",
+        "images": [
+          {
+            "sha256": "811de11b260d08c7f3198cd3054db24f41be4fada2f392c76385900288d0a848",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/train/Cephalograms/cl6cc2n573zin0771ggkr9kw3.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "cephalometric_radiograph",
+                "path": "Aariz-C005/train/Cephalograms/cl6cc2n573zin0771ggkr9kw3.jpeg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "下颌后缩数年"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "颌骨畸形"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "EXTRAORAL_PHOTO",
+                "detail": "患者90°侧面照"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:da200670781841dda0d65ac39ed6a339",
+      "case_code": "case822",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：多生牙\n科室场景：儿童口腔科\n[M01] 题面影像",
+        "images": [
+          {
+            "sha256": "2809d8040c7bcd447805f83070aa7313501aaa1d8992a5d6a5ae8bccff50fdd8",
+            "modality": "intraoral_photograph",
+            "width": 1138,
+            "height": 640,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-rightLateralView-1727264191778.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous-rightLateralView-1727264191778.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": []
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "多生牙"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "53颊侧根方萌出的牙齿为多生牙，13牙胚位于牙槽骨内"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:db91284a1a994d02a9f9f0e779f1c225",
+      "case_code": "case821",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：先天缺牙\n科室场景：儿童口腔科\n[M01] 题面影像",
+        "images": [
+          {
+            "sha256": "cd03e04eaa6866fc8ee516083a871d73feab4b1c6a3aff080b7aa98be13e4e8b",
+            "modality": "intraoral_photograph",
+            "width": 1516,
+            "height": 1136,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-008-1326-01_1733483791924_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-008-1326-01_1733483791924_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": []
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "先天缺牙"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PANORAMIC",
+                "detail": "未发现牙胚"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:dd44ca8b9e4c452aa9ecd0dd57df92f0",
+      "case_code": "case831",
+      "task_code": "A6.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：46牙隐裂\n科室场景：牙体牙髓科\n[M01] 题面影像\n[C01] 右下后牙咬物疼痛不适数日余\n[C02] 有咬硬物病史，无自发痛夜间痛病史\n[C03] X片显示47 45未见明显根尖周异常\n[C04] 叩不适，冷稍敏感，未见明显蛀洞",
+        "images": [
+          {
+            "sha256": "c617a9fc64c954601c30d67b985eec19b92b4906934a427ab76166664490487f",
+            "modality": "periapical_radiograph",
+            "width": 1112,
+            "height": 764,
+            "path": "DenPAR-C007/Training/Images/755.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/755.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙咬物疼痛不适数日余"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "有咬硬物病史，无自发痛夜间痛病史"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "X片显示47 45未见明显根尖周异常"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "clinical_exam",
+                "text": "叩不适，冷稍敏感，未见明显蛀洞"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "46牙隐裂"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "CLINICAL_INSPECTION",
+                "detail": "咬合面见一裂纹深染"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e12c0a0151ad44e88f6e1392a669ae98",
+      "case_code": "case814",
+      "task_code": "A6.3",
+      "dataset_id": "C003",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请按患者信息、检查状况、补充图像三类，选择为达到该目标仍需补充的最低必要条件，并说明具体需要补充什么；无需判断充分性或解释理由。\n诊断目标：慢性牙周炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 左上后牙反复食物嵌塞一月",
+        "images": [
+          {
+            "sha256": "2839cec27647c169f9223fb73c696e7bd9310238fd907198e0fb95e15c3be7ac",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/573-M-38.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "inredd-dataset-pan924-1.0.0-C003/images/573-M-38.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左上后牙反复食物嵌塞一月"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "口腔卫生一般，牙石I°，色素I°，26.27颊侧牙龈乳头红肿，探及食物残渣，26远中PD3-5mm，26.27腭侧牙龈退缩，27伸长"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f2033486fbec4e2eb324cb17476306a4",
+      "case_code": "case818",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：84根尖周炎\n科室场景：儿童口腔科\n[M01] 题面影像",
+        "images": [
+          {
+            "sha256": "9fce5df6998ff5bff9104e306dd56b777f0cc718bb358c1a73488dbecd4cf827",
+            "modality": "intraoral_photograph",
+            "width": 795,
+            "height": 446,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1417-00_1733917109783_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1417-00_1733917109783_Right_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": []
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "84根尖周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PERIAPICAL",
+                "detail": "84根周阴影"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f304e53d77ad4a029fbffdcb463812b0",
+      "case_code": "case815",
+      "task_code": "A6.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：慢性牙周炎\n科室场景：牙周科\n[M01] 题面影像\n[C01] 前牙牙缝变大",
+        "images": [
+          {
+            "sha256": "e18f0d252dc91793dcacf127c43550722b24cdd607425b53056c13183585ed20",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00065.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00065.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "前牙牙缝变大"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "慢性牙周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "examinations",
+                "condition_code": "PERIODONTAL_PROBING",
+                "detail": "口腔卫生一般，全口牙结石II°，色素I°，22-12唇侧牙龈退缩，AL：2mm，牙龈略红肿，松动度（-）"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fd4d85fad57c44cca1790ad4e47f6cd3",
+      "case_code": "case832",
+      "task_code": "A6.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A6.3 · 诊断信息补充 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "现有影像与已知事实不足以达到题面诊断目标。请从患者信息、检查状况、补充图像三类中选择唯一一项仍需补充的必要条件，并说明该项具体需要补充什么；不要列出多项或将多个独立条件合并，无需判断充分性或解释理由。\n诊断目标：16慢性根尖周炎\n科室场景：牙体牙髓科\n[M01] 题面影像\n[C01] 右上后牙咬物不适数日余\n[C02] 右上后牙无自发痛病史，偶有肿痛不适\n[C03] 46近中深蛀洞，松一度，叩稍不适，冷-，电活力测试显示无反应",
+        "images": [
+          {
+            "sha256": "63231a7d94ce189ee2a65a048182dab6f4daf0a1b3b701c4f761db9d3ced69ee",
+            "modality": "intraoral_photograph",
+            "width": 1611,
+            "height": 1208,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1187-01_1732714576631_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1187-01_1732714576631_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右上后牙咬物不适数日余"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "右上后牙无自发痛病史，偶有肿痛不适"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "46近中深蛀洞，松一度，叩稍不适，冷-，电活力测试显示无反应"
+              }
+            ]
+          },
+          {
+            "key": "diagnostic_goal",
+            "name": "诊断目标",
+            "value": "16慢性根尖周炎"
+          },
+          {
+            "key": "information_status",
+            "name": "预设诊断信息状态",
+            "value": "insufficient"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "required_conditions",
+            "name": "需要补充的条件",
+            "value": [
+              {
+                "category": "additional_images",
+                "condition_code": "PERIAPICAL",
+                "detail": "X片显示16根尖周低密度影"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

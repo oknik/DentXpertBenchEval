@@ -1,4 +1,5 @@
 import json
+import re
 import urllib.request
 from typing import Any
 
@@ -79,8 +80,23 @@ def chat_completion(
         data = json.loads(response.read().decode("utf-8"))
     choice = data["choices"][0]
     message = choice.get("message", {})
+    # Providers use several names for hidden/reasoning output. Keep it
+    # separate from the visible answer so it can be audited later.
+    thinking = (
+        message.get("reasoning_content")
+        or message.get("thinking")
+        or message.get("reasoning")
+    )
+    content = message.get("content", "")
+    if not isinstance(content, str) or not content.strip():
+        raise ValueError("model returned empty content")
+    if thinking is None and isinstance(content, str):
+        match = re.match(r"\s*<think>(.*?)</think>(.*)\Z", content, flags=re.DOTALL | re.IGNORECASE)
+        if match:
+            thinking = match.group(1)
     return {
-        "content": message.get("content", ""),
+        "content": content,
+        "thinking": thinking,
         "usage": _normalize_usage(data.get("usage")),
         "finish_reason": choice.get("finish_reason"),
     }

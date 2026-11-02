@@ -1,0 +1,4067 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:073d6995f9724c1490ee7959a2914407",
+      "case_code": "case429",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "49cbb00c5c479b83c5504856fcc5e43949c5031b42164be9bd8788fede4007a0",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00319.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙冠",
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36",
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36",
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0bd3137e2d53422f9797c78aff69d20b",
+      "case_code": "case417",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "2cb7425cf6971ad1d87fe3ed5f92d4898ba18edebc084394b3eeca35823ddcdf",
+            "modality": "panoramic_radiograph",
+            "width": 2793,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000912_1e375f49.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.63291,
+                  0.497409,
+                  0.658632,
+                  0.600994
+                ]
+              },
+              {
+                "finding_code": "种植体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.589379,
+                  0.528204,
+                  0.659951,
+                  0.738173
+                ]
+              },
+              {
+                "finding_code": "固定桥",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.34007,
+                  0.503007,
+                  0.449555,
+                  0.75917
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:13d693a73215452c80295c85cd998833",
+      "case_code": "case414",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.17.0",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "d6d7a4632079ba476e1c422c79588b0b486e3dfc261c802f794880eee935454f",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000384_d6d2deea.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "whole_mouth"
+              },
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47",
+                    "46"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "47",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "46",
+                      "missing": false
+                    }
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:15a02bc3de09484a9e21bc93a51cd759",
+      "case_code": "case410",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "da9015e5914f5ad39ac509bc7b9866da23c95016573d423ac7f751acefc8e6b8",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000972_36b41d7a.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "34",
+                    "35",
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:15f4c6d904394dd7a46f79ff95583b8e",
+      "case_code": "case411",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "c2dd32da8faa6f185dc5f108676df6eb918210888106dfcde66d54ec485e50e5",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00112.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.269166,
+                  0.544143,
+                  0.707767,
+                  0.850002
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:19e91c47c3154a29ae1fa283180ff440",
+      "case_code": "case444",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "cce517dc7aac578bff2fa63c9645e82bb7feec2e2f449b277a1cb95e0af51f7f",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000945_21f7d851.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "23",
+                  "24",
+                  "25",
+                  "26"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23",
+                    "24",
+                    "25",
+                    "26"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "23",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "24",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "25",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "26",
+                      "missing": false
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:22697546742e4837a641d88e2f14610f",
+      "case_code": "case443",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "ebed757d315a053fa1df615c948b1d6f5a30d0080adf591e6eb9419a5a3f3d32",
+            "modality": "panoramic_radiograph",
+            "width": 2976,
+            "height": 1536,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000289_03c1de08.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙冠"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:31d5475450b147d588ac3134fc8c951d",
+      "case_code": "case404",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "25b3bc842844aae2cfa8977853e2a3b0ee115667cc930a50de552a4f6286a616",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/524-F-80.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:375863ad02184f89b3acf92ab7c0e71e",
+      "case_code": "case399",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "0ffe9ac62be8180642cc783c1958db2114d148e3c36122a8f7deda3f4cd905b6",
+            "modality": "panoramic_radiograph",
+            "width": 2985,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_58.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "12",
+                    "11",
+                    "21",
+                    "22",
+                    "23"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "13",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "12",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "11",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "21",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "22",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "23",
+                      "missing": false
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3900bd5d62db453fbc7570519039313f",
+      "case_code": "case422",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "072642a2f3a0b848dcb4cde0a4dd104087dca8dd394cff6a75ca916942e04547",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00349.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "12",
+                    "17",
+                    "26",
+                    "27",
+                    "11"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "22",
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "11",
+                    "22",
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3f25370f90a24341a611f1ccb6d561c8",
+      "case_code": "case439",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "253029437ab9717a7cfc32d5a36674bc1c7252ac33627abd02e164b18b487945",
+            "modality": "panoramic_radiograph",
+            "width": 2772,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_57.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4245b03c83524204842d69a6adf0f6c3",
+      "case_code": "case425",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "c04829ce6fe0ffebeb1c64e689d777208415bb303a35f83af7a39d91a3b27af2",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Archive/images/107.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47",
+                    "36"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:45add4b0a2f844f7a08ccfb4133654fe",
+      "case_code": "case434",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "925a5e58ad9e0b31a0983c96339968a46afa1992607ee0522fe2728e71e58eb7",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1238-M-35.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "桩核"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12",
+                    "43"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4a42b40fc76c4f04a5e603c746faf5c0",
+      "case_code": "case442",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "cab9643f050523631c443c14b2758e280fec6f1972abaf72ca43379e34b77667",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00117.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植上部修复体",
+                "种植体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "24",
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "25",
+                    "24"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:53cc41e0f6a54b488604ceca74eeb567",
+      "case_code": "case432",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "c3b483eadb3ac4332512c8db33f046b35ce8e42a4eac820d5cd45d4db08a6c09",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/611-F-57.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "normalized_bbox": [
+                  0.572724,
+                  0.468676,
+                  0.683529,
+                  0.573386
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:54ca11fd43a24c08bf1e30e7a66e6cf8",
+      "case_code": "case419",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "4d5a05139246499e1287a89deba5cdb5268d633a72328d9bca9b2ea7857d4695",
+            "modality": "panoramic_radiograph",
+            "width": 2976,
+            "height": 1536,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000141_bf14d4a9.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12",
+                    "11",
+                    "21",
+                    "22"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "21"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "21"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:54d88dbd1c8f43c9ae1f953e73c6d311",
+      "case_code": "case418",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "8fe58b8061722cbc3acdf67fa7e603a49b6f941b37d268f57cc3725330b340c5",
+            "modality": "panoramic_radiograph",
+            "width": 2786,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000346_2c491bdf.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "15",
+                    "46",
+                    "24",
+                    "26",
+                    "27"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "14",
+                    "24",
+                    "26",
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "嵌体/高嵌体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47",
+                    "17"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:58875205bbb947a183109ab597afe91d",
+      "case_code": "case421",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "8ff97a181b6aa968c85928be87a7499a237ce6267610315b8aa254384008c020",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00311.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "充填体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "16",
+                    "12",
+                    "22",
+                    "26",
+                    "36",
+                    "44",
+                    "46"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5bfe1151c14e46e3b85048e37ebab756",
+      "case_code": "case437",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "23e4e660f44523face3f8d990a62fb3245b78ac7434b498a0e0b26cc6192adde",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00224.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "normalized_bbox": [
+                  0.34419,
+                  0.407525,
+                  0.665062,
+                  0.5054
+                ]
+              },
+              {
+                "finding_code": "固定桥",
+                "normalized_bbox": [
+                  0.319952,
+                  0.509478,
+                  0.391513,
+                  0.692994
+                ]
+              },
+              {
+                "finding_code": "固定桥",
+                "normalized_bbox": [
+                  0.565799,
+                  0.495205,
+                  0.745856,
+                  0.654252
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5d379bd755b64aeca9a17fae60f3ad1d",
+      "case_code": "case430",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "407590963d5146d1fc92a81d6e45396525b58f471148799e9deadfa98bd900e6",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00039.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "48",
+                    "47",
+                    "46",
+                    "45",
+                    "44"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "48",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "47",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "46",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "45",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "44",
+                      "missing": false
+                    }
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35",
+                    "36",
+                    "37",
+                    "38"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "35",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "36",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "37",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "38",
+                      "missing": false
+                    }
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35",
+                    "44"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35",
+                    "44"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:69c6fb75a59f418b83f7256e2a51c9b6",
+      "case_code": "case407",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "aabddc82fd2dd2e6cd301ed8d3ca0dc1634a09ddfa7d95c9fe8aa3054f8c354f",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00049.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.192988,
+                  0.197502,
+                  0.343036,
+                  0.44015
+                ]
+              },
+              {
+                "finding_code": "桩核",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.353424,
+                  0.191385,
+                  0.580804,
+                  0.487049
+                ]
+              },
+              {
+                "finding_code": "桩核",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.553103,
+                  0.497244,
+                  0.787408,
+                  0.713385
+                ]
+              },
+              {
+                "finding_code": "固定桥",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.586575,
+                  0.189346,
+                  0.753936,
+                  0.474814
+                ]
+              },
+              {
+                "finding_code": "充填体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.081029,
+                  0.313729,
+                  0.177983,
+                  0.515596
+                ]
+              },
+              {
+                "finding_code": "充填体",
+                "normalized_bbox": [
+                  0.771249,
+                  0.338197,
+                  0.834731,
+                  0.523752
+                ],
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.422677,
+                  0.513557,
+                  0.565799,
+                  0.633861
+                ]
+              },
+              {
+                "finding_code": "根管充填",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.136432,
+                  0.538025,
+                  0.261087,
+                  0.688915
+                ]
+              },
+              {
+                "finding_code": "根管充填",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.314181,
+                  0.501322,
+                  0.40998,
+                  0.813299
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6cc5b6ac331d498d98723e7d0f93d142",
+      "case_code": "case435",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "a12e39604c1069137fdd094fe62da51b3599672e08ba58eb858267c10669b0b4",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/286-M-49.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙冠"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙冠",
+                "normalized_bbox": [
+                  0.487724,
+                  0.400274,
+                  0.549838,
+                  0.490786
+                ]
+              },
+              {
+                "finding_code": "牙冠",
+                "normalized_bbox": [
+                  0.595358,
+                  0.369805,
+                  0.634239,
+                  0.473759
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:716b178a8ce84482b9353f90dc01992a",
+      "case_code": "case412",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.0",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "cf7c3c22c56beb4ae5848d9441859dc8d30579a313538e2dcb2adcffddb936ef",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000806_a933040b.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "37"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "normalized_bbox": [
+                  0.68867,
+                  0.513548,
+                  0.752524,
+                  0.667345
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:76e84c4e785c419986c2e5ce2ef45cc5",
+      "case_code": "case926",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "b2417c04be76144cf21f38fd1e371e597e1612fc214c971bb61acc0a39f2166f",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate2-00114.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7ff2fcee462f45e8b413ab9d5ca1c832",
+      "case_code": "case405",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "646fb1b999dce351bcc0ff17383b6cdd61c43c8ecc07409fb3dfdff8eea4f8fa",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_62.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "14"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "14"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8af6074caf224095abd906279ab490bf",
+      "case_code": "case401",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "8e020c9fc354cf552a89c21d17b987c96c25d6aaf50c8b7557c33e158cc8640a",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1399-F-22.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8d6d128fcc0b4896a43cb1630d9d15df",
+      "case_code": "case406",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.7.6",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "288d21bcf7c396b480b7137aec57c1c6916d91d43fcc8cb738db68220f3f9448",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/128-F-54.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植体",
+                "种植上部修复体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "右上后牙区",
+                    "左上后牙区"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "右下后牙区"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:92b15155794a44148ba106005c839ce4",
+      "case_code": "case441",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "6ed209bcc1bdbb1d10d47d6fcccf575492472d0c8cf47697ef6054be9fc2a56b",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00391.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "充填体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36",
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46",
+                    "36"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:93be1e6da931487cbd69fbf2e25086b1",
+      "case_code": "case400",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "e55dc9037b2c1cafd25cd5ba74354b81fb30ba8eae9a633ec7f00c7c2a4d0ae0",
+            "modality": "panoramic_radiograph",
+            "width": 2976,
+            "height": 1536,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000442_fa5b3c29.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右上后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "16",
+                    "15"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "17",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "16",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "15",
+                      "missing": false
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9893435a5bb24e46b57a704f79647303",
+      "case_code": "case416",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.17.0",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "6c79a98fbdfa97059bf9ec9e7558622263382fb87ca9e59989803840dc8fce72",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/456-F-23.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "16",
+                    "18",
+                    "15",
+                    "14",
+                    "13",
+                    "12",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "27",
+                    "37",
+                    "36",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12",
+                    "21"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:99739554434c46cc9494c15a9181dda0",
+      "case_code": "case426",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "9ace674f3454a9f6777f4a5e0fe4d7357389efb608a18488922e801251d5937a",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00027.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12",
+                    "16",
+                    "21",
+                    "22",
+                    "24",
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "15",
+                    "13",
+                    "11",
+                    "23",
+                    "27"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "13",
+                    "15",
+                    "17",
+                    "23",
+                    "27"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "15",
+                    "13",
+                    "23",
+                    "27"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:998732208e0f45e4b4e6ea66e6121712",
+      "case_code": "case398",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "47514790e822bcc798da425791d05fdfe08d5ce948778010c2cc6aa129a505f4",
+            "modality": "panoramic_radiograph",
+            "width": 2958,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_77.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "固定桥"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "15",
+                    "14"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "16",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "15",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "14",
+                      "missing": false
+                    }
+                  ]
+                }
+              },
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "48",
+                    "47",
+                    "46"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "48",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "47",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "46",
+                      "missing": true
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a03e22b9ac3244c5b47c4d77b57ad441",
+      "case_code": "case431",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "ab9946710b8e2c719ee7754995509b4bfa8a7dadcacd3a95178fe85b4ae131ba",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/344-M-54.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "12",
+                    "11"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a27798cc69c74f4aac713e9c61eaca79",
+      "case_code": "case445",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "c0843e211eb39f877a07e1b160871016eabf33097fa0f6d9141fa7531e044fe4",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000718_bd47a97f.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根管充填"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "26",
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46",
+                    "26"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ac3a076b5c634a6aa4cbd9059829007e",
+      "case_code": "case424",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "ff8f9f534d422b55715838d2bd1ab9ef8cad386e34fc8d61ce61056642a68e67",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00097.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "15",
+                    "14",
+                    "12",
+                    "22",
+                    "24",
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12",
+                    "14",
+                    "15",
+                    "16",
+                    "11",
+                    "21",
+                    "22",
+                    "24",
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "26"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ac5d4be057ee488fbdc210825dd5ef8d",
+      "case_code": "case438",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "e6483adfff572ed410f7bf568eb3d50c6b95dae87a5b821828d2167a8de9f58a",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/570.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "桩核"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "桩核",
+                "normalized_bbox": [
+                  0.616815,
+                  0.426726,
+                  0.689915,
+                  0.562323
+                ]
+              },
+              {
+                "finding_code": "桩核",
+                "normalized_bbox": [
+                  0.373662,
+                  0.635839,
+                  0.42137,
+                  0.786139
+                ]
+              },
+              {
+                "finding_code": "桩核",
+                "normalized_bbox": [
+                  0.69761,
+                  0.50351,
+                  0.778404,
+                  0.675048
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b815eea1524647619a2840fc76d46c08",
+      "case_code": "case436",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "148066843d0533cadb34e563e9a318a1844060ff051914b4727d9daf594acc60",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/302-F-45.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "normalized_bbox": [
+                  0.481857,
+                  0.309327,
+                  0.647813,
+                  0.470634
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:be8b44a05a9d4772a8523145b3a3fe68",
+      "case_code": "case428",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "64288a3a1a95a03e0984043582e6fdf5fc2635069faccc699c9c51ce2ffcfd4a",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/696-F-61.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "25",
+                    "37",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "37"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "12",
+                    "11",
+                    "23",
+                    "34"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "14",
+                    "13",
+                    "12",
+                    "24",
+                    "26",
+                    "46",
+                    "36",
+                    "35",
+                    "34"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "14",
+                    "24",
+                    "46",
+                    "35",
+                    "36",
+                    "16",
+                    "26"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "嵌体/高嵌体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "44",
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bea50eb7f9d14187a0380caa8c9650a1",
+      "case_code": "case440",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "9c45a99dd375b2924eb3987050f8a1385ef6a6edf534d388a2fb2ae77deb7374",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00065.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植上部修复体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植上部修复体",
+                "normalized_bbox": [
+                  0.590377,
+                  0.340136,
+                  0.711935,
+                  0.439133
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c5b110099d0a4423b6e204f1c8182800",
+      "case_code": "case403",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "1d559acc4249224a2c97169d5d2aed71841cb917136e7a5d0f12a7d66e36a019",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate1-00043.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "27",
+                    "37",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "正畸装置",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "15",
+                    "14",
+                    "13",
+                    "12",
+                    "11",
+                    "21",
+                    "22",
+                    "23",
+                    "24",
+                    "25",
+                    "26",
+                    "31",
+                    "32",
+                    "33",
+                    "34",
+                    "35",
+                    "36",
+                    "41",
+                    "44",
+                    "43",
+                    "42",
+                    "45",
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c912bddb25a04f50b4be559a38d2e54c",
+      "case_code": "case413",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.0",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "26fa5f7c77293872ccc62a7d58df3727b3d773927bfa172fd3de5d8ed66d4906",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000264_6689da5e.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植体",
+                "种植上部修复体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "23"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.547331,
+                  0.325865,
+                  0.575051,
+                  0.480022
+                ]
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "normalized_bbox": [
+                  0.542589,
+                  0.445163,
+                  0.573227,
+                  0.570657
+                ],
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cad0dc467430448ea865006c6cb50d85",
+      "case_code": "case397",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "04839afab705203e03349abfd699596d98f21c3f7c957142b3cd3f0f21e223fe",
+            "modality": "panoramic_radiograph",
+            "width": 2963,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_33.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "残根"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "16"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "残根",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cc48a2bd7fa74795b5a86448fa5dba12",
+      "case_code": "case409",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "752991f94f8bf50feedaeb8e947512b72e13ba53b77774fdbcbe724d04bfe3c4",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000734_49373ac3.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "27"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙冠",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.693917,
+                  0.315197,
+                  0.767786,
+                  0.408384
+                ]
+              },
+              {
+                "finding_code": "根管充填",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.700842,
+                  0.192582,
+                  0.747011,
+                  0.347076
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cd027b62114b4ec7a18ba581f0d6b64e",
+      "case_code": "case420",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "4e4c0a12ef3f19896353f20a356e9a96ad399da280b9f2276b9b693598725b83",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00074.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "14",
+                    "15",
+                    "16",
+                    "34",
+                    "35",
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "26",
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "24"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "15",
+                    "14",
+                    "34",
+                    "35",
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cebcc98dd173453c890f8781d37dde2f",
+      "case_code": "case402",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "89f85aa3c3a07f99d8ec8037c19dc987265df80e8605d52fc71480b7dcc63fb6",
+            "modality": "panoramic_radiograph",
+            "width": 2954,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_44.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.310812,
+                  0.489929,
+                  0.669999,
+                  0.583199
+                ]
+              },
+              {
+                "finding_code": "固定桥",
+                "normalized_bbox": [
+                  0.321892,
+                  0.632943,
+                  0.410535,
+                  0.732431
+                ],
+                "other_text": ""
+              },
+              {
+                "finding_code": "固定桥",
+                "normalized_bbox": [
+                  0.584127,
+                  0.589416,
+                  0.659842,
+                  0.686832
+                ],
+                "other_text": ""
+              },
+              {
+                "finding_code": "嵌体/高嵌体",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.416998,
+                  0.601853,
+                  0.438236,
+                  0.707559
+                ]
+              },
+              {
+                "finding_code": "嵌体/高嵌体",
+                "normalized_bbox": [
+                  0.533342,
+                  0.595634,
+                  0.57674,
+                  0.655742
+                ],
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:de6ae5dead1541da8c3e1796518e9f1e",
+      "case_code": "case423",
+      "task_code": "A3.4",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A3.4 · 治疗状态 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "685776fc3ac5806b2075088fa49e027aa0536de859d078402f0f71569f7cb7f3",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate5-00086.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35",
+                    "37",
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46",
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e65a8b9db0654eb39967eff522b52aae",
+      "case_code": "case408",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "726ffab158381fd89917a803f413063a386bc9bf41c030699d59a95e596af9b9",
+            "modality": "panoramic_radiograph",
+            "width": 2808,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_203.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "充填体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "45",
+                    "46",
+                    "47"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f161e05cb01b4ddaa0c463aab10bac65",
+      "case_code": "case427",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "56a6919a551daf50dc7ed6f33e505ddd089b9e92d85e8a20038d55db8d83372b",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/289-F-88.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "固定桥",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "15",
+                    "14",
+                    "13",
+                    "12",
+                    "11",
+                    "21",
+                    "22",
+                    "23",
+                    "24"
+                  ],
+                  "bridge_units": [
+                    {
+                      "fdi": "16",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "15",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "14",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "13",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "12",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "11",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "21",
+                      "missing": false
+                    },
+                    {
+                      "fdi": "22",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "23",
+                      "missing": true
+                    },
+                    {
+                      "fdi": "24",
+                      "missing": false
+                    }
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "25",
+                    "24"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙冠",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "25",
+                    "35",
+                    "34"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "17",
+                    "26",
+                    "27"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "桩核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "24"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f2b2b245643244439a4a9bc1630e1600",
+      "case_code": "case415",
+      "task_code": "A3.4",
+      "dataset_id": "C017",
+      "schema_version": "0.6.0",
+      "title": "A3.4 · 治疗状态 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "6bbe79abeb1b17565d3ef507b10c1ee175fe387b5bfc08c04400981a3e6f6de8",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000951_4cd21fcb.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根管充填",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "14",
+                    "13",
+                    "15",
+                    "34",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "充填体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "24",
+                    "25",
+                    "46",
+                    "47",
+                    "35"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "其他/待审核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "13",
+                    "14",
+                    "15"
+                  ]
+                },
+                "other_text": "联冠"
+              },
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36",
+                    "37"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "种植上部修复体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "37",
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f97f5e00871e4332af8f7a1dafd6299a",
+      "case_code": "case396",
+      "task_code": "A3.4",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.4 · 治疗状态 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "91572242cb96c2cf9ebdca1d8bcedd57e95806ace2adc52adad8557c9a4c2c15",
+            "modality": "panoramic_radiograph",
+            "width": 2889,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_55.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "残根"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "残根",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "14",
+                    "22",
+                    "23",
+                    "24"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f9ceacd4601a4ba69fa21c49f19afe7e",
+      "case_code": "case433",
+      "task_code": "A3.4",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.4 · 治疗状态 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价充填、嵌体、根管充填、桩核、冠桥、种植修复及正畸装置等治疗或状态所见。",
+        "images": [
+          {
+            "sha256": "fdd14b228a6c34189976718ee5b58c462b6b8ab0a0c914fe72d98fbed8f6fa3a",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1062-M-40.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "种植体"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "种植体",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "34"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

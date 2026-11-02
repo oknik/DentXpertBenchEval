@@ -1,0 +1,23 @@
+{
+  "model": "claude-sonnet-5-5",
+  "base_url": "https://api.chatanywhere.tech/v1",
+  "api_key_file": "D:\\Desktop\\chatanywhere.txt",
+  "api_key_env": "CHATANYWHERE_API_KEY",
+  "generation": {
+    "max_tokens": 65536,
+    "timeout": 600,
+    "retries": 10,
+    "retry_sleep": 2.0,
+    "extra_body": {
+      "output_config": {
+        "format": {
+          "type": "json_schema",
+          "schema": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

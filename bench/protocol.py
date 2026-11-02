@@ -2,8 +2,9 @@ import json
 import hashlib
 import random
 import re
-from pathlib import Path
 from typing import Any
+
+from bench.prompt_renderer import render_prompt_file
 
 A11_FIELD_KEYS = ("modality_type", "field_of_view")
 A11_ANSWER_KEYS = A11_FIELD_KEYS
@@ -40,8 +41,29 @@ CLINICAL_FIELD_KEYS = {
     "A5.3": ("sufficiency", "reason"),
     "A6.1": ("total", "images"),
     "A6.2": ("diagnoses", "reason"),
-    "A6.3": ("conditions",),
+    "A6.3": ("category", "condition_code"),
     "A7.1": ("plans",),
+}
+
+# Keep one source of truth for the public task-to-field contract.  The runner,
+# evaluator, and reporting code all consume this mapping instead of repeating
+# the A1-A4 and A5-A7 lists independently.
+TASK_FIELD_KEYS = {
+    "A1.1": A11_FIELD_KEYS,
+    "A1.2": A12_FIELD_KEYS,
+    "A1.3": A13_FIELD_KEYS,
+    "A2.1": A21_FIELD_KEYS,
+    "A2.2": A22_FIELD_KEYS,
+    "A2.3": A23_FIELD_KEYS,
+    "A2.4": A24_FIELD_KEYS,
+    "A3.1": A31_FIELD_KEYS,
+    "A3.2": A32_FIELD_KEYS,
+    "A3.3": A33_FIELD_KEYS,
+    "A3.4": A34_FIELD_KEYS,
+    "A4.1": A41_FIELD_KEYS,
+    "A4.2": A42_FIELD_KEYS,
+    "A4.3": A43_FIELD_KEYS,
+    **CLINICAL_FIELD_KEYS,
 }
 
 A43_SURFACE_LABELS = {
@@ -133,6 +155,7 @@ ACTION_OPTIONS = (
     "补充牙髓活力检查",
     "补充牙周探诊",
     "补充标准化口内照片",
+    "补充侧位片",
     "补充多视角黏膜照片",
     "补充活检病理",
 )
@@ -293,6 +316,39 @@ CEPHALOMETRIC_STRUCTURE_LABELS = {
     "Pog`": "Soft Tissue Pogonion",
     "Sn": "Subnasale",
 }
+CEPHALOMETRIC_STRUCTURE_DESCRIPTIONS = {
+    "S": "S（Sella，蝶鞍点）：蝶鞍（垂体窝）影像的中心点。",
+    "N": "N（Nasion，鼻根点）：鼻额缝，即鼻骨与额骨交界处的最前点。",
+    "Po": "Po（Porion，耳点）：骨性外耳道上缘的最高点，即解剖耳点。",
+    "Or": "Or（Orbitale，眶点）：骨性眼眶下缘的最低点。",
+    "ANS": "ANS（Anterior Nasal Spine，前鼻棘点）：前鼻棘的尖端。",
+    "PNS": "PNS（Posterior Nasal Spine，后鼻棘点）：硬腭后方骨性鼻棘的尖端。",
+    "A": "A（A-point / Subspinale，上牙槽座点）：前鼻棘与上齿槽缘之间，上颌骨前缘轮廓的最凹点。",
+    "R": "R（Ramus，下颌支点）：下颌支后方外轮廓沿垂直段的最凸点。",
+    "Ar": "Ar（Articulare，关节点）：通常指颅底下缘与下颌支或髁突颈后缘影像的交点。",
+    "Co": "Co（Condylion，髁突点／髁顶点）：下颌髁突轮廓的最后上点。",
+    "Gn": "Gn（Gnathion，颏顶点）：骨性颏部前下方的定位点，通常在颏前点与颏下点之间的轮廓上按规定方法确定。",
+    "Go": "Go（Gonion，下颌角点）：下颌支后缘与下颌体下缘之间，下颌角轮廓的中间定位点。",
+    "B": "B（B-point / Supramentale，下牙槽座点）：下齿槽缘与颏前点之间，下颌联合部前缘轮廓的最凹点。",
+    "Pog": "Pog（Pogonion，颏前点）：下颌联合部骨性颏部轮廓的最前突点。",
+    "Me": "Me（Menton，颏下点）：下颌联合部骨性轮廓的最低点。",
+    "LPM": "LPM（Lower 2nd Premolar Cusp Tip，下颌第二前磨牙颊尖点）：下颌第二前磨牙颊侧牙尖的尖端。",
+    "LIT": "LIT（Lower Incisor Tip，下中切牙切缘点）：下中切牙的切缘定位点。",
+    "LMT": "LMT（Lower Molar Cusp Tip，下颌第一磨牙近中颊尖点）：下颌第一磨牙近中颊侧牙尖的尖端。",
+    "UPM": "UPM（Upper 2nd Premolar Cusp Tip，上颌第二前磨牙颊尖点）：上颌第二前磨牙颊侧牙尖的尖端。",
+    "UIA": "UIA（Upper Incisor Apex，上中切牙根尖点）：上中切牙牙根的根尖。",
+    "UIT": "UIT（Upper Incisor Tip，上中切牙切缘点）：上中切牙的切缘定位点。",
+    "UMT": "UMT（Upper Molar Cusp Tip，上颌第一磨牙近中颊尖点）：上颌第一磨牙近中颊侧牙尖的尖端。",
+    "LIA": "LIA（Lower Incisor Apex，下中切牙根尖点）：下中切牙牙根的根尖。",
+    "Pn": "Pn（Pronasale，鼻尖点／鼻顶点）：鼻尖软组织轮廓的最前突点。",
+    "Li": "Li（Labrale inferius，下唇点）：正中矢状面上，下唇唇红缘的最突出点。",
+    "Ls": "Ls（Labrale superius，上唇点）：正中矢状面上，上唇唇红缘的最突出点。",
+    "N`": "N`（Soft Tissue Nasion，软组织鼻根点）：骨性鼻根点附近、鼻根表面软组织轮廓上的对应定位点。",
+    "Pog`": "Pog`（Soft Tissue Pogonion，软组织颏前点）：软组织颏部轮廓的最前突点。",
+    "Sn": "Sn（Subnasale，鼻下点）：正中矢状面上，鼻小柱基底与上唇相接的点。",
+}
+def describe_a24_cephalometric_structure(code: str) -> str:
+    return CEPHALOMETRIC_STRUCTURE_DESCRIPTIONS.get(code, code)
 CEPHALOMETRIC_STRUCTURE_ALIASES = {
     **{label: code for code, label in CEPHALOMETRIC_STRUCTURE_LABELS.items()},
     "A点": "A",
@@ -307,6 +363,8 @@ CEPHALOMETRIC_STRUCTURE_ALIASES = {
     "颏前点": "Pog",
     "软组织鼻根点": "N`",
     "软组织颏前点": "Pog`",
+    "N′": "N`",
+    "Pog′": "Pog`",
     "鼻下点": "Sn",
     "鼻尖点": "Pn",
 }
@@ -379,225 +437,6 @@ def option_to_value(letter: str, options: tuple[str, ...]) -> str:
     return options[index]
 
 
-def build_a11_prompt(case: dict[str, Any]) -> str:
-    return (
-        "请观察提供的口腔影像，识别其模态类型和主要视野。\n\n"
-        "模态类型只能选择一项：口内照、黏膜照、根尖片、全景片、头颅侧位片。\n\n"
-        "非黏膜照的视野只能选择一项：全口、头颅侧位、上颌、下颌、正面、前牙区、右侧后牙区、左侧后牙区、上颌前牙区、下颌前牙区、右上后牙区、左上后牙区、右下后牙区、左下后牙区。\n\n"
-        "黏膜照的视野只能选择一项：舌背、舌腹、舌缘、左颊黏膜、右颊黏膜、上唇、下唇、上牙弓、下牙弓。\n\n"
-        "判定规则：\n"
-        "1. 选择当前画面实际显示的主要解剖范围或视角，不推断画面之外的部位。\n"
-        "2. 头颅侧位片的视野为头颅侧位，全景片的视野为全口。根尖片不能选全口、头颅侧位或正面；口内照不能选头颅侧位；黏膜照使用黏膜部位清单。\n"
-        "3. 只回答模态与视野，不评价质量、疾病或临床用途。\n\n"
-        "输出字段仅有modality_type和field_of_view，分别表示模态类型和主要视野。\n\n"
-        "涉及左侧或右侧时，均以患者自身的左右侧为准。\n\n"
-        "请仅输出以下格式的合法JSON对象，字段值从上述选项中选择，不添加其他字段、解释或代码围栏：\n"
-        "{\n"
-        '  "modality_type": "<模态类型>",\n'
-        '  "field_of_view": "<主要视野>"\n'
-        "}"
-    )
-
-
-def build_a12_prompt(case: dict[str, Any]) -> str:
-    return (
-        "请观察提供的口腔影像，给出实际覆盖范围和质量等级。\n\n"
-        "覆盖范围只能选择一项，请选择最精确的一项。\n"
-        "非粘膜照可选：全口、头颅侧位、上颌、下颌、正面、前牙区、右侧后牙区、左侧后牙区、上颌前牙区、下颌前牙区、右上后牙区、左上后牙区、右下后牙区、左下后牙区、部位无法判断。\n"
-        "黏膜照可选：舌背、舌腹、舌缘、左颊黏膜、右颊黏膜、上唇、下唇、上牙弓、下牙弓、部位无法判断。\n"
-        "只记录画面完整支持的范围，不推断未显示区域，不用多个同义范围重复表达同一视野。无法确认实际解剖部位时选择“部位无法判断”，不猜测细分部位。涉及左侧或右侧时，均以患者自身的左右侧为准。\n\n"
-        "质量等级只能选择一项：\n"
-        "- 未见明显问题：覆盖部位可辨，主要结构清楚，未见明显的关键结构裁切或成像缺陷。\n"
-        "- 覆盖或部位辨识问题：画面较清楚，但关键结构被截断，或缺少辨认解剖部位所需的定位参照。\n"
-        "- 成像质量问题：失焦、运动模糊、曝光异常、反光、遮挡或伪影等明显影响主要结构的观察。\n\n"
-        "判定时注意：\n"
-        "1. 局部视野不等于覆盖不足；未明显影响主要结构观察的轻微瑕疵，不单独判为有问题。\n"
-        "2. 疾病或治疗表现本身不属于质量问题，不能将龋损、骨吸收或修复体直接视为成像缺陷。\n"
-        "3. 三个选项表示问题性质，不表示严重程度。只根据当前画面判断，不假设临床用途。\n\n"
-        "coverage_codes表示实际覆盖范围，为仅含一个元素的中文数组；quality_grade表示质量等级，使用上述三个中文选项之一。\n\n"
-        "请仅按以下结构输出合法JSON，不增加其他字段、具体问题、判定理由或代码围栏：\n"
-        "{\n"
-        '  "coverage_codes": ["<实际覆盖范围>"],\n'
-        '  "quality_grade": "<质量等级>"\n'
-        "}"
-    )
-
-
-def build_a13_prompt(case: dict[str, Any]) -> str:
-    purpose = next(
-        item["value"] for item in case["input"].get("fields", []) if item.get("key") == "specified_purpose"
-    )
-    purpose_text = format_clinical_purpose(purpose)
-    return (
-        "请根据提供的影像和下列临床用途，判断现有信息是否充分，并选择一项最低必要行动。\n\n"
-        f"临床用途：{purpose_text}\n\n"
-        "充分性只能选择“充分”或“不足”。围绕指定的临床目标，综合影像模态、覆盖范围、可辨认程度和必要临床信息判断。影像清晰或存在局部质量问题，均不能单独决定充分性。\n\n"
-        "最低必要行动只能选择一项：无需补充检查、重拍同一区域、补充缺失视角、补充目标牙根尖片、补充咬翼片、按标准重拍全景片、补充限视野CBCT、先行针对性临床检查、补充牙髓活力检查、补充牙周探诊、补充标准化口内照片、补充多视角黏膜照片、补充活检病理。\n\n"
-        "判定与填写规则：\n"
-        "1. 充分时选择“无需补充检查”；不足时选择一项针对关键证据缺口的最低必要行动。\n"
-        "2. 仅依据影像和给定临床用途作答，不推测未提供的患者信息。\n"
-        "3. 仅选择“补充缺失视角”时，才需从以下选项中选择一个具体视角／部位。普通视角允许：全口、头颅侧位、上颌、下颌、正面、前牙区、右侧后牙区、左侧后牙区、上颌前牙区、下颌前牙区、右上后牙区、左上后牙区、右下后牙区、左下后牙区。黏膜视角允许：舌背、舌腹、舌缘、舌根、舌尖、左颊黏膜、右颊黏膜、上唇、下唇、腭部、口底、上牙龈、下牙龈、上牙弓、下牙弓、其他口腔部位。\n"
-        "4. 不输出行动理由、分级、诊断或治疗方案。\n\n"
-        "sufficiency表示输入充分性；minimum_necessary_action用action_code记录所选行动。\n\n"
-        "涉及左侧或右侧时，均以患者自身的左右侧为准。\n\n"
-        "请仅按以下结构输出合法JSON；requested_view仅在action_code为“补充缺失视角”时保留并填写，其他行动删除此字段。不增加额外字段、正文说明或代码围栏：\n"
-        "{\n"
-        '  "sufficiency": "<充分或不足>",\n'
-        '  "minimum_necessary_action": {\n'
-        '    "action_code": "<一项最低必要行动>",\n'
-        '    "requested_view": "<需补充的具体视角或部位>"\n'
-        "  }\n"
-        "}\n"
-    )
-
-
-# def build_a21_prompt(case: dict[str, Any]) -> str:
-#     return (
-#         "请观察提供的口腔影像，判断牙列阶段。\n\n"
-#         "牙列阶段只能选择一项：乳牙列、混合牙列、恒牙列、不可评价。\n"
-#         "不可评价原因可选：牙列覆盖不足、年龄信息不足、图像质量不足。\n\n"
-#         "判定规则：\n"
-#         "1. 根据可见的乳牙、恒牙及替牙特征判断，不推断未显示区域。\n"
-#         "2. 无法可靠判断时选择“不可评价”，unevaluable_reasons至少填写一项原因，可多选但不重复；能够判断时该数组为空。\n"
-#         "3. 仅在缺少年龄信息确实影响判断时，选择“年龄信息不足”。\n\n"
-#         "请仅按以下结构输出合法JSON，不增加其他字段、说明或代码围栏：\n"
-#         "{\n"
-#         '  "dentition_stage": "<牙列阶段>",\n'
-#         '  "unevaluable_reasons": []\n'
-#         "}"
-#     )
-def build_a21_prompt(case: dict[str, Any]) -> str:
-    return (
-        "请观察提供的口腔影像，判断牙列阶段。\n\n"
-        "牙列阶段只能选择一项：乳牙列、混合牙列、恒牙列。\n\n"
-        "不可评价原因可选：牙列覆盖不足、年龄信息不足、图像质量不足。\n\n"
-        "判定规则：\n"
-        "1. 根据可见的乳牙、恒牙及替牙特征判断，不推断未显示区域。\n"
-        "2. 仅在缺少年龄信息确实影响判断时，选择“年龄信息不足”。\n\n"
-        "请仅按以下结构输出合法JSON，不增加其他字段、说明或代码围栏：\n"
-        "{\n"
-        '  "dentition_stage": "<牙列阶段>"\n'
-        "}"
-    )
-
-def build_a22_prompt(case: dict[str, Any]) -> str:
-    mode = get_field_value(case, "localization_mode")
-    if mode == "inventory":
-        return (
-            "请观察提供的口腔影像，列出能够可靠识别的牙齿及其FDI编号。\n\n"
-            "判定与输出规则：\n"
-            "1. 识别画面中可确认的牙齿，FDI采用下列恒牙或乳牙编号，同一FDI只出现一次，按编号升序排列。\n"
-            "2. 不补齐未显示或无法确认身份的牙位，不把仅有缺牙间隙的位置当作可见牙齿，不因为未萌出而自动忽略可识别牙齿。\n"
-            "3. teeth直接填写FDI整数数组。\n\n"
-            "牙位统一使用FDI整数，不加引号。恒牙仅限11–18、21–28、31–38、41–48；乳牙仅限51–55、61–65、71–75、81–85。\n\n"
-            "请仅按以下示意结构输出合法JSON，示意牙位和坐标须替换为实际结果，不增加额外字段、说明或代码围栏：\n"
-            "{\n"
-            '  "teeth": [11, 12]\n'
-            "}"
-        )
-    if mode == "detection":
-        target_fdis = extract_a22_reference_fdis(case)
-        target_fdis_text = json.dumps(target_fdis, ensure_ascii=False)
-        return (
-            "请在提供的口腔影像中定位下列指定FDI牙位，并分别给出完整牙体范围框。\n\n"
-            f"待定位牙位：{target_fdis_text}\n\n"
-            "判定与输出规则：\n"
-            "1. 每个给定牙位记录一项，同一FDI只出现一次，按编号升序排列；不添加指定列表之外的牙位。\n"
-            "2. 每项包含题目给定的fdi和对应bbox。框尽量贴合该牙实际可见的完整牙体，包含可见牙冠和牙根，覆盖所有可见根，不把邻牙、缺牙间隙或修复体单独作为一颗牙。\n"
-            "3. bbox为当前画面上的归一化四数字数组。不能根据牙列平均位置生成框，也不以关键点代替框。\n\n"
-            "牙位统一使用FDI整数，不加引号。恒牙仅限11–18、21–28、31–38、41–48；乳牙仅限51–55、61–65、71–75、81–85。\n\n"
-            "坐标按实际影像填写：左上角为原点，向右、向下递增，按画面宽高归一化到0–1。框为[左边界,上边界,右边界,下边界]，左边界小于右边界，上边界小于下边界；四个值均为数字，四舍五入保留小数点后三位。\n\n"
-            "请仅按以下结构模板输出合法JSON，不增加额外字段、说明或代码围栏：\n"
-            "{\n"
-            '  "teeth": [\n'
-            "    {\n"
-            '      "fdi": <题目给定的FDI整数>,\n'
-            '      "bbox": [<左边界坐标>, <上边界坐标>, <右边界坐标>, <下边界坐标>]\n'
-            "    }\n"
-            "  ]\n"
-            "}"
-        )
-    raise ValueError(f"unsupported A2.2 localization_mode: {mode}")
-
-
-def build_a23_prompt(case: dict[str, Any]) -> str:
-    target_fdis = extract_a23_target_fdis(case)
-    target_fdis_text = json.dumps(target_fdis, ensure_ascii=False) if target_fdis else "{{题目给定的FDI整数数组}}"
-    return (
-        "请观察提供的口腔影像，判断待评价牙位的发育、萌出、缺失或阻生状态。\n\n"
-        f"待评价牙位：{target_fdis_text}\n\n"
-        "每颗目标牙的状态只能选择一项：已萌出、萌出中、未萌出、阻生、缺失。\n\n"
-        "判定与输出规则：\n"
-        "1. 仅记录待评价牙位中与发育、缺失或阻生情况有关的牙位，每项包含fdi和status；同一牙位只记录一次，按题目给定顺序输出，不添加其他牙位。\n"
-        "2. 正常发育过程中未萌出不自动等于阻生；“阻生”需要有当前影像支持的异常位置、方向或萌出受阻表现，不能只因牙尚未萌出就判断阻生。\n"
-        "3. “缺失”表示可可靠判读的牙位未见对应牙齿，未萌出牙仍存在时不标为缺失，不将区域未覆盖或牙位无法辨认判为缺失。\n"
-        "4. 待评价牙位均可可靠判读，且均未见需记录的发育、缺失或阻生情况时，输出{\"teeth\": []}；不为正常牙位补齐记录。\n\n"
-        "牙位统一使用FDI整数，不加引号。恒牙仅限11–18、21–28、31–38、41–48；乳牙仅限51–55、61–65、71–75、81–85。\n\n"
-        "请仅按以下结构模板输出合法JSON，将数值占位符替换为实际数字，不加引号；不增加额外字段、说明或代码围栏：\n"
-        "{\n"
-        '  "teeth": [\n'
-        '    {"fdi": <FDI整数>, "status": "<牙齿状态>"}\n'
-        "  ]\n"
-        "}"
-    )
-
-
-def build_a24_prompt(case: dict[str, Any]) -> str:
-    modality = str(case.get("input", {}).get("images", [{}])[0].get("modality", "")).strip()
-    if modality == "cephalometric_radiograph":
-        target_structures = select_a24_cephalometric_structures(case)
-        target_text = "、".join(target_structures) if target_structures else "{{题目指定的头影关键点中文列表}}"
-        return (
-            "请在提供的头影影像中定位下列指定关键点，并给出各点的坐标。\n\n"
-            f"待定位关键点：{target_text}" "\n\n"
-            "头影结构：A · A-point；ANS · Anterior Nasal Spine；B · B-point；Me · Menton；N · Nasion；Or · Orbitale；Pog · Pogonion；PNS · Posterior Nasal Spine；Pn · Pronasale；R · Ramus；S · Sella；Ar · Articulare；Co · Condylion；Gn · Gnathion；Go · Gonion；Po · Porion；LPM · Lower 2nd PM Cusp Tip；LIT · Lower Incisor Tip；LMT · Lower Molar Cusp Tip；UPM · Upper 2nd PM Cusp Tip；UIA · Upper Incisor Apex；UIT · Upper Incisor Tip；UMT · Upper Molar Cusp Tip；LIA · Lower Incisor Apex；Li · Labrale inferius；Ls · Labrale superius；N` · Soft Tissue Nasion；Pog` · Soft Tissue Pogonion；Sn · Subnasale。\n\n"
-            "判定与输出规则：\n"
-            "1. 只定位题目指定的关键点，每个点记录一次，按给定列表的顺序排列。\n"
-            "2. structure_code使用题目给定的点名，coordinate记录该点的坐标。\n"
-            "3. 区分骨组织、软组织、牙尖、切缘和根尖等不同点位，不合并名称相近的关键点。\n\n"
-            "坐标按实际影像填写：左上角为原点，向右、向下递增，按画面宽高归一化到0-1。点为[横坐标,纵坐标]，两个值均为数字。\n\n"
-            "请仅按以下结构模板输出合法JSON，将数值占位符替换为实际数字，不加引号；不增加额外字段、说明或代码围栏：\n"
-            "{\n"
-            '  "structures": [\n'
-            "    {\n"
-            '      "structure_code": "<题目指定的头影关键点名称>",\n'
-            '      "coordinate": [<横坐标>, <纵坐标>]\n'
-            "    }\n"
-            "  ]\n"
-            "}"
-        )
-    if modality == "periapical_radiograph":
-        image_fdis = extract_a24_periapical_image_fdis(case)
-        target_fdis = select_a24_periapical_target_fdis(case)
-        left_to_right_fdis = extract_a24_periapical_left_to_right_fdis(case)
-        image_fdis_text = json.dumps(image_fdis, ensure_ascii=False) if image_fdis else "{{图中牙齿FDI整数数组}}"
-        target_fdi_text = str(target_fdis[0]) if target_fdis else "{{需定位关键点的目标牙FDI整数}}"
-        left_to_right_fdis_text = "、".join(str(fdi) for fdi in left_to_right_fdis) if left_to_right_fdis else "{{从左到右的FDI整数序列}}"
-        return (
-            "请根据提供的根尖片及图中牙位信息，定位下列目标牙的牙周关键点，并给出各点的坐标。\n\n"
-            f"图中包含的牙位从左到右依次是：{image_fdis_text}\n"
-            f"目标牙位：{target_fdi_text}\n\n"
-            "关键点类型：近中釉牙骨质界、远中釉牙骨质界、根尖、近中牙槽嵴顶、远中牙槽嵴顶、根分叉。\n\n"
-            "判定与输出规则：\n"
-            "1. 只为目标牙位记录关键点；图中包含的其他牙位用于位置参照，不输出其点位。\n"
-            "2. 每项包含structure_code和coordinate，分别记录点名及点坐标。同一牙位下同一类型最多记录一次。\n"
-            "3. 记录目标牙实际存在且可辨认的上述关键点；根分叉仅对存在根分叉的目标牙记录。\n"
-            "4. 近中、远中按牙齿与牙弓中线的关系判断。\n\n"
-            "牙位统一使用FDI整数，不加引号。恒牙仅限11-18、21-28、31-38、41-48；乳牙仅限51-55、61-65、71-75、81-85。\n\n"
-            "坐标按实际影像填写：左上角为原点，向右、向下递增，按画面宽高归一化到0-1。点为[横坐标,纵坐标]，两个值均为数字。\n\n"
-            "请仅按以下结构模板输出合法JSON，将数值占位符替换为实际数字，不加引号；不增加额外字段、说明或代码围栏：\n"
-            "{\n"
-            '  "structures": [\n'
-            "    {\n"
-            '      "structure_code": "<牙周关键点名称>",\n'
-            '      "coordinate": [<横坐标>, <纵坐标>]\n'
-            "    }\n"
-            "  ]\n"
-            "}"
-        )
-    raise ValueError(f"unsupported A2.4 modality: {modality}")
-
-
 def get_a31_scope(case: dict[str, Any]) -> dict[str, Any]:
     raw = get_field_value(case, "evaluation_scope")
     if not isinstance(raw, dict):
@@ -632,65 +471,29 @@ def _a31_reference_finding_codes(case: dict[str, Any]) -> list[str]:
     return []
 
 
-def _a31_choice_options(case: dict[str, Any]) -> list[str]:
+def _case_stable_rng(case: dict[str, Any]) -> random.Random:
+    """Create the shared reproducible per-case RNG for randomized selections."""
+    seed_text = "{}|{}|{}".format(
+        case.get("task_code", ""),
+        case.get("id", ""),
+        case.get("case_code", ""),
+    )
+    seed = int.from_bytes(hashlib.sha256(seed_text.encode("utf-8")).digest()[:8], "big")
+    return random.Random(seed)
+
+
+def select_a31_prompt_options(case: dict[str, Any]) -> list[str]:
     """Build six deterministic choices containing every correct A3.1 label."""
     correct = _a31_reference_finding_codes(case)
     if len(correct) > 6:
         raise ValueError(f"A3.1 has more than six correct finding codes: {correct}")
     pool = A31_FINDING_CODES
     distractors = [code for code in pool if code not in correct]
-    seed_text = "A3.1|finding-options|{}|{}".format(
-        case.get("id", ""), case.get("case_code", "")
-    )
-    seed = int.from_bytes(hashlib.sha256(seed_text.encode("utf-8")).digest()[:8], "big")
-    rng = random.Random(seed)
+    rng = _case_stable_rng(case)
     rng.shuffle(distractors)
     options = [*correct, *distractors[: 6 - len(correct)]]
     rng.shuffle(options)
     return options
-
-
-def build_a31_prompt(case: dict[str, Any]) -> str:
-    scope = get_a31_scope(case)
-    mode = get_a31_mode(case)
-    category_text = json.dumps(scope["concepts"], ensure_ascii=False) if scope["concepts"] else "未指定"
-    category_options = _a31_choice_options(case)
-    category_options_text = "、".join(category_options)
-    if scope["site_type"] == "tooth" and scope["fdis"]:
-        scope_text = json.dumps(scope["fdis"], ensure_ascii=False)
-    elif scope["site_type"] == "region" and scope["regions"]:
-        scope_text = json.dumps(scope["regions"], ensure_ascii=False)
-    else:
-        scope_text = "全口"
-    common = (
-        "请观察提供的口腔影像，查找硬组织异常。\n\n"
-        f"评价类别：{category_text}\n"
-        f"评价范围：{scope_text}\n\n"
-        f"硬组织异常类别：{category_options_text}\n"
-        "指定评价类别时，仅检查指定类别；未指定时，检查并列出上述全部类别中实际存在的异常。\n\n"
-    )
-    if mode == "tooth":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的异常时，输出{\"findings\": []}。\n"
-            "2. 按牙位定位，每项包含finding_code和非空FDI整数数组fdi。指定牙位时仅评价这些牙位；全口时评价影像中所有可判读的牙位。\n"
-            "3. 同种类型的异常合并为一条记录，fdi汇总所有相关牙位，去重并按FDI编号升序排列。同一牙位存在多种异常时，分别记录在对应类别中。\n\n"
-            "牙位统一使用FDI整数，不加引号。恒牙仅限11–18、21–28、31–38、41–48；乳牙仅限51–55、61–65、71–75、81–85。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构填写，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的硬组织异常类别>\",\n      \"fdi\": [<FDI整数>]\n    }\n  ]\n}"
-        )
-    if mode == "bbox":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的异常时，输出{\"findings\": []}。\n"
-            "2. 按框定位，每项只包含finding_code和bbox，每个框对应一个类别，只记录评价范围内的目标。\n"
-            "3. 不同目标分别画框，即使类别相同也不合并；同一目标有多种所见时，按类别分别记录。\n"
-            "4. 框尽量贴合异常的实际可见范围，不包含无关的邻近结构。\n\n"
-            "坐标以实际影像为准：左上角为原点，向右、向下递增，按画面宽高归一化到0–1。bbox为[左边界,上边界,右边界,下边界]，左边界小于右边界，上边界小于下边界；四个值均为数字，四舍五入保留小数点后三位。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构填写，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的硬组织异常类别>\",\n      \"bbox\": [<左边界坐标>, <上边界坐标>, <右边界坐标>, <下边界坐标>]\n    }\n  ]\n}"
-        )
-    raise ValueError(f"unsupported A3.1 localization_mode: {mode}")
 
 
 def infer_reference_localization_mode(case: dict[str, Any], aliases: dict[str, str], fallback: str) -> str:
@@ -758,62 +561,18 @@ def _a32_reference_finding_codes(case: dict[str, Any]) -> list[str]:
     return []
 
 
-def _a32_choice_options(case: dict[str, Any]) -> list[str]:
+def select_a32_prompt_options(case: dict[str, Any]) -> list[str]:
     """Build six deterministic choices containing every correct A3.2 label."""
     correct = _a32_reference_finding_codes(case)
     if len(correct) > 6:
         raise ValueError(f"A3.2 has more than six correct finding codes: {correct}")
     pool = list(A32_PROMPT_FINDING_CODES)
     distractors = [code for code in pool if code not in correct]
-    seed_text = "A3.2|{}|{}".format(
-        case.get("id", ""),
-        case.get("case_code", ""),
-    )
-    seed = int.from_bytes(hashlib.sha256(seed_text.encode("utf-8")).digest()[:8], "big")
-    rng = random.Random(seed)
+    rng = _case_stable_rng(case)
     rng.shuffle(distractors)
     options = [*correct, *distractors[: 6 - len(correct)]]
     rng.shuffle(options)
     return options
-
-
-def build_a32_prompt(case: dict[str, Any]) -> str:
-    scope = get_a32_scope(case)
-    category_text = json.dumps(scope["concepts"], ensure_ascii=False) if scope["concepts"] else "未指定"
-    category_options_text = "、".join(_a32_choice_options(case))
-    scope_text = json.dumps(scope["regions"], ensure_ascii=False) if scope["regions"] else "全口"
-    common = (
-        "请观察提供的口腔照片，查找软组织异常。\n\n"
-        f"评价类别：{category_text}\n"
-        f"评价范围：{scope_text}\n\n"
-        f"软组织表现类别：{category_options_text}\n"
-        "finding_code只能从上述软组织表现类别选项中选择，可多选。\n"
-        "指定评价类别时，仅检查指定类别；未指定时，检查并列出上述全部类别中实际存在的所见。\n\n"
-    )
-    if scope["mode"] == "region":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的所见时，输出{\"findings\": []}。\n"
-            "2. 按区域定位，每项只包含finding_code和region_code，region_code为非空的中文区域名称数组；评价范围为全口，区域须来自下方区域词表，只记录影像中可判读的所见。\n"
-            "3. 同一类别合并为一条记录，region_code汇总所有相关区域，去重并按题面评价范围的顺序排列。同一区域存在多种类别时，分别记录在对应类别中。\n"
-            "4. 记录照片中可见的软组织表现，不将反光、唾液或器械遮挡当作病损，不据此确定病理诊断。\n\n"
-            "区域词表：舌背、舌腹、舌缘、左颊黏膜、右颊黏膜、上唇、下唇、腭部、上牙弓、下牙弓。\n"
-            "涉及左侧或右侧时，均以患者自身的左右侧为准。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的软组织表现类别>\",\n      \"region_code\": [\"<评价范围中允许的中文区域名称>\"]\n    }\n  ]\n}"
-        )
-    if scope["mode"] == "bbox":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的所见时，输出{\"findings\": []}。\n"
-            "2. 按框定位，每项只包含finding_code和bbox，每个框对应一个类别，只记录评价范围内的目标。\n"
-            "3. 不同目标分别画框，即使类别相同也不合并；同一目标有多种所见时，按类别分别记录。\n"
-            "4. 框尽量贴合目标软组织表现的实际可见范围，不包含无关的周围组织。\n\n"
-            "坐标以实际影像为准：左上角为原点，向右、向下递增，按画面宽高归一化到0–1。bbox为[左边界,上边界,右边界,下边界]，左边界小于右边界，上边界小于下边界；四个值均为数字，四舍五入保留小数点后三位。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写；将坐标占位符替换为实际数字，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的软组织表现类别>\",\n      \"bbox\": [<左边界坐标>, <上边界坐标>, <右边界坐标>, <下边界坐标>]\n    }\n  ]\n}"
-        )
-    raise ValueError(f"unsupported A3.2 localization_mode: {scope['mode']}")
 
 
 def get_a33_scope(case: dict[str, Any]) -> dict[str, Any]:
@@ -858,87 +617,18 @@ def _a33_reference_finding_codes(case: dict[str, Any]) -> list[str]:
     return []
 
 
-def _a33_choice_options(case: dict[str, Any]) -> list[str]:
+def select_a33_prompt_options(case: dict[str, Any]) -> list[str]:
     """Build six deterministic choices containing every correct A3.3 label."""
     correct = _a33_reference_finding_codes(case)
     if len(correct) > 6:
         raise ValueError(f"A3.3 has more than six correct finding codes: {correct}")
     pool = list(A33_PROMPT_FINDING_CODES)
     distractors = [code for code in pool if code not in correct]
-    seed_text = "A3.3|{}|{}".format(
-        case.get("id", ""),
-        case.get("case_code", ""),
-    )
-    seed = int.from_bytes(hashlib.sha256(seed_text.encode("utf-8")).digest()[:8], "big")
-    rng = random.Random(seed)
+    rng = _case_stable_rng(case)
     rng.shuffle(distractors)
     options = [*correct, *distractors[: 6 - len(correct)]]
     rng.shuffle(options)
     return options
-
-
-def build_a33_prompt(case: dict[str, Any]) -> str:
-    scope = get_a33_scope(case)
-    category_text = json.dumps(scope["concepts"], ensure_ascii=False) if scope["concepts"] else "未指定"
-    category_options_text = "、".join(_a33_choice_options(case))
-    if scope["mode"] == "region":
-        # 区域定位时要求模型先在全口范围内观察，再返回具体区域。
-        scope_text = "全口"
-    elif scope["site_type"] == "tooth":
-        scope_text = json.dumps(scope["fdis"], ensure_ascii=False) if scope["fdis"] else "全口"
-    elif scope["site_type"] == "region":
-        scope_text = json.dumps(scope["regions"], ensure_ascii=False) if scope["regions"] else "全口"
-    elif scope["mode"] == "region":
-        scope_text = "全口"
-    else:
-        scope_parts = []
-        if scope["fdis"]:
-            scope_parts.append(json.dumps(scope["fdis"], ensure_ascii=False))
-        if scope["regions"]:
-            scope_parts.append(json.dumps(scope["regions"], ensure_ascii=False))
-        scope_text = "、".join(scope_parts) if scope_parts else "全口"
-    common = (
-        "请观察提供的口腔影像，查找正畸或发育异常。\n\n"
-        f"评价类别：{category_text}\n"
-        f"评价范围：{scope_text}\n\n"
-        f"正畸／发育异常类别：{category_options_text}\n"
-        "finding_code只能从上述正畸／发育异常类别选项中选择，可多选。\n"
-        "指定评价类别时，仅检查指定类别；未指定时，检查并列出上述全部类别中实际存在的异常。\n\n"
-    )
-    if scope["mode"] == "tooth":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的异常时，输出{\"findings\": []}。\n"
-            "2. 按牙位定位，每项包含finding_code和非空FDI整数数组fdi。指定牙位时仅评价这些牙位；全口时评价影像中所有可判读的牙位。\n"
-            "3. 同种类型的异常合并为一条记录，fdi汇总所有相关牙位，去重并按FDI编号升序排列。同一牙位存在多种异常时，分别记录在对应类别中。\n\n"
-            "牙位统一使用FDI整数，不加引号。恒牙仅限11–18、21–28、31–38、41–48；乳牙仅限51–55、61–65、71–75、81–85。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写；将数值占位符替换为实际数字，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的正畸或发育异常类别>\",\n      \"fdi\": [<FDI整数>]\n    }\n  ]\n}"
-        )
-    if scope["mode"] == "region":
-        return common + (
-            "区域词表：全口、头颅侧位、上颌、下颌、正面、前牙区、右侧后牙区、左侧后牙区、上颌前牙区、下颌前牙区、右上后牙区、左上后牙区、右下后牙区、左下后牙区。\n\n"
-            "判定规则：\n"
-            "1. 未见需记录的异常时，输出{\"findings\": []}。\n"
-            "2. 按区域定位，每项只包含finding_code和region_code，region_code为非空的中文区域名称数组；评价范围为全口，区域须来自下方区域词表，只记录影像中可判读的所见。\n"
-            "3. 同一类别合并为一条记录，region_code汇总所有相关区域，去重并按题面评价范围的顺序排列。同一区域存在多种类别时，分别记录在对应类别中。\n"
-            "4. 牙列或咬合关系按其涉及的区域记录；未萌出不直接等于阻生或萌出延迟，当前未见牙齿不直接等于先天缺牙，咬合关系未显示时不推断咬合异常。\n\n"
-            "涉及左侧或右侧时，均以患者自身的左右侧为准。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的正畸／发育异常类别>\",\n      \"region_code\": [\"<评价范围中允许的中文区域名称>\"]\n    }\n  ]\n}"
-        )
-    if scope["mode"] == "bbox":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的异常时，输出{\"findings\": []}。\n"
-            "2. 按框定位，每项只包含finding_code和bbox，每个框对应一个类别，只记录评价范围内的目标。\n"
-            "3. 不同目标分别画框，即使类别相同也不合并；同一目标有多种所见时，按类别分别记录。\n"
-            "4. 框覆盖支持该异常的相关牙齿或咬合结构；同一个牙列或咬合关系涉及多颗牙时，用一个框覆盖该关系所需的完整范围。\n\n"
-            "坐标以实际影像为准：左上角为原点，向右、向下递增，按画面宽高归一化到0–1。bbox为[左边界,上边界,右边界,下边界]，左边界小于右边界，上边界小于下边界；四个值均为数字，四舍五入保留小数点后三位。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写；将坐标占位符替换为实际数字，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的正畸／发育异常类别>\",\n      \"bbox\": [<左边界坐标>, <上边界坐标>, <右边界坐标>, <下边界坐标>]\n    }\n  ]\n}"
-        )
-    raise ValueError(f"unsupported A3.3 localization_mode: {scope['mode']}")
 
 
 def get_a34_scope(case: dict[str, Any]) -> dict[str, Any]:
@@ -984,126 +674,17 @@ def _a34_reference_finding_codes(case: dict[str, Any]) -> list[str]:
     return []
 
 
-def _a34_choice_options(case: dict[str, Any]) -> list[str]:
+def select_a34_prompt_options(case: dict[str, Any]) -> list[str]:
     """Build six deterministic choices containing every correct A3.4 label."""
     correct = _a34_reference_finding_codes(case)
     if len(correct) > 6:
         raise ValueError(f"A3.4 has more than six correct finding codes: {correct}")
     distractors = [code for code in A34_PROMPT_FINDING_CODES if code not in correct]
-    seed_text = "A3.4|{}|{}".format(
-        case.get("id", ""),
-        case.get("case_code", ""),
-    )
-    seed = int.from_bytes(hashlib.sha256(seed_text.encode("utf-8")).digest()[:8], "big")
-    rng = random.Random(seed)
+    rng = _case_stable_rng(case)
     rng.shuffle(distractors)
     options = [*correct, *distractors[: 6 - len(correct)]]
     rng.shuffle(options)
     return options
-
-
-def build_a34_prompt(case: dict[str, Any]) -> str:
-    scope = get_a34_scope(case)
-    category_text = json.dumps(scope["concepts"], ensure_ascii=False) if scope["concepts"] else "未指定"
-    category_options_text = "、".join(_a34_choice_options(case))
-    if scope["mode"] == "region":
-        # 区域定位时要求模型先在全口范围内观察，再返回具体区域。
-        scope_text = "全口"
-    elif scope["site_type"] == "tooth":
-        scope_text = json.dumps(scope["fdis"], ensure_ascii=False) if scope["fdis"] else "全口"
-    elif scope["site_type"] == "region":
-        scope_text = json.dumps(scope["regions"], ensure_ascii=False) if scope["regions"] else "全口"
-    elif scope["mode"] == "region":
-        scope_text = "全口"
-    else:
-        parts = []
-        if scope["fdis"]:
-            parts.append(json.dumps(scope["fdis"], ensure_ascii=False))
-        if scope["regions"]:
-            parts.append(json.dumps(scope["regions"], ensure_ascii=False))
-        scope_text = "、".join(parts) if parts else "全口"
-    common = (
-        "请观察提供的口腔影像，识别治疗、修复及相关状态。\n\n"
-        f"评价类别：{category_text}\n"
-        f"评价范围：{scope_text}\n\n"
-        f"治疗状态类别：{category_options_text}\n"
-        "finding_code只能从上述治疗状态类别选项中选择，可多选。\n"
-        "指定评价类别时，仅检查指定类别；未指定时，检查并列出上述全部类别中实际存在的所见。\n\n"
-    )
-    if scope["mode"] == "tooth":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的所见时，输出{\"findings\": []}。\n"
-            "2. 按牙位定位，每项包含finding_code和非空FDI整数数组fdi。指定牙位时仅评价这些牙位；全口时评价影像中所有可判读的牙位。\n"
-            "3. 除固定桥每座单独记录外，同种类型的所见合并为一条记录，fdi汇总所有相关牙位，去重并按FDI编号升序排列。同一牙位存在多种所见时，分别记录在对应类别中。\n"
-            "4. 每座固定桥记录一项，finding_code为“固定桥”，fdi合并评价范围内的基牙位与桥体替代的缺牙位，按患者右侧到左侧排列；缺牙位仍填写对应FDI。单冠或没有桥体替代缺牙位的联冠，不标为固定桥。\n\n"
-            "牙位统一使用FDI整数，不加引号。恒牙仅限11–18、21–28、31–38、41–48；乳牙仅限51–55、61–65、71–75、81–85。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写；将数值占位符替换为实际数字，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的治疗状态类别>\",\n      \"fdi\": [<FDI整数>]\n    }\n  ]\n}"
-        )
-    if scope["mode"] == "region":
-        return common + (
-            "区域词表：全口、头颅侧位、上颌、下颌、正面、前牙区、右侧后牙区、左侧后牙区、上颌前牙区、下颌前牙区、右上后牙区、左上后牙区、右下后牙区、左下后牙区。\n\n"
-            "判定规则：\n"
-            "1. 未见需记录的所见时，输出{\"findings\": []}。\n"
-            "2. 按区域定位，每项只包含finding_code和region_code，region_code为非空的中文区域名称数组；评价范围为全口，区域须来自下方区域词表，只记录影像中可判读的所见。\n"
-            "3. 同一类别合并为一条记录，region_code汇总所有相关区域，去重并按题面评价范围的顺序排列。同一区域存在多种类别时，分别记录在对应类别中。\n"
-            "4. 固定桥按包含基牙及桥体的完整修复体确定所在区域；单冠或没有桥体替代缺牙位的联冠，不标为固定桥。\n\n"
-            "涉及左侧或右侧时，均以患者自身的左右侧为准。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的治疗状态类别>\",\n      \"region_code\": [\"<评价范围中允许的中文区域名称>\"]\n    }\n  ]\n}"
-        )
-    if scope["mode"] == "bbox":
-        return common + (
-            "判定规则：\n"
-            "1. 未见需记录的所见时，输出{\"findings\": []}。\n"
-            "2. 按框定位，每项只包含finding_code和bbox，每个框对应一个类别，只记录评价范围内的目标。\n"
-            "3. 不同目标分别画框，即使类别相同也不合并；同一目标有多种所见时，按类别分别记录。\n"
-            "4. 框尽量贴合目标治疗或修复所见的实际可见范围；每座固定桥或每组联冠各用一个框，包含该修复体的全部可见组成部分。\n\n"
-            "坐标以实际影像为准：左上角为原点，向右、向下递增，按画面宽高归一化到0–1。bbox为[左边界,上边界,右边界,下边界]，左边界小于右边界，上边界小于下边界；四个值均为数字，四舍五入保留小数点后三位。\n\n"
-            "请仅输出一个合法JSON对象，按以下结构模板填写；将坐标占位符替换为实际数字，不加引号，不增加额外字段、说明或代码围栏：\n"
-            "{\n  \"findings\": [\n    {\n      \"finding_code\": \"<实际发现的治疗状态类别>\",\n      \"bbox\": [<左边界坐标>, <上边界坐标>, <右边界坐标>, <下边界坐标>]\n    }\n  ]\n}"
-        )
-    raise ValueError(f"unsupported A3.4 localization_mode: {scope['mode']}")
-
-
-def build_a41_prompt(case: dict[str, Any]) -> str:
-    return (
-        "请观察提供的头颅侧位片，根据第2至第4颈椎的可见形态，按下列标准判断颈椎成熟阶段。\n\n"
-        "采用以下阶段定义：\n"
-        "- 第1阶段：第2至第4颈椎下缘近于平坦，第3、第4颈椎椎体多呈梯形。\n"
-        "- 第2阶段：第2颈椎下缘出现凹陷，第3、第4颈椎椎体多呈梯形。\n"
-        "- 第3阶段：第2和第3颈椎下缘出现凹陷，第3、第4颈椎椎体呈梯形或水平长方形。\n"
-        "- 第4阶段：第2至第4颈椎下缘均有凹陷，第3、第4颈椎椎体主要呈水平长方形。\n"
-        "- 第5阶段：第2至第4颈椎下缘均有凹陷，第3、第4颈椎椎体至少一个接近方形。\n"
-        "- 第6阶段：第2至第4颈椎下缘均有凹陷，第3、第4颈椎椎体至少一个呈垂直长方形。\n\n"
-        "判定与输出规则：\n"
-        "grade_value表示颈椎成熟阶段，只能选择上述一个阶段。按整体形态组合判断，不仅凭一处凹陷或年龄印象判级，不混用其他阶段体系。\n\n"
-        "请仅按以下结构输出合法JSON，字段按上述规则填写，不增加额外字段、正文说明或代码围栏：\n"
-        "{\n"
-        '  "grade_value": "<第1阶段至第6阶段之一>"\n'
-        "}"
-    )
-
-
-def build_a42_prompt(case: dict[str, Any]) -> str:
-    return (
-        "请观察提供的影像，评价图中红色框内的牙齿的牙周影像骨丧失程度。\n\n"
-        "采用以下等级定义：\n"
-        "- 无吸收：目标牙可可靠判读，未见明确病理性牙周牙槽骨吸收；不把生理性牙槽嵴顶位置当作吸收。\n"
-        "- 轻度吸收：病理性骨吸收占根长小于三分之一。\n"
-        "- 中度吸收：病理性骨吸收占根长三分之一至三分之二，包含两个边界。\n"
-        "- 重度吸收：病理性骨吸收占根长大于三分之二。\n\n"
-        "根长以釉牙骨质界至根尖为参照；结合釉牙骨质界、牙槽嵴顶与根尖位置判断骨丧失相对于根长的程度。以该牙近中、远中可可靠判读部位中骨吸收比例较大的一处给出一个等级。\n\n"
-        "判定与输出规则：\n"
-        "1. grade_value表示目标牙的骨丧失等级，只能选择上述一个等级。\n"
-        "2. 影像模糊、目标未显示完整或嵴顶不可辨不等于无吸收。\n"
-        "3. 只评价牙周牙槽骨支持，不把根尖周透射影的大小当作牙周骨丧失程度。\n\n"
-        "请仅按以下结构输出合法JSON，字段按上述规则填写，不增加额外字段、正文说明或代码围栏：\n"
-        "{\n"
-        '  "grade_value": "<无吸收、轻度吸收、中度吸收或重度吸收>"\n'
-        "}"
-    )
 
 
 def get_a43_target_surfaces(case: dict[str, Any]) -> list[str]:
@@ -1114,33 +695,6 @@ def get_a43_target_surfaces(case: dict[str, Any]) -> list[str]:
                 raise ValueError("target_surfaces must be a list")
             return [A43_SURFACE_LABELS.get(str(surface).strip(), str(surface).strip()) for surface in raw_surfaces]
     raise ValueError(f"case has no target_surfaces: {case.get('id')}")
-
-
-def build_a43_prompt(case: dict[str, Any]) -> str:
-    surfaces = get_a43_target_surfaces(case)
-    surface_text = "、".join(surfaces)
-    return (
-        "请观察提供的影像，按下列标准逐一评价图中红色框内的牙齿的指定牙面，判断龋损影像深度。\n\n"
-        f"指定牙面（按此顺序作答）：{surface_text}\n\n"
-        "采用以下等级定义：\n"
-        "- 无龋：指定牙面可可靠判读，影像未见明确龋损征象；仅表示该牙面的影像判断，不等同于排除所有临床龋病。\n"
-        "- 浅龋：牙冠龋损透射范围局限于釉质，未明确进入牙本质。\n"
-        "- 中龋：龋损透射范围进入牙本质浅层，未达牙本质深层。\n"
-        "- 深龋：龋损透射范围达到牙本质深层、接近髓腔。\n\n"
-        "牙面词表：近中面、远中面、咬合面、颊／唇面、舌／腭面。只回答指定的牙面。\n"
-        "判定与输出规则：\n"
-        "1. surface_grades记录各牙面的分级，每个指定牙面恰好一项，按给定顺序输出；target_surface使用对应中文牙面名称，不遗漏或添加牙面。\n"
-        "2. 每个牙面独立判断，grade_value只选上述一个等级。同一牙面有多处可分级龋损时按最深处判断；不能把一处龋损的深度复制给所有牙面。\n\n"
-        "请仅按以下结构输出合法JSON，字段按上述规则填写，不增加额外字段、正文说明或代码围栏：\n"
-        "{\n"
-        '  "surface_grades": [\n'
-        '    {\n'
-        '      "target_surface": "<一个指定牙面的中文名称>",\n'
-        '      "grade_value": "<无龋、浅龋、中龋或深龋>"\n'
-        '    }\n'
-        '  ]\n'
-        "}"
-    )
 
 
 def parse_json_object(text: str | None) -> dict[str, Any]:
@@ -1662,14 +1216,14 @@ def normalize_a34_findings(value: Any) -> list[dict[str, Any]]:
             normalized.append({"finding_code": code, "bbox": normalize_bbox(item.get("bbox", item.get("normalized_bbox")))})
             continue
         if "fdi" in item:
-            fdis = sorted(set(normalize_fdi(fdi) for fdi in item["fdi"]))
+            fdis = _normalize_a34_tooth_sequence(item["fdi"], code)
             if not fdis:
                 raise ValueError("fdi must be non-empty")
             normalized.append({"finding_code": code, "fdi": fdis})
             continue
         site = item.get("site") if isinstance(item.get("site"), dict) else {}
         if site.get("type") == "tooth":
-            fdis = sorted(set(normalize_fdi(fdi) for fdi in site.get("fdi", [])))
+            fdis = _normalize_a34_tooth_sequence(site.get("fdi", []), code)
             if not fdis:
                 raise ValueError("site.fdi must be non-empty")
             normalized.append({"finding_code": code, "fdi": fdis})
@@ -1684,6 +1238,20 @@ def normalize_a34_findings(value: Any) -> list[dict[str, Any]]:
             raise ValueError(f"invalid treatment-status region_code: {cleaned}")
         normalized.append({"finding_code": code, "region_code": list(dict.fromkeys(cleaned))})
     return normalized
+
+
+def _normalize_a34_tooth_sequence(values: Any, finding_code: str) -> list[int | str]:
+    if not isinstance(values, list):
+        raise ValueError(f"fdi must be a list: {values}")
+    normalized: list[int | str] = []
+    for value in values:
+        if isinstance(value, str) and value.strip().lower() == "x":
+            if finding_code != "固定桥":
+                raise ValueError("x is only valid for fixed-bridge pontic positions")
+            normalized.append("x")
+        else:
+            normalized.append(normalize_fdi(value))
+    return list(dict.fromkeys(normalized))
 
 
 def normalize_a24_structure_code(value: Any) -> str:
@@ -1824,22 +1392,12 @@ def extract_a24_periapical_target_fdis(case: dict[str, Any]) -> list[int]:
     return sorted(fdis, key=lambda fdi: FDI_LEFT_TO_RIGHT_RANK[fdi])
 
 
-def _a24_stable_rng(case: dict[str, Any]) -> random.Random:
-    """Create a reproducible per-case RNG for A2.4 target sampling."""
-    seed_text = "A2.4|{}|{}".format(
-        case.get("id", ""),
-        case.get("case_code", ""),
-    )
-    seed = int.from_bytes(hashlib.sha256(seed_text.encode('utf-8')).digest()[:8], "big")
-    return random.Random(seed)
-
-
 def select_a24_cephalometric_structures(case: dict[str, Any]) -> list[str]:
     """Select four landmarks deterministically, preserving the case list order."""
     structures = extract_a24_cephalometric_structures(case)
     if len(structures) <= 4:
         return structures
-    rng = _a24_stable_rng(case)
+    rng = _case_stable_rng(case)
     indexes = sorted(rng.sample(range(len(structures)), 4))
     return [structures[index] for index in indexes]
 
@@ -1849,7 +1407,11 @@ def select_a24_periapical_target_fdis(case: dict[str, Any]) -> list[int]:
     fdis = extract_a24_periapical_target_fdis(case)
     if len(fdis) <= 1:
         return fdis
-    rng = _a24_stable_rng(case)
+    # case237 has a fixed annotation target; do not let the seeded sampling
+    # select a different tooth for this case.
+    if case.get("case_code") == "case237" and 31 in fdis:
+        return [31]
+    rng = _case_stable_rng(case)
     return [fdis[rng.randrange(len(fdis))]]
 
 
@@ -1922,6 +1484,8 @@ def clinical_input_fields(case: dict[str, Any]) -> dict[str, Any]:
 
 def clinical_diagnosis_options(case: dict[str, Any]) -> list[dict[str, Any]]:
     options = clinical_input_fields(case).get("diagnosis_options", [])
+    if case["task_code"] in {"A5.1", "A6.2"}:
+        return _fixed_choice_options(case)
     if case["task_code"] != "A5.2":
         return options
     # The candidate set is defined by the doctor's recorded option IDs. Roles
@@ -1932,6 +1496,38 @@ def clinical_diagnosis_options(case: dict[str, Any]) -> list[dict[str, Any]]:
     if not ids or len(set(ids)) != len(ids) or len(set(available)) != len(available) or set(ids) - set(available):
         raise ValueError("invalid A5.2 doctor-recorded candidate IDs")
     return [option for option in options if option["option_id"] in set(ids)]
+
+
+def _fixed_choice_options(case: dict[str, Any]) -> list[dict[str, Any]]:
+    """Build six deterministic choices: all correct options plus distractors."""
+    task_code = case["task_code"]
+    options = clinical_input_fields(case).get("diagnosis_options", [])
+    entries = next(
+        (
+            field.get("value")
+            for field in case.get("reference_answer", {}).get("fields", [])
+            if field.get("key") == "selected_option_ids"
+        ),
+        [],
+    )
+    correct_ids = [str(option_id).strip() for option_id in (entries or []) if str(option_id).strip()]
+    if len(correct_ids) != len(set(correct_ids)):
+        raise ValueError(f"duplicate {task_code} correct option IDs")
+    if len(correct_ids) > 6:
+        raise ValueError(f"{task_code} has more than six correct option IDs: {correct_ids}")
+
+    by_id = {str(option.get("option_id", "")).strip(): option for option in options}
+    if len(by_id) != len(options) or set(correct_ids) - set(by_id):
+        raise ValueError(f"invalid {task_code} correct option IDs")
+    distractors = [option for option in options if option.get("option_id") not in set(correct_ids)]
+    if len(correct_ids) + len(distractors) < 6:
+        raise ValueError(f"{task_code} must have at least six diagnosis options")
+
+    rng = _case_stable_rng(case)
+    rng.shuffle(distractors)
+    selected = [by_id[option_id] for option_id in correct_ids] + distractors[: 6 - len(correct_ids)]
+    rng.shuffle(selected)
+    return selected
 
 
 def clinical_media(case: dict[str, Any]) -> list[dict[str, Any]]:
@@ -1961,7 +1557,11 @@ def build_clinical_prompt(case: dict[str, Any]) -> str:
     facts = "\n".join(
         f"[{item['evidence_id']}] {item['text']}" for item in fields.get("clinical_facts", [])
     ) or "未额外提供"
-    options = "\n".join(item["diagnosis"] for item in clinical_diagnosis_options(case))
+    options = "、".join(item["diagnosis"] for item in clinical_diagnosis_options(case))
+    target_entity = fields.get("target_entity", "未提供")
+    entity_description = fields.get("entity_description")
+    if code == "A6.1" and entity_description:
+        target_entity = f"{target_entity}（{entity_description}）"
     replacements = {
         "科室中文名称": DEPARTMENT_LABELS.get(fields.get("department_code"), fields.get("department_code", "未提供")),
         "事实列表": facts,
@@ -1970,8 +1570,12 @@ def build_clinical_prompt(case: dict[str, Any]) -> str:
         "本题正确诊断与待排除诊断组成的中文候选列表": options,
         "诊断名称": fields.get("diagnosis", fields.get("target_diagnosis", "未提供")),
         "诊断目标": fields.get("diagnostic_goal", "未提供"),
-        "实体名称": fields.get("target_entity", "未提供"),
-        "按发送顺序列出的影像M编号": "\n".join(item["evidence_id"] for item in media),
+        "实体名称": target_entity,
+        "按发送顺序列出的影像M编号": (
+            "、".join(item["evidence_id"] for item in media)
+            if code == "A6.1"
+            else "\n".join(item["evidence_id"] for item in media)
+        ),
         "性别": fields.get("sex", "未提供"),
         "年龄": fields.get("age", "未提供"),
         "患者资料": fields.get("patient_info", "未额外提供"),
@@ -1981,25 +1585,48 @@ def build_clinical_prompt(case: dict[str, Any]) -> str:
         "影像检查描述": fields.get("imaging_exam", "未提供"),
         "患者偏好": fields.get("patient_preferences") or "未提供",
     }
-    template = (Path(__file__).parent / "prompts" / f"{code}.txt").read_text(encoding="utf-8-sig")
-
-    def replace(match: re.Match) -> str:
-        key = match.group(1)
-        if key not in replacements:
-            raise ValueError(f"unknown prompt placeholder: {key}")
-        return str(replacements[key])
-
-    prompt = re.sub(r"\{\{([^{}]+)\}\}", replace, template).strip()
+    prompt = render_prompt_file(code, replacements)
     # All candidates come from input; favored/excluded labels stay private.
     if code in {"A5.1", "A5.2", "A6.2"} and not options:
         raise ValueError("diagnosis_options must not be empty")
-    if code == "A6.1" and fields.get("entity_description"):
-        prompt += f"\n\n实体定义或计数说明：{fields['entity_description']}"
-    if media:
-        prompt += "\n\n影像发送顺序：\n" + "\n".join(
-            f"第{i}张：{item['evidence_id']}" for i, item in enumerate(media, 1)
-        )
     return prompt
+
+
+# Keep the public protocol surface task-specific, like the A1-A4 tasks.  The
+# shared renderer above still owns the common placeholder handling, while each
+# task now has an explicit prompt builder for registration and testing.
+def build_a51_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A5.1"))
+
+
+def build_a52_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A5.2"))
+
+
+def build_a53_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A5.3"))
+
+
+def build_a61_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A6.1"))
+
+
+def build_a62_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A6.2"))
+
+
+def build_a63_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A6.3"))
+
+
+def build_a71_prompt(case: dict[str, Any]) -> str:
+    return build_clinical_prompt(_require_task(case, "A7.1"))
+
+
+def _require_task(case: dict[str, Any], task_code: str) -> dict[str, Any]:
+    if case.get("task_code") != task_code:
+        raise ValueError(f"expected {task_code} case, got {case.get('task_code')}")
+    return case
 
 
 def _clinical_text(value: Any, label: str) -> str:
@@ -2064,19 +1691,53 @@ def parse_clinical_answer(text: str | None, task_code: str) -> dict[str, Any]:
         counts = [item["count"] for item in obj["images"]]
         if not max(counts) <= obj["total"] <= sum(counts):
             raise ValueError("deduplicated total must be between largest image count and sum")
-    elif task_code in {"A6.3", "A7.1"}:
-        key = "conditions" if task_code == "A6.3" else "plans"
-        if not isinstance(obj[key], list) or not obj[key]:
-            raise ValueError(f"{key} must be a non-empty array")
-        expected = {"category", "detail"} if key == "conditions" else {"plan"}
-        for item in obj[key]:
-            if not isinstance(item, dict) or set(item) != expected:
-                raise ValueError(f"invalid {key} entry")
-            for field in expected:
-                item[field] = _clinical_text(item[field], field)
-            if key == "conditions" and item["category"] not in ("患者信息", "检查状况", "补充图像"):
-                raise ValueError("invalid condition category")
+    elif task_code == "A6.3":
+        if set(obj) != {"category", "condition_code"}:
+            raise ValueError("A6.3 requires exactly category and condition_code")
+        obj["category"] = _clinical_text(obj["category"], "category")
+        obj["condition_code"] = _clinical_text(obj["condition_code"], "condition_code")
+        if obj["category"] not in ("患者信息", "检查状况", "补充图像"):
+            raise ValueError("invalid condition category")
+        if len(obj["condition_code"]) > 20:
+            raise ValueError("A6.3 condition_code must be at most 20 characters")
+    elif task_code == "A7.1":
+        if not isinstance(obj["plans"], list) or not obj["plans"]:
+            raise ValueError("plans must be a non-empty array")
+        for item in obj["plans"]:
+            if not isinstance(item, dict) or set(item) != {"plan"}:
+                raise ValueError("invalid plans entry")
+            item["plan"] = _clinical_text(item["plan"], "plan")
+            if len(item["plan"]) > 100:
+                raise ValueError("A7.1 plan must be at most 100 characters")
     return obj
+
+
+def parse_a51_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A5.1")
+
+
+def parse_a52_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A5.2")
+
+
+def parse_a53_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A5.3")
+
+
+def parse_a61_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A6.1")
+
+
+def parse_a62_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A6.2")
+
+
+def parse_a63_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A6.3")
+
+
+def parse_a71_answer(text: str | None) -> dict[str, Any]:
+    return parse_clinical_answer(text, "A7.1")
 
 
 def validate_clinical_answer(pred: dict[str, Any], case: dict[str, Any]) -> None:
@@ -2112,7 +1773,11 @@ def clinical_reference_answer(case: dict[str, Any]) -> dict[str, Any]:
         ]}
     if code == "A6.3":
         categories = {"patient_information": "患者信息", "examinations": "检查状况", "additional_images": "补充图像"}
-        return {"conditions": [{"category": categories[item["category"]], "detail": item["detail"]} for item in fields["required_conditions"]]}
+        conditions = fields["required_conditions"]
+        if len(conditions) != 1:
+            raise ValueError("A6.3 reference must contain exactly one required condition")
+        item = conditions[0]
+        return {"category": categories[item["category"]], "condition_code": item["condition_code"]}
     if code == "A7.1":
         return {"plans": fields["treatment_plans"]}
     if code == "A5.3":
@@ -2136,7 +1801,7 @@ def build_clinical_mock_response(case: dict[str, Any]) -> str:
     elif code == "A6.1":
         response = {"total": 0, "images": [{"image": item["evidence_id"], "count": 0} for item in clinical_media(case)]}
     elif code == "A6.3":
-        response = {"conditions": [{"category": "患者信息", "detail": "仅用于验证输出格式。"}]}
+        response = {"category": "患者信息", "condition_code": "测试信息"}
     else:
         response = {"plans": [{"plan": "仅用于验证输出格式。"}]}
     return json.dumps(response, ensure_ascii=False)

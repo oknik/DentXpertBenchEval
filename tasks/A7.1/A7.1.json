@@ -2,8 +2,14 @@
   "task_code": "A7.1",
   "scoring": {
     "case_points": 100.0,
-    "field_weights": {
-      "surface_grades": 1.0
-    }
+    "rubric": "a71_treatment_plan_v1",
+    "dimensions": {
+      "clinical_relevance": 0.30,
+      "completeness_sequence": 0.25,
+      "safety_evidence": 0.20,
+      "individualization_feasibility": 0.15,
+      "clarity": 0.10
+    },
+    "critical_safety_cap": 30.0
   }
 }

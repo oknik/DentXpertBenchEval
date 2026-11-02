@@ -1,0 +1,3162 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:03bcc15554cf4098ad50fd5a640595d3",
+      "case_code": "case377",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "80c6c86251b13265d470c3a683cef046598293e00a3d8343f5773e61c74cba16",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Pediatric dental disease detection dataset/Train/images/cate4_010.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "34",
+                  "35",
+                  "44",
+                  "45"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:09968b6c41ad4f2baa0fd7684c924c3c",
+      "case_code": "case369",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "ee18ef937cfc37c98a34d5bfeb75b46d1a4b4b2524a10f4fcc5a582cc585b842",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/379.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0d2384ac9482475f98f928dbe2f3efed",
+      "case_code": "case372",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "b99662f9a4e27f10baa66710dd2394e261d3b3c2bda3f81c6005bb35f4235d3e",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/192.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "深覆合"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "深覆合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0d44dfb548b940038a3be3d5807cbed9",
+      "case_code": "case376",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "ee5429f62841a2ab455142c42b28b1ab63c7ef9223d8cc4f171f0e1bde17a0b6",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate5_0009.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生",
+                "先天缺牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "33",
+                  "34",
+                  "35",
+                  "43",
+                  "44",
+                  "45"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "先天缺牙",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:0e973f6b4a0d4e8f857734b4c1b53ff7",
+      "case_code": "case356",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "aa0cd80d1d99f78d8098b82c5ba26c70a0104b8c1c3da8b95998a94cfddd55f1",
+            "modality": "intraoral_photograph",
+            "width": 4966,
+            "height": 3673,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/208.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "开合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "开合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:12022f2bda5f46ce8ce5fa70fd8da03a",
+      "case_code": "case366",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "4c50ecf15863a08fb9c369c39cff909d34377792feae11f5796d34be6449b84e",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate1-00017.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "18",
+                    "38",
+                    "28",
+                    "48"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:13c4abd30ba540b0b2b5d4e838d9e6ba",
+      "case_code": "case389",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "35e8faa93c80e85867b768db584c5d9b0e762963e54ff0a5eed8fb68d978342b",
+            "modality": "intraoral_photograph",
+            "width": 2646,
+            "height": 1983,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-007-1469-01_1734153129262_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "错位牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "错位牙",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "32"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1e7c3c47fccc4f6a888ff88fc0d476c1",
+      "case_code": "case355",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "72143330a7ff5095c2eba40552f08d1575bf92ebc6a6d6df699d2ddc640258d0",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/079.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "开合",
+                "反合",
+                "深覆合"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "开合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2bfd9a65537845c2a1113074288bbc9c",
+      "case_code": "case371",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "a87f1a83b769bb1f08cf83e58f6e1a976f6ed89bd5f1c3d7e4ef3ef539a95add",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/095.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "其他/待审核"
+              ],
+              "other_text": "正锁合",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左侧后牙区",
+                  "右侧后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "其他/待审核",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16",
+                    "26"
+                  ]
+                },
+                "other_text": "正锁合"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:32d8da31c9464c2c8885bca1fef88278",
+      "case_code": "case379",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "bac6dec225970f435846a0504c2351d0616e60b31ec7c6a0969179dd699f5ef7",
+            "modality": "intraoral_photograph",
+            "width": 4978,
+            "height": 3749,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/100.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "深覆合",
+                "开合",
+                "反合",
+                "拥挤",
+                "牙列间隙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:336a0f69f6064eaca10a3a99415d14df",
+      "case_code": "case391",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "eb9bc41073187981895630ebbce3081312ea6bdb820d2461670cc5b1ed6c2526",
+            "modality": "intraoral_photograph",
+            "width": 1063,
+            "height": 797,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_103_369_00_1728122663687_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "交叉合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "交叉合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "右侧后牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:37314020285b4fcebc61311084670fae",
+      "case_code": "case386",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "9b89341e027665aabdc11ce14fa8f4802533477697f7fd566b6460d684ba5a70",
+            "modality": "intraoral_photograph",
+            "width": 1535,
+            "height": 1150,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-760-01_1729676313536_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "拥挤"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "拥挤",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "左上后牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4533339b88ec4329bb9d2ddf26619359",
+      "case_code": "case388",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "64326a1f190e45bd8e41ec14f49a4bded022e944f107f1c881c5eff37d9c1bda",
+            "modality": "intraoral_photograph",
+            "width": 2426,
+            "height": 1363,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_007_345_01_1728030576884_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "错位牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "错位牙",
+                "normalized_bbox": [
+                  0.576849,
+                  0.69631,
+                  0.678278,
+                  0.889614
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:482d821ab0824974ac05cff8b7530703",
+      "case_code": "case360",
+      "task_code": "A3.3",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "dea306fcb143ed5b2d01cb0cf596f05f0b41910182e02267d7b0021dedf7a431",
+            "modality": "panoramic_radiograph",
+            "width": 2836,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_191.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌前牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "33",
+                    "43"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:48e4ba0b2d9748b78019919023be4616",
+      "case_code": "case380",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "32d0b9e478fe5fb50bb2b45441b8c438365a253ead0808c67536d137873adbe4",
+            "modality": "intraoral_photograph",
+            "width": 5589,
+            "height": 3727,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/159.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "反合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌前牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "反合",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "22"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:49c7e499ca2946e6a6be4cb2de818802",
+      "case_code": "case368",
+      "task_code": "A3.3",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "3d0509e153b28c9f63e26339dbfea5d99d6b0f092619d03ccc149fa0cdb87212",
+            "modality": "panoramic_radiograph",
+            "width": 2736,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_202.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4b129015ed0443728621178eff30ce42",
+      "case_code": "case387",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "da614b801be5e905537bde8b918ce1d23368786a00d39ccfe935d64dec363c22",
+            "modality": "intraoral_photograph",
+            "width": 1321,
+            "height": 990,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-911-00_1730371705980_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙列间隙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙列间隙",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "下颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4c1b86001fde4d258bc2c9019e1eb318",
+      "case_code": "case364",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "9a4c734b495fad5a72398daec033f7aa3a68306c6bd74dc1ed42bda216abcd73",
+            "modality": "intraoral_photograph",
+            "width": 3060,
+            "height": 1720,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Mandibular/anonymous-mandibularView-1727247632394.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "拥挤"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "拥挤",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "下颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4cdcf07893354068b22517823c8096c6",
+      "case_code": "case357",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "dcc92f31fe98b3fed73e156ce1c22b474e25c36d872626b5598685979768830f",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/138.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙列间隙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙列间隙",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "上颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:546b8b90c65b4635a18b37315cebe13e",
+      "case_code": "case370",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "9a0e8553423bb9b631d431f2da6550359aa317cc8f6b65981993fcdf4eebd2d7",
+            "modality": "intraoral_photograph",
+            "width": 1963,
+            "height": 1103,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/test/images/anonymous_003_007_418_01_1728450994783_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "拥挤"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "拥挤",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "下颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:57ad4ccee6404a04a691f8d8bdeca870",
+      "case_code": "case393",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "44a075a97324b95cec6730e5ac4566ca7f7fc240d10ae2f02b870b7a56c1a5dc",
+            "modality": "intraoral_photograph",
+            "width": 3915,
+            "height": 3287,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/205.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "拥挤"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "拥挤",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "下颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6e4984971f004ae69702b9b89bf00b49",
+      "case_code": "case374",
+      "task_code": "A3.3",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "57f83d1d00a11c9add9d9629e6070230c7512af3be503e97d496d1346e995de4",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000539_b6cf1f5b.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "38",
+                    "48"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:750eb7cb2b8e4285bd26d6a17a2a82be",
+      "case_code": "case394",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "20b29f61da7597600bacd9b9cad1e59dd6c1142b246b69fa3114c5ecd292570d",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/046.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "深覆合"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "深覆合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:78196ed183d94564bb27481685afc338",
+      "case_code": "case359",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "2150603f8b6ace957dacba7f25111f0857b5aa66f57fcc67c03c451c6d1d0685",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate2_0000.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "多生牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "多生牙",
+                "normalized_bbox": [
+                  0.474394,
+                  0.296921,
+                  0.515376,
+                  0.403508
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7ff2ffe4d5b048419b97619fc9b7627d",
+      "case_code": "case347",
+      "task_code": "A3.3",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "df958a66f74b9da2669d84785ddd4bea7d3f243aff59a4ca1fe9b8e7c1afd529",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_103.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "18",
+                    "28"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:80c0c8a586e34627a0e09ac9d11ed749",
+      "case_code": "case346",
+      "task_code": "A3.3",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "5a3bd212e15348880135fd09f4a54943f57c2001ba2f76b386af331ef9ab3773",
+            "modality": "panoramic_radiograph",
+            "width": 2817,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_99.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23",
+                    "38",
+                    "48"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:810497b897e64749b53a46058ea3699a",
+      "case_code": "case352",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "d5d35a09edd95a1e905720af646bc3bd75953bfcda6143b3fd3edbd6d3469191",
+            "modality": "intraoral_photograph",
+            "width": 1004,
+            "height": 564,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-847-00_1730117317228_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "错位牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌前牙区"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "错位牙",
+                "normalized_bbox": [
+                  0.012327,
+                  0.03793,
+                  0.147566,
+                  0.366219
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:83778b0f70a648c4abe7ab744b728fd5",
+      "case_code": "case392",
+      "task_code": "A3.3",
+      "dataset_id": "C003",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "9604f970dcd8f5841b22dfb6dcf8eef46e72d68f182c7a736943af1b49cbbe41",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/732-F-26.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "先天缺牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "先天缺牙",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8815c4c2c0f841c8a2dc60eee2f9865a",
+      "case_code": "case390",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "b87cccaca32d6114c2291934d21a11ae753cba80495d8e566b5dfdfdeb3916c3",
+            "modality": "intraoral_photograph",
+            "width": 964,
+            "height": 542,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Left_Lateral/anonymous_003-008-1221-01_1732875645470_Left_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "异位萌出"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "异位萌出",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23",
+                    "24"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:959d466d059a4194a53344f98bb59f53",
+      "case_code": "case385",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "f8a68f318daeb4a8eb5c7fe5756f05b02db45f54a5277da2edc01b6a296201e8",
+            "modality": "intraoral_photograph",
+            "width": 1661,
+            "height": 1245,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003-008-570-01_1728915270013_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙齿旋转"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙齿旋转",
+                "normalized_bbox": [
+                  0.079393,
+                  0.466551,
+                  0.247643,
+                  0.631164
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:976cf5bc3c5642cabd9fade55379c436",
+      "case_code": "case383",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "4eef0c88b53b3015c6436e6949613a94c70b8cc34fd517689cf6cb7cc7d5084e",
+            "modality": "intraoral_photograph",
+            "width": 1465,
+            "height": 823,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003-008-566-01_1728910029994_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙列间隙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙列间隙",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "上颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a69a85464ffc4440a08d3a2b30575c39",
+      "case_code": "case375",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "a1a6850ee465cca809732d758aea0b9f9585c212a4cfc37559d21a8d5f65ce9f",
+            "modality": "intraoral_photograph",
+            "width": 1192,
+            "height": 669,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-974-01_1730891946552_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "开合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "开合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ac7931b59ab942f780526a33b4112e99",
+      "case_code": "case384",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "3a4ba1ce0f0f861ea78e131c5b44bc2969e6429e46a2b5ebff644bb5f4cc0d9c",
+            "modality": "intraoral_photograph",
+            "width": 1658,
+            "height": 1243,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003-008-738-01_1729592002010_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "错位牙",
+                "牙齿旋转"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "错位牙",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙齿旋转",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:afd3131cd991462e97007efce36ee132",
+      "case_code": "case349",
+      "task_code": "A3.3",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "c36ef1bdd59b7057186a9cef164c5bb23bea34aeffa2bbfce0091a29eb62fd01",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000639_1b622c1a.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "38",
+                    "48"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bae137bc584346ac8c80e2243ad3dce2",
+      "case_code": "case353",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "e04fdfe462b906d9b40edb54505ad812af23f3ac1e93b91d6997b7a44946fa96",
+            "modality": "intraoral_photograph",
+            "width": 5589,
+            "height": 3727,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/140.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "反合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌前牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "反合",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12",
+                    "22"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bb005359b3fa400caf85401b94faf749",
+      "case_code": "case382",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "63c1290c0eb5dbc001cb9c8291e2ad908c80f3c517d1dd065ea8fd97e7f09977",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/033.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "拥挤",
+                "深覆合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "拥挤",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "深覆合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c08534bb52594f0fab06928368ac4915",
+      "case_code": "case348",
+      "task_code": "A3.3",
+      "dataset_id": "C003",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "357dbaf13704dca318cb63478128ed7fbe340ca82b5103d65e795c3048f99cb2",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/158-M-16.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "18",
+                    "23",
+                    "28",
+                    "38",
+                    "48"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c5e416a9cece4bb199e2ccc64e3cf19e",
+      "case_code": "case365",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "7916b21d1932a6763f5b12e232e5432d95d77f06926a10ad88147a713708ed96",
+            "modality": "intraoral_photograph",
+            "width": 1217,
+            "height": 684,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1078-00_1731473228593_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙列间隙"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙列间隙",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "上颌前牙区",
+                    "下颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c71123232f2c4a548b77760893fe180f",
+      "case_code": "case395",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "6d697207980dec7ba27bda5efacf1330fc33269aea97d6553c0973f78f1d845f",
+            "modality": "intraoral_photograph",
+            "width": 6364,
+            "height": 4143,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/081.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ca81a28768e44f49a70332b7317c709c",
+      "case_code": "case367",
+      "task_code": "A3.3",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "740c26355c79db8e77e0c375fa40c891c1bef72b193eb04e3ac05257810f13f9",
+            "modality": "panoramic_radiograph",
+            "width": 3076,
+            "height": 1536,
+            "path": "DENTEX-C002/input/test_27.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "normalized_bbox": [
+                  0.36272,
+                  0.675718,
+                  0.43956,
+                  0.841915
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cc13fd37b7644e9c9b73c575ebbdd9ce",
+      "case_code": "case378",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "ec8f09f8f37a0392e0b4eea9c0f3781cae10aedc879dc70d338cda00cde8a04d",
+            "modality": "intraoral_photograph",
+            "width": 5287,
+            "height": 3699,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/206.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "深覆合"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "深覆合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:daa6529e0c294087a027c1ae35ca552a",
+      "case_code": "case381",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "f2d3f4325a2bee0114eac5759afe7c4b2d953f048e37ab87db72e61e04509d1d",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/010.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "拥挤"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "拥挤",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "下颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e1e60a4b4a244e17937de74a68e5b45e",
+      "case_code": "case351",
+      "task_code": "A3.3",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "721beb600c024f0e05da78ca505c0058ecfc6711acd075bf3ba10de4efd928f1",
+            "modality": "panoramic_radiograph",
+            "width": 1976,
+            "height": 976,
+            "path": "DENTEX-C002/input/test_18.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "18",
+                  "28"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ea5367e723574752974d612ad801cb35",
+      "case_code": "case358",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "2e076bf32358414a84d25826a8892f5481708ce86a8c5cdde494b02ee0883e3a",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Train/images/cate5_000.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "多生牙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "多生牙",
+                "normalized_bbox": [
+                  0.496934,
+                  0.381755,
+                  0.528695,
+                  0.51227
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:eae1714b11a14ee7a4407d098bbad17e",
+      "case_code": "case361",
+      "task_code": "A3.3",
+      "dataset_id": "C001",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "d6bbe7b50c2989b6f05ba39756eb5da367c10043c74eec0112715ab767c640ad",
+            "modality": "intraoral_photograph",
+            "width": 1526,
+            "height": 1144,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Maxillary_Occlusal/anonymous_003-008-1396-00_1733833829814_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙列间隙"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "region"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙列间隙",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "上颌前牙区"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:eeabf5b7f9c94a5888dff3138c3623b5",
+      "case_code": "case350",
+      "task_code": "A3.3",
+      "dataset_id": "C004",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "8097d371fcce65bbf1bedc2d8e4e150a23e6ef2fcad18e4459ee93f10939dbd0",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate6_0004.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "先天缺牙",
+                "other_text": "",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "35",
+                    "45"
+                  ]
+                }
+              },
+              {
+                "finding_code": "阻生",
+                "other_text": "",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "18"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ef0b88bc47294124b7964469ec0537f5",
+      "case_code": "case363",
+      "task_code": "A3.3",
+      "dataset_id": "C003",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "240f85e8ebe1fbb67e83f3038a9b814e13a38ccb88f31f266bea38c59063cf8c",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/952-M-19.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": true
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f4d1d5e5567148f69dcc5127a3500499",
+      "case_code": "case362",
+      "task_code": "A3.3",
+      "dataset_id": "C003",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "371025301064cf3431daac6ffb34366ae034cea5a017ad6b6f1c083ebb913ad3",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/236-F-21.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "阻生"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "阻生",
+                "normalized_bbox": [
+                  0.693646,
+                  0.288251,
+                  0.747947,
+                  0.414118
+                ]
+              },
+              {
+                "finding_code": "阻生",
+                "normalized_bbox": [
+                  0.263339,
+                  0.257269,
+                  0.313542,
+                  0.373453
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f547c43aaf5d44d6aa114dc2057e7e40",
+      "case_code": "case354",
+      "task_code": "A3.3",
+      "dataset_id": "C014",
+      "schema_version": "0.7.6",
+      "title": "A3.3 · 正畸/发育异常 · C014",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "9998d4aebbc3639124c0e34da0e3b010055848fc2d1fb179145134c7372abea1",
+            "modality": "intraoral_photograph",
+            "width": 5150,
+            "height": 3799,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/237.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "反合",
+                "交叉合"
+              ],
+              "localization_mode": "site_only",
+              "localization_site_type": "region",
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              }
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "反合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "前牙区"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "交叉合",
+                "site": {
+                  "type": "region",
+                  "region_codes": [
+                    "左侧后牙区"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fe7a5be070984347837a296c577d4a65",
+      "case_code": "case373",
+      "task_code": "A3.3",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.3 · 正畸/发育异常 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价萌出、牙数、牙位、牙列间隙以及覆合、覆盖、反合、交叉合或开合异常。",
+        "images": [
+          {
+            "sha256": "ce241ca31116a5ba884983f434d349111419e7b9719afe3dcacf221928d494d2",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000543_652f86bc.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "多生牙",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.506155,
+                  0.355603,
+                  0.549186,
+                  0.442642
+                ]
+              },
+              {
+                "finding_code": "阻生",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.195719,
+                  0.555794,
+                  0.266413,
+                  0.679825
+                ]
+              },
+              {
+                "finding_code": "阻生",
+                "other_text": "",
+                "normalized_bbox": [
+                  0.709014,
+                  0.590609,
+                  0.771511,
+                  0.72552
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

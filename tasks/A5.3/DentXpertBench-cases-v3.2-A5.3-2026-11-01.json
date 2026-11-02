@@ -1,0 +1,5348 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:05202c318ed14e5f96c3d44d71bb6d9b",
+      "case_code": "case725",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 上前牙牙龈退缩一个月。\n[C02] 22牙龈退缩3-4mm,无松动，bop(+)\n[C03] 牙槽骨水平吸收。",
+        "images": [
+          {
+            "sha256": "c8312a48c8ffbda80249d819b21a252294ef1e4bba97d887085eea964f5d3f6a",
+            "modality": "intraoral_photograph",
+            "width": 6631,
+            "height": 4021,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/015.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/015.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "上前牙牙龈退缩一个月。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "22牙龈退缩3-4mm,无松动，bop(+)"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨水平吸收。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "牙槽骨水平吸收。牙龈退缩均为牙周组织破坏。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:13f8d19b91824b75bb5efbbbc6cad4eb",
+      "case_code": "case694",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：上颌牙列缺失\n[M01] 题面影像\n[C01] 上颌17-27缺失\n[C02] 全景片排查上颌颌骨内残根、埋伏牙、颌骨病变",
+        "images": [
+          {
+            "sha256": "a7bceb75ffd3b399c60db90f31cd16878edfd3cd00d8e4a4cfb1f2b6d4d9a99b",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/166.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/166.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "上颌17-27缺失"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "全景片排查上颌颌骨内残根、埋伏牙、颌骨病变"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "上颌牙列缺失"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "上颌全牙列无天然牙存留，满足上颌牙列缺失的核心定义。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:193d6a3ea59848029fbd4d9241d91ec8",
+      "case_code": "case735",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：牙本质过敏\n[M01] 题面影像\n[C01] 左上前牙冷酸痛不适数日余\n\n[C02] 21颈部未见明显缺损，冷++，颈部探+++，叩-，龈无特殊",
+        "images": [
+          {
+            "sha256": "5ef02d5586ac9328993ed05184c650d18176845931827629738e7fe58b36a06d",
+            "modality": "intraoral_photograph",
+            "width": 808,
+            "height": 454,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Frontal/anonymous_003-008-854-00_1730195460240_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Frontal/anonymous_003-008-854-00_1730195460240_Frontal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左上前牙冷酸痛不适数日余\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "21颈部未见明显缺损，冷++，颈部探+++，叩-，龈无特殊"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙本质过敏"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "未见明显缺损 但是有颈部机械刺激酸痛",
+                "source_refs": [
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1b32d456065c45d29f4195a639d0c48e",
+      "case_code": "case726",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 左下前牙松动一周。",
+        "images": [
+          {
+            "sha256": "8479dcaf7b37d43a6b67474598b463edd352a667f9464c37f31d689a3c614170",
+            "modality": "periapical_radiograph",
+            "width": 882,
+            "height": 1167,
+            "path": "DenPAR-C007/Validation/Images/1225.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Validation/Images/1225.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下前牙松动一周。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "33松I度，远中邻面见龋洞不能证明牙周炎诊断。",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              },
+              {
+                "statement": "牙槽骨吸收至根中1/2",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1b6d9aabd8ea41ac9457806db4762248",
+      "case_code": "case730",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 13-15牙槽骨吸收至根尖1/3.\n[C02] 13-15松II度，牙龈暗红水肿，质地松软，叩（-），bop(+),pd7-8mm.",
+        "images": [
+          {
+            "sha256": "7c9a31525e7b50f5f4d0bfb49fb5fcd1f74871ade032210066b470cfc404002b",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/56.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/56.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "13-15牙槽骨吸收至根尖1/3."
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "13-15松II度，牙龈暗红水肿，质地松软，叩（-），bop(+),pd7-8mm."
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "牙槽骨严重吸收的影像可以证明慢性牙周炎。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:20bfca2da7a842e9b6a805ce4d6ca0cf",
+      "case_code": "case724",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 牙龈出血两天。\n[C02] 全口龈水肿增生，牙龈质地松软，bop(+),pd2-4mm.34，35，44，45龈乳头退缩2mm.\n[C03] 牙槽骨轻度吸收。",
+        "images": [
+          {
+            "sha256": "7c7dad9d90913e996a7b4e999438cd11af9a794b8e8d70ded2637473b6579275",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/001.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/001.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙龈出血两天。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "全口龈水肿增生，牙龈质地松软，bop(+),pd2-4mm.34，35，44，45龈乳头退缩2mm."
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨轻度吸收。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "影像学显示牙槽骨轻度吸收。",
+                "source_refs": [
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              },
+              {
+                "statement": "牙龈红肿，bop(+),pd2-4mm.",
+                "source_refs": [
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:220cbe63c0f642429cad9dcc474c2602",
+      "case_code": "case745",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周脓肿\n[M01] 题面影像\n[C01] 右下后牙冷热刺激不适",
+        "images": [
+          {
+            "sha256": "471154d42f946c2c44a31995025f1346a801dc177f57cd5214a53d11fb2559d5",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/879.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/879.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙冷热刺激不适"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周脓肿"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "47冷热刺激敏感，根据影像表现发现47远中龋坏",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2411052a11404004b7bf7caddbcb3756",
+      "case_code": "case740",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：15急性根尖周炎\n[M01] 题面影像\n[C01] 右上后牙疼痛不适数日余\n\n[C02] 无自发痛 夜间痛病史\n[C03] 15远中深龋，松一度，叩+++，冷-，探-\n[C04] X片显示根尖周无明显低密度影",
+        "images": [
+          {
+            "sha256": "bd2601ba95d1d0586ec09780e5cfb180b29e4b8f0d659fafac7b2d8c55bd25c5",
+            "modality": "periapical_radiograph",
+            "width": 1051,
+            "height": 838,
+            "path": "DenPAR-C007/Training/Images/555.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/555.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右上后牙疼痛不适数日余\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "无自发痛 夜间痛病史"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "15远中深龋，松一度，叩+++，冷-，探-"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "X片显示根尖周无明显低密度影"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "15急性根尖周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "虽然无根尖周低密度影，但是因为典型的疼痛和牙髓没有活力的检查，诊断为急性根尖周炎",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:25f78d5602f14dfdb767af58477b681f",
+      "case_code": "case713",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：牙髓炎\n[M01] 题面影像\n[C01] 右上后牙进食时偶有疼痛\n[C02] 55冷刺激敏感，去除刺激后疼痛迅速消失，无自发痛及夜间痛，叩诊（−），牙龈未见明显肿胀及瘘管。",
+        "images": [
+          {
+            "sha256": "6a9b42212758a8f0e4afc3bec6bf9a0ad768d60b7ca2f9f972d8300119ccdfad",
+            "modality": "intraoral_photograph",
+            "width": 3335,
+            "height": 2500,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Maxillary_Occlusal/anonymous_003-007-830-00_1730091915668_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Maxillary_Occlusal/anonymous_003-007-830-00_1730091915668_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右上后牙进食时偶有疼痛"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "55冷刺激敏感，去除刺激后疼痛迅速消失，无自发痛及夜间痛，叩诊（−），牙龈未见明显肿胀及瘘管。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙髓炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "影像证据： 上颌𬌗面照显示55存在较深龋损，但龋洞深度及范围不能直接证明牙髓已经发生炎症。",
+                "source_refs": [
+                  "M01"
+                ]
+              },
+              {
+                "statement": "症状特点： 患牙仅有短暂冷刺激痛，刺激去除后迅速缓解，无自发痛及夜间痛，不符合典型症状性不可复性牙髓炎的表现。\n",
+                "source_refs": [
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:28d7060bff0e4506b4e6c981ad8ec076",
+      "case_code": "case731",
+      "task_code": "A5.3",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[M02] 题面影像\n[C01] 牙槽骨吸收为根长的1/3.",
+        "images": [
+          {
+            "sha256": "193af66aa8e02ed7fb68862aa71ae57a5fc769152e71fdb333ba1306b9ecba41",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1669-003-03.jpg"
+          },
+          {
+            "sha256": "23fedaefd94daaef872bff571613dbb96e425718eadf416a2ef0f803c2b90328",
+            "modality": "intraoral_photograph",
+            "width": 448,
+            "height": 336,
+            "path": "COde-Dataset-C018/Images/Photographs/1669-002-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1669-003-03.jpg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1669-002-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨吸收为根长的1/3."
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "临床表现牙龈水肿增生，菌斑牙石大量，影像学显示牙槽骨吸收为根长的1/3.",
+                "source_refs": [
+                  "C01"
+                ]
+              },
+              {
+                "statement": "牙槽骨吸收为根长的1/3.",
+                "source_refs": [
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2a29894d62014a5cbadb75a6a9c3198b",
+      "case_code": "case712",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：骨性错颌\n[M01] 题面影像\n[C01] 牙齿替换后门牙局部反咬",
+        "images": [
+          {
+            "sha256": "9f3f986c93d851371af375c27e62ce0c0beb4c9fb6cb39446323e54ad839510d",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/087.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/087.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙齿替换后门牙局部反咬"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "骨性错颌"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "需添加X线侧位片",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2f605d3a2a6f44cba6725bf784743d15",
+      "case_code": "case696",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：75牙髓炎\n[M01] 题面影像\n[C01] 左下后牙疼痛1周。\n[C02] 患儿左下后牙疼痛1周，曾有反复发作史。\n[C03] 75𬌗面大面积龋坏，探痛（+），冷热（+），叩（+），颊侧牙龈肿胀，松动I度。",
+        "images": [
+          {
+            "sha256": "3d0b438b55f0ae5e192ea3d49ca22eadd2bd1b1192310d1f2b254f5218c4a705",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Pediatric dental disease detection dataset/Test/images/cate2_004.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Pediatric dental disease detection dataset/Test/images/cate2_004.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙疼痛1周。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "患儿左下后牙疼痛1周，曾有反复发作史。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "75𬌗面大面积龋坏，探痛（+），冷热（+），叩（+），颊侧牙龈肿胀，松动I度。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "75牙髓炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "乳磨牙根周炎症首先侵犯根分歧部，根周组织慢行炎症时可能为活髓。本题虽然临床有牙髓症状，但影像检查根周阴影，继承恒牙硬骨板部连续，首先考虑根尖周炎",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:351fe32e5a0944718e3b53385d7fac00",
+      "case_code": "case715",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 常规牙科检查，既往无拔牙史",
+        "images": [
+          {
+            "sha256": "31dc01938128529226e10c9e62ddfee67607144102349b6602f6be30a3934a02",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_409.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_409.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "常规牙科检查，既往无拔牙史"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "可见35牙胚缺失",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:438dff1ab1654c9cb2e625efbce67409",
+      "case_code": "case732",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔颌面外科\n待判断诊断：阻生牙\n[M01] 题面影像\n[C01] 左下后牙肿痛3天",
+        "images": [
+          {
+            "sha256": "e1a5198ecf307aa235d65ceecac1973fc2d0bd93a3ca9f739b7c6c969a75660e",
+            "modality": "intraoral_photograph",
+            "width": 3060,
+            "height": 1719,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Mandibular/anonymous-mandibularView-1727765060075.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Mandibular/anonymous-mandibularView-1727765060075.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "左下后牙肿痛3天"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "阻生牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "口内38清晰可见",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:459fdc80bde34a00a9823bffe2159eea",
+      "case_code": "case691",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：乳牙滞留\n[M01] 题面影像\n[C01] 10岁\n[C02] 73、74松动I度，龈无红肿。舌侧见33、34萌出。",
+        "images": [
+          {
+            "sha256": "273d38ce8b6a8330d20bdc5c045215776906b27737cbe48c64a8757c390a7f35",
+            "modality": "intraoral_photograph",
+            "width": 1226,
+            "height": 919,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1138-00_1732535496374_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1138-00_1732535496374_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "10岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "73、74松动I度，龈无红肿。舌侧见33、34萌出。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "乳牙滞留"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "73、74未脱落，33、34已萌出。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:57c53dff1fa54797b64f7b52da2c377a",
+      "case_code": "case700",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔种植科\n待判断诊断：种植体折裂\n[M01] 题面影像\n[C01] 46 种植体存在明显水平松动，种植体周围牙龈轻度红肿，探诊少量出血，无明显溢脓\n[C02] 影像学可见46种植体体部横向折裂线，未见广泛性周围骨吸收。",
+        "images": [
+          {
+            "sha256": "2ed360df76fd2d8033104218b611b1dbc38da7a0124a6cae93e79a511c6897f0",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_2641.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_2641.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "46 种植体存在明显水平松动，种植体周围牙龈轻度红肿，探诊少量出血，无明显溢脓"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "imaging_exam",
+                "text": "影像学可见46种植体体部横向折裂线，未见广泛性周围骨吸收。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "种植体折裂"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "46 种植体明显水平松动，种植体周围牙龈轻度红肿、探诊少量出血，符合种植体折裂后出现的临床松动表现。\n影像学未见广泛性周围骨吸收，可排除因重度种植体周围炎骨吸收导致的单纯种植体骨结合失败松动。",
+                "source_refs": [
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:59a70d752c66404dbb3e23f8e417dcd2",
+      "case_code": "case720",
+      "task_code": "A5.3",
+      "dataset_id": "C003",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：牙列拥挤\n[M01] 题面影像\n[C01] 自觉牙不整齐",
+        "images": [
+          {
+            "sha256": "8fb42563d63f45ec50086ca04d396a25564af4472f9c98dbdd2563f26b99957f",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/192-M-27.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "inredd-dataset-pan924-1.0.0-C003/images/192-M-27.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "自觉牙不整齐"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列拥挤"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "主诉与全景片不足以证实客观牙列拥挤情况",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5ce71e2787ce42a49363f35b5be6b0cd",
+      "case_code": "case692",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周脓肿\n[M01] 题面影像\n[C01] 牙龈肿胀，疼痛",
+        "images": [
+          {
+            "sha256": "0129c31dcc09ca386a016eb0ed4e2fa843ad63b3697d3d61607827235935fba5",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/22.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/22.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙龈肿胀，疼痛"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周脓肿"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "只有牙龈红肿，没有脓液",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5dc36110e7c74e108e4f2dcedaf1f342",
+      "case_code": "case746",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周炎\n[M01] 题面影像\n[C01] 右上牙齿疼痛三天，一天前出现夜间痛",
+        "images": [
+          {
+            "sha256": "1e8fa6bd7e09fde6783c2494fff6eedfc61f7f3339e685948d1fafc0df34c56a",
+            "modality": "periapical_radiograph",
+            "width": 1116,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1047.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1047.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右上牙齿疼痛三天，一天前出现夜间痛"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "根据主诉和影像表现，25近中龋坏及髓，根尖低密度影",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:68600d1886eb40f59fed0060b111fd8e",
+      "case_code": "case737",
+      "task_code": "A5.3",
+      "dataset_id": "C002",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：46深龋\n[M01] 题面影像\n[C01] 右下后牙冷热刺激痛10天余。\n[C02] 46远中深洞，达牙本质深层，探诊敏感，去净腐质未见穿髓孔，冷测同对照牙，入洞疼痛、去除刺激立即消失，叩诊(-)，松动(-)\n[C03] X线检查可见46远中低密度透射影接近髓腔。余牙未见异常。",
+        "images": [
+          {
+            "sha256": "41166837e833e0781f9c2892e23d8aa5bb5afbabdf5f6ed5e4ed717ffd82b440",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_120.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "DENTEX-C002/input/test_120.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙冷热刺激痛10天余。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "46远中深洞，达牙本质深层，探诊敏感，去净腐质未见穿髓孔，冷测同对照牙，入洞疼痛、去除刺激立即消失，叩诊(-)，松动(-)"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "X线检查可见46远中低密度透射影接近髓腔。余牙未见异常。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "46深龋"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "冷热刺激痛，龋损达牙本质深层，探诊敏感，冷测无异常，无穿髓点",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C03",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6e1aa216ccf546d8a2813c1f0ffab27d",
+      "case_code": "case705",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：牙列拥挤\n[M01] 题面影像\n[C01] 牙齿排列不齐",
+        "images": [
+          {
+            "sha256": "4cb52b8519c31195a01ae51c558142e3c53b61b30dd715e6788556aac58a8070",
+            "modality": "intraoral_photograph",
+            "width": 1894,
+            "height": 1419,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003_008_560_01_1728899628191_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Maxillary_Occlusal/anonymous_003_008_560_01_1728899628191_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙齿排列不齐"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列拥挤"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "可见拥挤",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7173a64e97304f6998b2f97920416514",
+      "case_code": "case738",
+      "task_code": "A5.3",
+      "dataset_id": "C002",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：44根尖周炎\n[M01] 题面影像\n[C01] 右下后牙咬物不适1周余\n[C02] 44根管治疗病史\n[C03] 44冠部充填物，松一度，叩++，冷-，颊侧红肿\n[C04] 44根尖周低密度影",
+        "images": [
+          {
+            "sha256": "2ab2d3d3bf5865e23ab75bdc80fbbf306dfe04655beea80e2d0f506710a18594",
+            "modality": "panoramic_radiograph",
+            "width": 2492,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_226.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "DENTEX-C002/input/test_226.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙咬物不适1周余"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "44根管治疗病史"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "44冠部充填物，松一度，叩++，冷-，颊侧红肿"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "44根尖周低密度影"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "44根尖周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "X光片表现以及典型 的症状和病史",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:74045a777f06452d89696650d33cd6dd",
+      "case_code": "case701",
+      "task_code": "A5.3",
+      "dataset_id": "C017",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔种植科\n待判断诊断：牙槽嵴萎缩\n[M01] 题面影像\n[C01] 患者多牙陆续松动拔除，要求种植",
+        "images": [
+          {
+            "sha256": "2c650db83a7b613ee1d46a1819e10bca75a2c6420f9b719c8ed36a66318674c0",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000927_f25a03f1.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000927_f25a03f1.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "患者多牙陆续松动拔除，要求种植"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙槽嵴萎缩"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "正常连续牙槽骨的形态消失，牙槽嵴顶平坦、凹陷，是牙槽嵴萎缩典型的全景片特征。",
+                "source_refs": [
+                  "C01",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:79fb9eb45a054a3cbc96d57fbba29da9",
+      "case_code": "case687",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周牙髓综合症\n[M01] 题面影像\n[C01] 左下后牙咀嚼痛",
+        "images": [
+          {
+            "sha256": "949a2ab843c61b1909492987bdbb2070fc5c8274086ce6fbf89039db3cde1ace",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/563.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/563.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙咀嚼痛"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周牙髓综合症"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "没有明确的牙周炎症状",
+                "source_refs": [
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7c90706dc05444d49cf0d72c84fcceda",
+      "case_code": "case709",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 右上乳牙脱落后恒牙未萌出",
+        "images": [
+          {
+            "sha256": "5573d2883a022ca4094dde979e14fc0e329754d32474b06d05d34bec4a7fdbb9",
+            "modality": "intraoral_photograph",
+            "width": 2220,
+            "height": 1665,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Maxillary_Occlusal/anonymous-maxillaryView-1727096513467.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/pilot/Maxillary_Occlusal/anonymous-maxillaryView-1727096513467.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右上乳牙脱落后恒牙未萌出"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "需完善X线片检查",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7ca3b221de9d41f88ca4fcef56993929",
+      "case_code": "case741",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：37根尖周炎\n[M01] 题面影像\n[C01] 左下后牙自觉有洞不适数日余\n\n[C02] 无自发痛 夜间痛\n[C03] \n37深龋，松-，叩-，冷-，探-\n[C04] X片显示37根尖周未见明显异常",
+        "images": [
+          {
+            "sha256": "ec41a2af273a89c113f8983aa2db2805fa4945b0ef5df2e2db4e75eca61263a5",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/1084.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Testing/Images/1084.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙自觉有洞不适数日余\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "无自发痛 夜间痛"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "\n37深龋，松-，叩-，冷-，探-"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "X片显示37根尖周未见明显异常"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "37根尖周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "没有明显叩痛或者咬合痛，X光片根尖周也未见明显异常",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7f46f61daf6646918824c482471d68d3",
+      "case_code": "case714",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：44先天缺牙\n[M01] 题面影像\n[C01] 右下乳牙因龋拔除1年后恒牙长久未萌出\n[C02] 患儿，男，7岁",
+        "images": [
+          {
+            "sha256": "09f420e2d868a0b2c3effaff60a3496dd5454371f2251ea8502ec494ff8e442f",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_027.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_027.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "右下乳牙因龋拔除1年后恒牙长久未萌出"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "患儿，男，7岁"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "44先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "可见44牙胚，可明确排除先天缺损",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:82d1a141fb164f30b298ae3ee3718488",
+      "case_code": "case748",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 左下后牙咀嚼酸痛一周",
+        "images": [
+          {
+            "sha256": "80092961f520334a1229824d144b71afcc4884603c15ca4626738f218ba2fba5",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1012.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1012.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙咀嚼酸痛一周"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "患者主诉牙齿疼痛，影像表现36颌面及远中龋坏类似髓腔，根尖低密度暗影",
+                "source_refs": [
+                  "C01",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8d2bb5eb9d854045b43ef306b3429c2c",
+      "case_code": "case706",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：深覆合\n[M01] 题面影像\n[C01] 牙不齐，咬合深",
+        "images": [
+          {
+            "sha256": "bd019dbc509cec01a46ecb23cfa8b53a1988bc3435d83b8685fb2ed57efdd7d4",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/032.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/032.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙不齐，咬合深"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "深覆合"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "可见深覆合",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8e18cad04bab4f60aeac2ffb3b56606a",
+      "case_code": "case707",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：深覆盖\n[M01] 题面影像\n[C01] 咬合深",
+        "images": [
+          {
+            "sha256": "f899330cac8bc6d6acbd358c06939f10dcfbbbbc880789b32319b9a614ab7b7a",
+            "modality": "intraoral_photograph",
+            "width": 3775,
+            "height": 2702,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/157.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/157.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "咬合深"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "深覆盖"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "正面照无法评价覆盖水平",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9017d9302a8e46008b6f6857f4109c11",
+      "case_code": "case742",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：47根尖周低密度影\n[M01] 题面影像\n[C01] 右下后牙夜间痛不适数日余\n[C02] 47合面深龋及髓，松-，叩稍不适，冷++，探++\n[C03] 偶有夜间痛\n[C04] X片显示47近中根尖周低密度影",
+        "images": [
+          {
+            "sha256": "957cd4f1917ee6efa7577a7985facecc76b748374c5fc8d2c16ab5ae22ce433c",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1246.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1246.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙夜间痛不适数日余"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "47合面深龋及髓，松-，叩稍不适，冷++，探++"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "偶有夜间痛"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "X片显示47近中根尖周低密度影"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "47根尖周低密度影"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "深龋导致的牙髓炎可能伴有一定程度的根尖周低密度影，但是牙髓是有活力，所以不应诊断为根尖周炎",
+                "source_refs": [
+                  "M01",
+                  "C02",
+                  "C01",
+                  "C03",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:906eca2013b04f0495cf8888f4804135",
+      "case_code": "case690",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 13岁\n[C02] 右下后牙区有乳牙未替换\n[C03] 85松动（-），叩（-），龈（-），45口内未见。35已完全萌出。",
+        "images": [
+          {
+            "sha256": "bd03617632fc034a7e53ce48ce079fe6fbca06a1de16576029f630b37ed5cb69",
+            "modality": "intraoral_photograph",
+            "width": 2253,
+            "height": 1689,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-007-1424-01_1733984735840_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Mandibular/anonymous_003-007-1424-01_1733984735840_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "13岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙区有乳牙未替换"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "85松动（-），叩（-），龈（-），45口内未见。35已完全萌出。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "85未脱落，45未萌出，缺少影像学检查。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:91b28b6392154458b61f6a5c6059ed5f",
+      "case_code": "case729",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 牙面不洁两日。\n[C02] 口腔卫生状况不佳，菌斑牙石(++),龈暗红水肿，质地松软，bop(+),pd2-4mm.\n[C03] 影像学显示牙槽骨轻度水平吸收。",
+        "images": [
+          {
+            "sha256": "80ea05a1424eda72a33234d2c67030950944a1947e1f0de751eae6054bc4b876",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/006.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/006.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙面不洁两日。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "口腔卫生状况不佳，菌斑牙石(++),龈暗红水肿，质地松软，bop(+),pd2-4mm."
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "imaging_exam",
+                "text": "影像学显示牙槽骨轻度水平吸收。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "牙槽骨吸收证明牙周炎诊断。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9a37cd287d654806b1958e5d877b4020",
+      "case_code": "case697",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 9岁\n[C02] 53已脱落，未见13萌出。63在位。",
+        "images": [
+          {
+            "sha256": "63448474aaa13b93c81f0dd981f6aec99000b93952021af59ccb092ed1e0d2cb",
+            "modality": "intraoral_photograph",
+            "width": 3047,
+            "height": 2284,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1038-01_1731307341906_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1038-01_1731307341906_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "9岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "53已脱落，未见13萌出。63在位。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "53脱落后，13未萌出，缺少影像学检查",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a0c940e1a7fb41c1a23b6d1bff55a5d1",
+      "case_code": "case733",
+      "task_code": "A5.3",
+      "dataset_id": "C008",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C008",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔黏膜科\n待判断诊断：口腔白班\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C01] 年龄：24岁\n[C02] 个人习惯史：有无相关习惯：是；习惯类型：烟草；烟草使用方式：嚼烟；嚼烟频次（次/日）：3；嚼烟持续时间（年）：4；嚼烟状态：目前仍使用；开始嚼烟年龄（岁）：20",
+        "images": [
+          {
+            "sha256": "5604ad45d15a7c1578401ef84cbdb72adb264c45de9d975448232c6c55edecb9",
+            "modality": "oral_mucosa_photograph",
+            "width": 1305,
+            "height": 1645,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/03. Left buccal mucosa/SMITA00277_W_LB.jpeg"
+          },
+          {
+            "sha256": "fa0a74bb9d643f38a336b34d0acfeeb6c735c2e3367e8794c1ee97c97317ffc5",
+            "modality": "oral_mucosa_photograph",
+            "width": 1872,
+            "height": 1404,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00277_W_UL.jpeg"
+          },
+          {
+            "sha256": "c302e84012c6be0d1dca368db5b51052cc234a1fc9144fec3b6082e3fa097b4f",
+            "modality": "oral_mucosa_photograph",
+            "width": 1502,
+            "height": 1721,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/04. Right buccal mucosa/SMITA00277_W_RB.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_MEDICINE"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/03. OPMD/01. Unannotated/03. Left buccal mucosa/SMITA00277_W_LB.jpeg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00277_W_UL.jpeg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/03. OPMD/01. Unannotated/04. Right buccal mucosa/SMITA00277_W_RB.jpeg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "年龄：24岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "个人习惯史：有无相关习惯：是；习惯类型：烟草；烟草使用方式：嚼烟；嚼烟频次（次/日）：3；嚼烟持续时间（年）：4；嚼烟状态：目前仍使用；开始嚼烟年龄（岁）：20"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "口腔白班"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "口内未见明显溃疡或增生，仅见色素沉着",
+                "source_refs": [
+                  "M01",
+                  "M02",
+                  "M03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a789b168f0a849fab7915940d78ec71b",
+      "case_code": "case695",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：龋病\n[M01] 题面影像\n[C01] 8岁\n[C02] 左上后牙疼痛1周。",
+        "images": [
+          {
+            "sha256": "862e3dcaf13ecf5f67df38027cde7d87837e45d74ec53925c36258e344206f9e",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate6-00078.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate6-00078.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "8岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "左上后牙疼痛1周。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "龋病"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "牙齿疼痛，有牙髓症状，影像学检查提示牙冠远中邻面低密度影已达髓腔。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a7f89c72968f4c4c97de211360cd1bde",
+      "case_code": "case717",
+      "task_code": "A5.3",
+      "dataset_id": "C005",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：深覆合\n[M01] 题面影像\n[C01] 自觉咬合深",
+        "images": [
+          {
+            "sha256": "96458749129a06fb76bb5ea8ed98a2679169479ade52ede2666fbf83ac9a2d96",
+            "modality": "cephalometric_radiograph",
+            "width": 2092,
+            "height": 1937,
+            "path": "Aariz-C005/train/Cephalograms/cl5lg05un01hq074k3k011hjm.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "cephalometric_radiograph",
+                "path": "Aariz-C005/train/Cephalograms/cl5lg05un01hq074k3k011hjm.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "自觉咬合深"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "深覆合"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "病史与侧位片可明确诊断",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a9a36659f7c1446abf65402f8a96e603",
+      "case_code": "case688",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：牙外伤\n[M01] 题面影像\n[C01] 左上前牙牙齿摔断后疼痛1日。\n[C02] 22冠折，见穿髓孔，探（+），冷热（+），叩（+），轻微松动，牙龈轻微充血。",
+        "images": [
+          {
+            "sha256": "a57805d1e5bc031ffabba93a5f665732c346a8523fd06eeafd6cc570bae5607c",
+            "modality": "intraoral_photograph",
+            "width": 2858,
+            "height": 2142,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1451-01_1734074621913_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1451-01_1734074621913_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左上前牙牙齿摔断后疼痛1日。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "22冠折，见穿髓孔，探（+），冷热（+），叩（+），轻微松动，牙龈轻微充血。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙外伤"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "牙外伤冠折",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ae502295c4ea4a67bdf9a6ade56bc273",
+      "case_code": "case711",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 右下乳牙一直未脱落\n[C02] 患儿，男，15岁",
+        "images": [
+          {
+            "sha256": "dbed9cee0a513340d02e484bc7a1eea357ab35219fdb3efcc72ba83909259c27",
+            "modality": "intraoral_photograph",
+            "width": 1550,
+            "height": 1033,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-694-00_1729315527929_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-694-00_1729315527929_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "右下乳牙一直未脱落"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "patient_info",
+                "text": "患儿，男，15岁"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "需完善X线检查",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b1f07ee672cc4d439a7a3169ea9e56a2",
+      "case_code": "case698",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：不良修复体\n[M01] 题面影像\n[C01] 11 12 21 22 烤瓷修复体在位，边缘密合，无叩痛，无松动，周围牙龈无红肿,PD1mm。",
+        "images": [
+          {
+            "sha256": "189912a9f15d5685bbd89bdbdc61f5624963dfc911bcb286a8894bf03ae87c74",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1670.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1670.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "11 12 21 22 烤瓷修复体在位，边缘密合，无叩痛，无松动，周围牙龈无红肿,PD1mm。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "不良修复体"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "现有检查显示烤瓷修复体边缘密合，基牙无叩痛、无松动，牙龈无红肿，牙周袋 PD1mm，无修复体缺陷及软硬组织损伤的阳性体征，因此不足以诊断不良修复体。诊断不良修复体需要存在修复体边缘不密合、有悬突，或引起牙龈炎症、牙周袋加深、基牙继发龋、咬合创伤、黏膜损伤等损害证据。",
+                "source_refs": [
+                  "C01",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b48466176637402cba80531a9e51f6ea",
+      "case_code": "case708",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：牙列间隙\n[M01] 题面影像\n[C01] 换牙后前牙有缝",
+        "images": [
+          {
+            "sha256": "de2d15e6adef41ac38a4396680dbd9e64b181aab4916bf57b48d8e82f52b2fed",
+            "modality": "intraoral_photograph",
+            "width": 963,
+            "height": 541,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Right_Lateral/anonymous_003-008-909-01_1730370898461_Right_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Right_Lateral/anonymous_003-008-909-01_1730370898461_Right_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "换牙后前牙有缝"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列间隙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "可见上下牙间隙",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b73f7a8589354dfc988ebc9a4584996a",
+      "case_code": "case743",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：47急性牙髓炎\n[M01] 题面影像\n[C01] 左下后牙疼痛不适数日余\n\n[C02] 夜间痛自发痛病史\n[C03] \n47合面继发龋，松-，叩-，牙体组织磨耗，冷+++，探+\n[C04] X片显示47冠部低密度影及髓  根尖周未见明显异常",
+        "images": [
+          {
+            "sha256": "0a1ea738857c1d8577db65eb0ed3f4accb9f9eb28fd4776ec5b0e859578310e4",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1089.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1089.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙疼痛不适数日余\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "夜间痛自发痛病史"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "\n47合面继发龋，松-，叩-，牙体组织磨耗，冷+++，探+"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "X片显示47冠部低密度影及髓  根尖周未见明显异常"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "47急性牙髓炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "典型的牙髓炎症状",
+                "source_refs": [
+                  "C02",
+                  "C01",
+                  "M01",
+                  "C03",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b7e05f20afe441a1b3d687f08b7974ce",
+      "case_code": "case693",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 10岁\n[C02] 左上后乳牙脱落6个月。\n[C03] 患儿左上后乳牙脱落6个月，恒牙未长出。",
+        "images": [
+          {
+            "sha256": "eedaf9798e943e55e0cd4c245a6b82ad9a0308086e6832bbb9d8345b72abb1ac",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00253.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate8-00253.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "10岁"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "左上后乳牙脱落6个月。"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "患儿左上后乳牙脱落6个月，恒牙未长出。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "乳牙脱落后，影像检查未见25牙胚。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02",
+                  "C03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b9137aad1c954147be86344f629e3eb2",
+      "case_code": "case686",
+      "task_code": "A5.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周炎\n[M01] 题面影像\n[C01] 牙齿检查",
+        "images": [
+          {
+            "sha256": "048b74ad1da11bfc1de71c5518f47e477c2e09d103e2b7a63e7f710612ad21c4",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate4-00023.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate4-00023.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "牙齿检查"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "影像表现未见牙槽骨吸收",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:baa9c04d2d6e4003a2e8bd7956601b59",
+      "case_code": "case736",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：中龋\n[M01] 题面影像\n[C01] 左下后牙冷热不适1周余。\n[C02] 47牙合面窝沟深染，可探入，稍敏感，质软，深达牙本质浅层。冷热测同对照牙，冷水入洞稍敏，叩痛(-)，松(-)，牙龈(-)",
+        "images": [
+          {
+            "sha256": "3b8ea028dd24f146f10224840bd8c9f8bf6431f1aeb04752a587d12e6991b7f1",
+            "modality": "intraoral_photograph",
+            "width": 2360,
+            "height": 1769,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1169-00_1732687162700_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-007-1169-00_1732687162700_Mandibular_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙冷热不适1周余。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "47牙合面窝沟深染，可探入，稍敏感，质软，深达牙本质浅层。冷热测同对照牙，冷水入洞稍敏，叩痛(-)，松(-)，牙龈(-)"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "中龋"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "遇冷热不适，龋损达牙本质浅层，冷热测无异常",
+                "source_refs": [
+                  "C01",
+                  "C02",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:bc74ae25c2894f86a6b9097a2c16bd7e",
+      "case_code": "case704",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：牙列拥挤\n[M01] 题面影像\n[C02] 前牙不齐多年",
+        "images": [
+          {
+            "sha256": "043c5d5a788a3a2b7ee420984918590081258a55bc8c55fc5105734691371465",
+            "modality": "intraoral_photograph",
+            "width": 1748,
+            "height": 1310,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_103_369_00_1728122663687_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_103_369_00_1728122663687_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "前牙不齐多年"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列拥挤"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "可见拥挤",
+                "source_refs": [
+                  "M01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c3781ac77b40488293f76825ac519f7a",
+      "case_code": "case703",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：牙体缺损\n[M01] 题面影像\n[C01] 35近中邻面大面积龋损，达牙本质深层，冷诊敏感有激发痛，无叩痛，牙齿无明显松动，颊侧牙龈未红肿。",
+        "images": [
+          {
+            "sha256": "7301e25065aa4ecb7e6a5d9f62c05171216e206bc6a212001a4275276d23bb98",
+            "modality": "intraoral_photograph",
+            "width": 1617,
+            "height": 1617,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Left_Lateral/anonymous_003-007-962-00_1730870024975_Left_Lateral_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Left_Lateral/anonymous_003-007-962-00_1730870024975_Left_Lateral_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "35近中邻面大面积龋损，达牙本质深层，冷诊敏感有激发痛，无叩痛，牙齿无明显松动，颊侧牙龈未红肿。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙体缺损"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "龋、磨耗、外伤、楔缺等造成的牙体硬组织破坏都属于牙体缺损。\n本题 35 为龋损造成的牙体硬组织破坏，属于牙体缺损，",
+                "source_refs": [
+                  "C01",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c7c22c1be9514ad299764eebf17a1836",
+      "case_code": "case744",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：47慢性根尖周炎\n[M01] 题面影像\n[C01] 右下后牙咬物疼痛不适数日余\n\n[C02] 无自发痛病史\n[C03] 47合面继发龋，松-，叩++，冷-，探-，牙龈红肿\n[C04] X片显示47根尖周低密度影",
+        "images": [
+          {
+            "sha256": "0732a607c5377b2c1a91e32d2b64b0c5447322d542646561066d8c2595685377",
+            "modality": "periapical_radiograph",
+            "width": 1026,
+            "height": 886,
+            "path": "DenPAR-C007/Validation/Images/686.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Validation/Images/686.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙咬物疼痛不适数日余\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "无自发痛病史"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "47合面继发龋，松-，叩++，冷-，探-，牙龈红肿"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "X片显示47根尖周低密度影"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "47慢性根尖周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "X片表现和典型的症状，无自发痛病史",
+                "source_refs": [
+                  "M01",
+                  "C02",
+                  "C03",
+                  "C01",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ca42d94add44431f8cfc9e8095783256",
+      "case_code": "case716",
+      "task_code": "A5.3",
+      "dataset_id": "C005",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：深覆合\n[M01] 题面影像\n[C01] 自觉门牙突出",
+        "images": [
+          {
+            "sha256": "3f7fe3f5c337ec2b97bcdc4d43ee0f6e2a3eb091c64d995111e7696b70a9a23b",
+            "modality": "cephalometric_radiograph",
+            "width": 919,
+            "height": 952,
+            "path": "Aariz-C005/train/Cephalograms/cl6wmcdb93jl3078vag3h22ps.bmp"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "cephalometric_radiograph",
+                "path": "Aariz-C005/train/Cephalograms/cl6wmcdb93jl3078vag3h22ps.bmp"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "自觉门牙突出"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "深覆合"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "侧位片明确",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ca9d89c359974b97845d9c75a3106199",
+      "case_code": "case719",
+      "task_code": "A5.3",
+      "dataset_id": "C002",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：深覆合\n[M01] 题面影像\n[C01] 自觉咬合深",
+        "images": [
+          {
+            "sha256": "1d9af5a8d48f7180cd64a43389107bbac4e441d8bc55444f4878d492c523202b",
+            "modality": "panoramic_radiograph",
+            "width": 2940,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_10.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "DENTEX-C002/input/test_10.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "自觉咬合深"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "深覆合"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "患者主诉与影像资料不足以支持客观深覆合情况",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ce4db33676b747ac9a3c85ed3679982b",
+      "case_code": "case699",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：牙列缺损\n[M01] 题面影像\n[C01] 35 X 37烤瓷固定桥在位，边缘密合，无叩痛，无松动，周围牙龈无红肿。\n\n[C02] 左下后牙肿痛1周",
+        "images": [
+          {
+            "sha256": "c009968a04a4ebf2112a384647983bfebf16a9b24a4123729cb33c038e05400f",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_2135.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_2135.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "35 X 37烤瓷固定桥在位，边缘密合，无叩痛，无松动，周围牙龈无红肿。\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙肿痛1周"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列缺损"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "35×37 烤瓷固定桥，35、37 作为基牙，桥体修复缺失的 36，存在天然牙缺失，符合牙列缺损的诊断，支持该诊断。",
+                "source_refs": [
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cea6befdce704a9f86b7721b21f8875f",
+      "case_code": "case685",
+      "task_code": "A5.3",
+      "dataset_id": "C014",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周炎\n[M01] 题面影像\n[C01] 牙龈探诊出血",
+        "images": [
+          {
+            "sha256": "de81416e3d192fce8c416c7b3089d440f5eea65d9deeeef2fc7aa289a590e1e7",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/004.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/004.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "牙龈探诊出血"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "X线显示牙槽骨吸收",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d071b2ed0fb94d03966bc8a980e7f910",
+      "case_code": "case739",
+      "task_code": "A5.3",
+      "dataset_id": "C006",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙体牙髓科\n待判断诊断：11急性牙髓炎\n[M01] 题面影像\n[C01] 右上前牙冷热不适数日余\n\n[C03] \n11远中继发龋，松-，叩-，冷+，探+\n[C04] X显示11远中低密度影近髓，根尖周未见明显异常",
+        "images": [
+          {
+            "sha256": "4287ee06303571542d9f529bb743488a114e7373ab3357cc48911b88cb46ed41",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.20.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ENDODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "Dataset of dental radiographs for the study of periapical lesions-C006/1. Rx Canon/1.20.JPG"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右上前牙冷热不适数日余\n"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "clinical_exam",
+                "text": "\n11远中继发龋，松-，叩-，冷+，探+"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "imaging_exam",
+                "text": "X显示11远中低密度影近髓，根尖周未见明显异常"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "11急性牙髓炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "缺乏有无自发痛的病史",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C03",
+                  "C04"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d0f65efd81a7466db85b31efc4297c40",
+      "case_code": "case722",
+      "task_code": "A5.3",
+      "dataset_id": "C018",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C018",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：牙体缺损\n[M01] 题面影像\n[C01] 检查：25 26牙备体，基牙无叩痛，无松动，周围牙龈无红肿、溢脓\n[C02] 主诉：左上后牙取模一周复诊",
+        "images": [
+          {
+            "sha256": "09c7974cccbb1b61b70e4fc0190748072198788abdefd05da98417a00a6a4845",
+            "modality": "intraoral_photograph",
+            "width": 319,
+            "height": 448,
+            "path": "COde-Dataset-C018/Images/Photographs/1299-002-01.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "COde-Dataset-C018/Images/Photographs/1299-002-01.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "检查：25 26牙备体，基牙无叩痛，无松动，周围牙龈无红肿、溢脓"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "主诉：左上后牙取模一周复诊"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙体缺损"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "患者主诉左上后牙取模一周复诊，临床检查示 25、26 为牙备体，牙体组织经预备后存在缺损，基牙无叩痛、无松动，周围牙龈无红肿溢脓，符合牙体缺损诊断，支持该诊断。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d8efca732170474c8a803042f866118c",
+      "case_code": "case734",
+      "task_code": "A5.3",
+      "dataset_id": "C008",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C008",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔颌面外科\n待判断诊断：口腔白斑\n[M01] 题面影像\n[M02] 题面影像\n[M03] 题面影像\n[C01] 影像覆盖口腔部位：舌背、舌腹、左颊黏膜、右颊黏膜、上唇、下唇、上牙弓、下牙弓\n[C02] 个人习惯史：有无相关习惯：是；习惯类型：烟草；烟草使用方式：嚼烟；嚼烟频次（次/日）：2；嚼烟持续时间（年）：20；嚼烟状态：目前仍使用；开始嚼烟年龄（岁）：20\n[C03] 既往全身病史：既往全身病史：高血压史、糖尿病史\n[C04] 义齿使用：是否使用义齿：否",
+        "images": [
+          {
+            "sha256": "61aff3ea539de10b6586cd2cf6db6a54d88537ed9c093976cde021c35bdedac7",
+            "modality": "oral_mucosa_photograph",
+            "width": 1079,
+            "height": 1095,
+            "path": "SMART-OM-C008/03. OPMD/01. Unannotated/04. Right buccal mucosa/SMITA00225_W_RB.jpeg"
+          },
+          {
+            "sha256": "e823deec98aa9fed2be746b259f23400c3db2658788153223d28169521d263ee",
+            "modality": "oral_mucosa_photograph",
+            "width": 1080,
+            "height": 1134,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/01. Dorsal tongue/SMITA00225_W_DT.jpeg"
+          },
+          {
+            "sha256": "4278f1bdf73ab62c9e74eb6b797516c2fbf33f06465eab3ddb424a5a77b8f4ef",
+            "modality": "oral_mucosa_photograph",
+            "width": 1646,
+            "height": 834,
+            "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00225_W_UL.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORAL_SURGERY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/03. OPMD/01. Unannotated/04. Right buccal mucosa/SMITA00225_W_RB.jpeg"
+              },
+              {
+                "evidence_id": "M02",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/01. Dorsal tongue/SMITA00225_W_DT.jpeg"
+              },
+              {
+                "evidence_id": "M03",
+                "modality_code": "oral_mucosa_photograph",
+                "view_or_site": "",
+                "evaluation_scope": "",
+                "path": "SMART-OM-C008/01. Normal/01. Unannotated/05. Upper lip/SMITA00225_W_UL.jpeg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "patient_info",
+                "text": "影像覆盖口腔部位：舌背、舌腹、左颊黏膜、右颊黏膜、上唇、下唇、上牙弓、下牙弓"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "个人习惯史：有无相关习惯：是；习惯类型：烟草；烟草使用方式：嚼烟；嚼烟频次（次/日）：2；嚼烟持续时间（年）：20；嚼烟状态：目前仍使用；开始嚼烟年龄（岁）：20"
+              },
+              {
+                "evidence_id": "C03",
+                "fact_type": "history",
+                "text": "既往全身病史：既往全身病史：高血压史、糖尿病史"
+              },
+              {
+                "evidence_id": "C04",
+                "fact_type": "history",
+                "text": "义齿使用：是否使用义齿：否"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "口腔白斑"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "吸烟史，高危因素，48颊侧见明显白色斑块，基底隆起",
+                "source_refs": [
+                  "M01",
+                  "M02",
+                  "M03"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d9aab4aec1844578b0e49e4542389415",
+      "case_code": "case702",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：牙列缺失\n[M01] 题面影像\n[C01] 曲面断层片示：上下颌全部牙缺失，上颌、下颌牙槽嵴广泛性骨吸收，牙槽嵴高度明显降低，骨量不足，骨皮质连续，未见局灶性骨质破坏、囊肿或肿瘤样阴影，下颌管位置清晰。",
+        "images": [
+          {
+            "sha256": "5f2d870000250e85e12dd2fba2c4de09f1862618231afe7c158de43d8513cc7d",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Labeled/Image/A_L_001.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Labeled/Image/A_L_001.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "曲面断层片示：上下颌全部牙缺失，上颌、下颌牙槽嵴广泛性骨吸收，牙槽嵴高度明显降低，骨量不足，骨皮质连续，未见局灶性骨质破坏、囊肿或肿瘤样阴影，下颌管位置清晰。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列缺失"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "曲面断层片显示上下颌全部天然牙缺失，符合牙列缺失定义。",
+                "source_refs": [
+                  "C01",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:decf8eb0810f469cbc4c11de5563d163",
+      "case_code": "case723",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔种植科\n待判断诊断：种植体周围炎\n[M01] 题面影像\n[C01] 46 47周围可见垂直型骨吸收，骨高度降低。\n[C02] 46 47种植修复体，种植体周围黏膜红肿，探诊出血伴溢脓，探诊深度6mm，种植体无松动。",
+        "images": [
+          {
+            "sha256": "cfb68621244a0b001814664c11ec7d38021e3c0732abb1ba04741a6753809d41",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1185.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "IMPLANTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1185.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "46 47周围可见垂直型骨吸收，骨高度降低。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "clinical_exam",
+                "text": "46 47种植修复体，种植体周围黏膜红肿，探诊出血伴溢脓，探诊深度6mm，种植体无松动。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "种植体周围炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "患者 46、47 种植修复体，临床检查见种植体周围黏膜红肿，探诊出血伴溢脓，探诊深度 6mm，种植体无松动；曲面断层片示 46、47 周围可见垂直型骨吸收。存在种植体周黏膜炎症同时伴牙槽骨吸收，符合种植体周围炎诊断，支持该诊断。",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e40fabdf8aa34464ab112e03d1388a40",
+      "case_code": "case747",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：牙周炎\n[M01] 题面影像\n[C01] 右下后牙牙齿疼痛一周",
+        "images": [
+          {
+            "sha256": "289ba0ac6a69129b87434f5097ac12fd407bd57a1806dc31bfb63dffd7725436",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Validation/Images/1275.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Validation/Images/1275.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "右下后牙牙齿疼痛一周"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "主诉牙齿疼痛，影像表现为45远中龋坏及髓，根尖低密度暗影。46近中龋坏",
+                "source_refs": [
+                  "C01",
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e8b61fe5550f4450a30391e0981320a1",
+      "case_code": "case728",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 牙槽骨吸收至根尖1/3.",
+        "images": [
+          {
+            "sha256": "2a8811b435bdc7c01b2def5184a6c529a738a73a775eb58dafd84b3c1589fd4f",
+            "modality": "periapical_radiograph",
+            "width": 1047,
+            "height": 799,
+            "path": "DenPAR-C007/Training/Images/834.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/834.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "imaging_exam",
+                "text": "牙槽骨吸收至根尖1/3."
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "影像学显示牙槽骨吸收至根尖1/3.",
+                "source_refs": [
+                  "M01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ec5a1360db8b46fa82895744facd34cf",
+      "case_code": "case710",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：先天缺牙\n[M01] 题面影像\n[C01] 上前乳牙拔除后2年未萌出新牙",
+        "images": [
+          {
+            "sha256": "28c16bb9cbdc3e0819d660633db4942602333b4e4959476a05837ddaf00c170c",
+            "modality": "intraoral_photograph",
+            "width": 2913,
+            "height": 1636,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_007_423_00_1728457856133_Maxillary_Occlusal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_007_423_00_1728457856133_Maxillary_Occlusal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "history",
+                "text": "上前乳牙拔除后2年未萌出新牙"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "先天缺牙"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "需补充影像证据与既往拔牙证据",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:efc2a6912077423c80cc93e752598ef3",
+      "case_code": "case721",
+      "task_code": "A5.3",
+      "dataset_id": "C010",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C010",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔修复科\n待判断诊断：牙列缺损\n[M01] 题面影像\n[C01] 46 47 36 37 26 27缺失，12 X 21 22烤瓷联冠在位，无叩痛，无松动，周围牙龈无红肿。\n\n[C02] 左下后牙缺失3年",
+        "images": [
+          {
+            "sha256": "2c5a4879137bdb2a8be58da6a742e285ed42ff622e39f014644b7ae95f7d1d77",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1381.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PROSTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "panoramic_radiograph",
+                "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1381.png"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "clinical_exam",
+                "text": "46 47 36 37 26 27缺失，12 X 21 22烤瓷联冠在位，无叩痛，无松动，周围牙龈无红肿。\n"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "chief_complaint",
+                "text": "左下后牙缺失3年"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列缺损"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "患者主诉左下后牙缺失 3 年；临床检查示 46、47、36、37、26、27 牙缺失，12×21、22 烤瓷联冠在位，患牙无叩痛、无松动，牙龈无红肿。依据病史及口腔专科检查，存在多颗牙缺失，牙列完整性遭到破坏，支持牙列缺损诊断。",
+                "source_refs": [
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f5c17a1480194ca8818991e1e9b0b29e",
+      "case_code": "case718",
+      "task_code": "A5.3",
+      "dataset_id": "C005",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C005",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：口腔正畸科\n待判断诊断：牙列拥挤\n[M01] 题面影像\n[C01] 自觉牙不美观",
+        "images": [
+          {
+            "sha256": "b230f2daa5b01d25879a6678a33981a071467e84786137c5737f84add0a29eb2",
+            "modality": "cephalometric_radiograph",
+            "width": 959,
+            "height": 1198,
+            "path": "Aariz-C005/valid/Cephalograms/cl6cc2n573zjj07714vyehp8z.jpeg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "ORTHODONTICS"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "cephalometric_radiograph",
+                "path": "Aariz-C005/valid/Cephalograms/cl6cc2n573zjj07714vyehp8z.jpeg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "自觉牙不美观"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙列拥挤"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "not_supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "无法判断是否存在牙列拥挤",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f72a036b5c3a4abba305c330d531b2f9",
+      "case_code": "case689",
+      "task_code": "A5.3",
+      "dataset_id": "C001",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C001",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：儿童口腔科\n待判断诊断：牙齿萌出异常\n[M01] 题面影像\n[C01] 左下牙齿双排牙发现1年。\n[C02] 牙齿拥挤，33位于牙弓唇侧，34位于牙弓舌侧，43牙弓唇侧萌出。",
+        "images": [
+          {
+            "sha256": "92bd2676a5773269e5e22fb031197cd711e18c26a1fe5dcad3527fe32335fc5b",
+            "modality": "intraoral_photograph",
+            "width": 810,
+            "height": 455,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-851-00_1730122523730_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PEDIATRIC_DENTISTRY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "intraoral_photograph",
+                "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-851-00_1730122523730_Frontal_View.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "左下牙齿双排牙发现1年。"
+              },
+              {
+                "evidence_id": "C02",
+                "fact_type": "history",
+                "text": "牙齿拥挤，33位于牙弓唇侧，34位于牙弓舌侧，43牙弓唇侧萌出。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "牙齿萌出异常"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "33、43唇侧异位、44舌侧异位",
+                "source_refs": [
+                  "M01",
+                  "C01",
+                  "C02"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fbc68cff128847c291a541fcc6824a2c",
+      "case_code": "case727",
+      "task_code": "A5.3",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A5.3 · 诊断边界 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "判断题面给定的诊断是否能由已纳入的影像和事实支持，并给出1至3条理由；不足以支持不等于排除该病，不另行要求检查方案。\n科室场景：牙周科\n待判断诊断：慢性牙周炎\n[M01] 题面影像\n[C01] 下前牙松动一周。",
+        "images": [
+          {
+            "sha256": "0a04e783d951d0feca73d4a9e4850c2c5b90142593055303c20f8b8a9603d98c",
+            "modality": "periapical_radiograph",
+            "width": 886,
+            "height": 1171,
+            "path": "DenPAR-C007/Training/Images/1152.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "department_code",
+            "name": "科室场景",
+            "value": "PERIODONTOLOGY"
+          },
+          {
+            "key": "evidence_media",
+            "name": "题面影像",
+            "value": [
+              {
+                "evidence_id": "M01",
+                "modality_code": "periapical_radiograph",
+                "path": "DenPAR-C007/Training/Images/1152.jpg"
+              }
+            ]
+          },
+          {
+            "key": "clinical_facts",
+            "name": "已提供事实",
+            "value": [
+              {
+                "evidence_id": "C01",
+                "fact_type": "chief_complaint",
+                "text": "下前牙松动一周。"
+              }
+            ]
+          },
+          {
+            "key": "target_diagnosis",
+            "name": "待判断诊断",
+            "value": "慢性牙周炎"
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "diagnosis_support",
+            "name": "是否支持给定诊断",
+            "value": "supported"
+          },
+          {
+            "key": "reasoning",
+            "name": "判断理由",
+            "value": [
+              {
+                "statement": "牙槽骨吸收至根尖1/3.",
+                "source_refs": [
+                  "M01",
+                  "C01"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

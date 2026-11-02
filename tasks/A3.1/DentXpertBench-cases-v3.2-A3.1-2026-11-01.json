@@ -1,0 +1,3361 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:0488d13fa1424bf99c927c10a9d0cf2f",
+      "case_code": "case260",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "02a72eac725e984414ae8fdbb375182521014ed06cf746460ad4c86bad7a1c29",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/460.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "47"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1317418c072347848e78851029b84beb",
+      "case_code": "case264",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "3e08d32b982c3e5d7a34a61c604140fa074f394299073fa12d94300e668c8a11",
+            "modality": "intraoral_photograph",
+            "width": 1351,
+            "height": 901,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-007-698-00_1729321479031_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1985d34ee99846368e0237581578a14c",
+      "case_code": "case258",
+      "task_code": "A3.1",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "ad2b8a4b2b6d85b6eb615c104f6cb1a6caaec41eac7af6e25f0543e65797379f",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Pediatric dental disease detection dataset/Train/images/cate4_003.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "84"
+                ]
+              },
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "84"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1cd0e60335dc4b4f884baf8b97a7dd7e",
+      "case_code": "case269",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "7e0d82960708b2a9b8aa7326d25bb2a8ea25466db731d76b84aa6cc427f9dc9f",
+            "modality": "panoramic_radiograph",
+            "width": 2843,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_108.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右侧后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "15",
+                    "45"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:1ffe42704c3d45f080469dd6b946529f",
+      "case_code": "case261",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "2ee79878a01c427e8037ffff00b999765468e46d1fe08bbe33af5dba035cd331",
+            "modality": "panoramic_radiograph",
+            "width": 2988,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_173.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "26",
+                    "46"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:2633235130cb416fa468e9d99c1f0a77",
+      "case_code": "case286",
+      "task_code": "A3.1",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "68bb13817f65f05ebb3ae5b5b69d36f6a8f1e89f77a574e37a45e156909bb7ae",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000807_f91c023c.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙周骨吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3a314a4c05484b00b8de9dd7084ae8d5",
+      "case_code": "case252",
+      "task_code": "A3.1",
+      "dataset_id": "C017",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C017",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "7dc208c3965eaf9d064f90225aecd3041e6fed8ad4f5387f0bbc92693d071255",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000553_f8c87a59.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左上后牙区"
+                ]
+              },
+              "concept_codes": [
+                "龋样缺损",
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "26",
+                    "27"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "25"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3ace516231f848188c3155c85a65ff10",
+      "case_code": "case248",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "a32753a920b8953825af5b397a0186cc40475c2ad5df8daa3b43300b63401e06",
+            "modality": "periapical_radiograph",
+            "width": 883,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/946.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              },
+              "concept_codes": [
+                "根尖周透射影",
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:43a5b12053e64eea9c0abaddfcf100e1",
+      "case_code": "case282",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "bf75a821a59713b3e09eae48a0c39d6ae363029dde4dcc3118d69215a782ccb4",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.133.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "42",
+                  "43"
+                ]
+              },
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "42",
+                    "43"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:444a594766a34673b3b4a14f9db715f1",
+      "case_code": "case249",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "ba8ff19ce594e006babb7ab91045d11bafb887cd9dbc17d605dd96d6bc36bae6",
+            "modality": "intraoral_photograph",
+            "width": 1386,
+            "height": 1039,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003_007_455_01_1728557053118_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:46d5025693294a8e95bf70d53d1ce459",
+      "case_code": "case245",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "371bb3793cb609120a037952edd4e5375de5f5ca6611588a43cfe57d067f48f9",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Validation/Images/644.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影",
+                "牙根吸收",
+                "牙周骨吸收"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙周骨吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙根吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4944f68e44c344e1a54223c5aafcf7c7",
+      "case_code": "case247",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "c706747dd254741d729af6527e3900e1812e9540a481c361c750437ff9618cf7",
+            "modality": "intraoral_photograph",
+            "width": 1356,
+            "height": 1016,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-008-1253-00_1732971070859_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左下后牙区"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "normalized_bbox": [
+                  0.778084,
+                  0.349826,
+                  0.982148,
+                  0.532397
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4a21bbf5882046ba9bc63f4ed8a9fdba",
+      "case_code": "case262",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "1c788b14aa8b23e97e8d673d0a0cca96e213d30539891b297cdd263d7baa826b",
+            "modality": "intraoral_photograph",
+            "width": 1267,
+            "height": 949,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003-008-1223-01_1732877412001_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "normalized_bbox": [
+                  0.797784,
+                  0.328027,
+                  0.945983,
+                  0.492603
+                ]
+              },
+              {
+                "finding_code": "龋样缺损",
+                "normalized_bbox": [
+                  0.085873,
+                  0.32063,
+                  0.234072,
+                  0.468564
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4d9f93051ca54b0cb7902aa7352485c8",
+      "case_code": "case266",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "870596a2541b054e4b89977735b0d7688aacf232689b0241dc67dd7c93acd79a",
+            "modality": "panoramic_radiograph",
+            "width": 2950,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_205.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左侧后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "26",
+                    "35"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4fa3793abf234b378a22fb58310fd7e8",
+      "case_code": "case273",
+      "task_code": "A3.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "38f00272692717eaf1fc077c8b68f2ad0c6d750e88c47ab25da4f9592733f59f",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/418-F-24.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂",
+                "根尖周透射影",
+                "牙周骨吸收"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙周骨吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:51b075138fce416f81e3558e892d34e3",
+      "case_code": "case270",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "8c9b72f144e5de4dd50359ff26ed56bb13c12e791e057e1b7557153a210e9dd5",
+            "modality": "panoramic_radiograph",
+            "width": 2866,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_118.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影",
+                "牙根吸收"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "下颌前牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "31",
+                    "41"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙根吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "31",
+                    "41"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5ac18e33193f45df8cf719e82c08e41a",
+      "case_code": "case274",
+      "task_code": "A3.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "b22bac895480afb71a61158d61ea7fe907e4f20d9f0828db692eb806b367a9df",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1127-F-60.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5b40de4e2428428b9f008d9e0cda822b",
+      "case_code": "case285",
+      "task_code": "A3.1",
+      "dataset_id": "C014",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "64cd8694cb77f4d6567a9a60da18a50dbce6a93803b201ef748ff5c81eaf181d",
+            "modality": "intraoral_photograph",
+            "width": 6500,
+            "height": 3720,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/178.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "22"
+                ]
+              },
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": ""
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "22"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:5ebdcf89f29144fabf8bc03e1ef5dea2",
+      "case_code": "case246",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "00c57441ff8b38e150bac96d093a73f770715877adedca01ff648623214cc825",
+            "modality": "intraoral_photograph",
+            "width": 1312,
+            "height": 983,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/valid/images/anonymous_003_103_310_00_1727879635589_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损",
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区",
+                  "左下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "no_abnormality",
+            "name": "没有异常",
+            "value": false
+          },
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36",
+                    "37",
+                    "45",
+                    "46",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6b99a587dd6242bca2cee043c728adbc",
+      "case_code": "case275",
+      "task_code": "A3.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "6461009c52984e0b2d60fcbeae2ff37b06735e3b97a355c562dd9e176c0d5fd7",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1250-F-27.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "47"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙周骨吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:70545b805a914b5ea2978326228d08c3",
+      "case_code": "case279",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "433f8f102c13a8f70437fbddb0192dc91e588e42c31b54409d11ba3ec24012ba",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.16.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "normalized_bbox": [
+                  0.507268,
+                  0.389793,
+                  0.761954,
+                  0.654309
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7aec8dc281774c07ae8972d43d510ef6",
+      "case_code": "case278",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "9d3f200de07a77f4df5e0bbe4542da1ffe526f9c77e057367810c4bfe0b52e09",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.51.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "11",
+                  "21"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "21"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:832eecb87aef4b97a31bdbd01869b64b",
+      "case_code": "case257",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "cf778adf1a2257173a7a53b66cc80bf11a4f1252a511694aa9e78d23df7400c1",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Validation/Images/239.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "16"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8d7f72f22ae441a99af69e8b7cf36f34",
+      "case_code": "case254",
+      "task_code": "A3.1",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C014",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "a2725f9f260fcad26ca6f90460f8aeed795426aeee1cb89cd5c361a36473a7c8",
+            "modality": "intraoral_photograph",
+            "width": 5760,
+            "height": 3840,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/071.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8f4954a01df948948eb84f255185a06f",
+      "case_code": "case253",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "c0fe361a7e5268ad963db2929ad8c0709c98486b819e850aba83c964c1db247f",
+            "modality": "intraoral_photograph",
+            "width": 2000,
+            "height": 1123,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Benchmarking Dataset/train/images/anonymous_003_007_454_00_1728548324368_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46",
+                  "47",
+                  "36",
+                  "37"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36",
+                    "37",
+                    "46",
+                    "47"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:915517c1eb4044d49f772518e95349ca",
+      "case_code": "case289",
+      "task_code": "A3.1",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "310a327528301ccd48db336d945e1409fab0a9ef13a0e788d4e99146d7df128d",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Archive/images/38.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "47",
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46",
+                    "47"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:91abc52ecf674592af8fc12c9ed66e9c",
+      "case_code": "case271",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "075b0c999848dcab5efc2a2cd9773824922a552b6b2fa594cb5a4d06b7fd0179",
+            "modality": "panoramic_radiograph",
+            "width": 2832,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_234.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂",
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:96885c5d6d7247e190eace2f7180c802",
+      "case_code": "case284",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "1eb1ac51698397640ad855b1ba8461ea5dcc445f9ce3a894514d72df134c62e7",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/1160.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "45"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙根吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "45"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9ae63ffd506a42a09ebfad326c28ffbc",
+      "case_code": "case276",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "bed83b5674622e78ef637c90ec8d8c59cebf426b5022d6dfa12b3aee4ad8601e",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.72.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "12"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "12"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9df15c28eff04ef283b14730b27dea83",
+      "case_code": "case277",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "3648389bbc7982d1a4ab9045450ec4a5eceb09f676aa7f3cfe9699ba0de946b7",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.42.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "23"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "normalized_bbox": [
+                  0.48615,
+                  0.241,
+                  0.603878,
+                  0.515249
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:9fdba279ad224df984e01241951e2dd4",
+      "case_code": "case280",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "7298fd582a1dab93caf7bb14c7422eca9684239672d62d715459b8e715165001",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.54.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损",
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "21",
+                  "22"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "21",
+                    "22"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "21",
+                    "22"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:a1580f224d7c42f390ef77a06c46b20b",
+      "case_code": "case256",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "f7e012a374989e41155d7309a4ac51ca20eee593e80a52b63647efa041b6bf75",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Training/Images/937.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右上后牙区"
+                ]
+              },
+              "localization_mode": "bbox"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "normalized_bbox": [
+                  0.713297,
+                  0.203455,
+                  0.99446,
+                  0.565916
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b4d5aada93d048c5b25cc221774b2435",
+      "case_code": "case290",
+      "task_code": "A3.1",
+      "dataset_id": "C004",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "7aa0cfc136b9f3295c38124494faccc661889b329d42cbed4a55e39bc45fe802",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Train/images/cate3_013.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "85"
+                ]
+              },
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "85"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ba65b7c4c01f41ef8d06c120d39f4629",
+      "case_code": "case251",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "900fc83d1fc9662f04ca6cfc1374b7f86af06dc0293eaa3b6852ddd41fbd1b9d",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/3. Rx Xiaomi/3.40.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "上颌前牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:be1dc17e16874316846c3e1388fc161a",
+      "case_code": "case293",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "330d9f732c18af6b09f7cee85316cd7b1d175776a1b88d2b22a5c3db03e314b8",
+            "modality": "periapical_radiograph",
+            "width": 885,
+            "height": 1167,
+            "path": "DenPAR-C007/Training/Images/902.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影",
+                "牙周骨吸收"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11"
+                  ]
+                }
+              },
+              {
+                "finding_code": "牙周骨吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "21"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c0ed8a787001468e9c28d2111add250d",
+      "case_code": "case291",
+      "task_code": "A3.1",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C017",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "4ae740807323b5a15879fd059cefaec3ab6713e740ce7f1b8513490375fbdd8c",
+            "modality": "panoramic_radiograph",
+            "width": 2796,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_1/patient_image_000638_8c410f94.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "11",
+                  "21"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "21"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c1bddaaaf13445e1ba37db2a91ffab6e",
+      "case_code": "case268",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "eb25d49abb327b6479ec31f9f7cd0a02c85c140a0398234a7bbbbe2643cb18d0",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_60.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙根吸收",
+                "根尖周透射影",
+                "非龋性牙体缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "非龋性牙体缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙根吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c9a0b98e836f4aecad2a06341dbaedce",
+      "case_code": "case292",
+      "task_code": "A3.1",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "1eeb483d7da82c165b574169a9053da47bf42c869fd3fda6b994626310c0ce0a",
+            "modality": "panoramic_radiograph",
+            "width": 2976,
+            "height": 1536,
+            "path": "BRAR-anchored multimodal dataset-C017/level_2/patient_image_000462_3e19cc2a.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "21",
+                    "31"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:caabcdbc1ebd495eaa8423953bdd8917",
+      "case_code": "case294",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "110b7202f67cd23d7ab15341cc1c4ef8549be11b32e39edb2fad54f05af52b02",
+            "modality": "periapical_radiograph",
+            "width": 1171,
+            "height": 886,
+            "path": "DenPAR-C007/Testing/Images/1027.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙根吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙周骨吸收",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:cf64604d6dfb444992165d302aedd4cd",
+      "case_code": "case250",
+      "task_code": "A3.1",
+      "dataset_id": "C003",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "fabf923f6672726dff6ee08c42aa6e3be14d833ad10b96eb98bf5cc0e654ba47",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/634-F-23.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ddf444b3518b47629eba859cf67a7821",
+      "case_code": "case281",
+      "task_code": "A3.1",
+      "dataset_id": "C006",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C006",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "f617ff9f2660eb1d0dd8fcaef400eddff87f45b7282fa90d81feb5dc2b802b8e",
+            "modality": "periapical_radiograph",
+            "width": 3118,
+            "height": 2551,
+            "path": "Dataset of dental radiographs for the study of periapical lesions-C006/2. Rx iPhone/2.101.JPG"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "21",
+                  "11"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "21",
+                    "11"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11",
+                    "21"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:df0e6a0d216d4ff8be93b74476ef8a66",
+      "case_code": "case259",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "ee4c5670ff698cc52bf6399685c190f0d91bfee6de8ecfb8c5fe59e851941189",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/678.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:df11191e28c44fcfae4585a01ee78396",
+      "case_code": "case283",
+      "task_code": "A3.1",
+      "dataset_id": "C007",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C007",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "f43bbcd2a8efef13a4e9bbccd126832198b85932b67301bf79140014ae6ab22c",
+            "modality": "periapical_radiograph",
+            "width": 1168,
+            "height": 883,
+            "path": "DenPAR-C007/Training/Images/1090.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "36"
+                ]
+              },
+              "concept_codes": [
+                "根尖周透射影",
+                "牙体折裂",
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e9ee43dd8efd4ff68737c9e3d5e9aa07",
+      "case_code": "case288",
+      "task_code": "A3.1",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A3.1 · 硬组织异常 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "f5ec6fff193fdf89052d4f64fbdebf4f4b1f8f84b09bbe1eaefffe601e51c9dd",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate2-00220.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "右下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:eb5ff84a6b7b4d4db546140459fd4842",
+      "case_code": "case267",
+      "task_code": "A3.1",
+      "dataset_id": "C002",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "a42036aac4ff7272eba361d0d94ebc0d6c68972f13689bde4897a65f1af4cf24",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_59.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "根尖周透射影"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "34"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "34"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ec8cf1dd8f704a6ab0a02e2a00eaad02",
+      "case_code": "case265",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "75af838e0b34239cd54c7e0cde0660fd0288bab24c5af98caa311b5beb483eb0",
+            "modality": "intraoral_photograph",
+            "width": 1365,
+            "height": 1023,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/retractors/Frontal/anonymous_003_007_461_01_1728565377628_Frontal_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "11"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "11"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ed6ed0b287f149cfbd501ed50f282f1c",
+      "case_code": "case272",
+      "task_code": "A3.1",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C003",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "5b8e3a30e612e10a73b5a197e441012c98208c005776c4236191c0f8897c6499",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1193-M-20.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "牙体折裂"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "whole_mouth"
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "牙体折裂",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "26",
+                    "47"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f046ac5335c04a88856f91a107d41bee",
+      "case_code": "case263",
+      "task_code": "A3.1",
+      "dataset_id": "C001",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C001",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "1cb5a4b037c102cec85858bbfb42b13446d7aeb3868cf7d3e5559daa714fcdeb",
+            "modality": "intraoral_photograph",
+            "width": 1670,
+            "height": 1252,
+            "path": "Annotated intraoral image dataset for dental caries detection-C001/Images/no_retractors/Mandibular/anonymous_003-007-719-00_1729496830754_Mandibular_View.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "龋样缺损"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "region",
+                "region_codes": [
+                  "左下后牙区"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "36",
+                    "37"
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f2816dc6034248b5a5dfb891b28773e6",
+      "case_code": "case255",
+      "task_code": "A3.1",
+      "dataset_id": "C014",
+      "schema_version": "0.4.9",
+      "title": "A3.1 · 硬组织异常 · C014",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "d6fc4282e05e534c6ab7b82582f0d25613cd284238a6b2d85f2be4ae6c452418",
+            "modality": "intraoral_photograph",
+            "width": 5208,
+            "height": 4013,
+            "path": "FDTooth-C014/patient_imaging_data/intraoral_photographs/220.png"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "23"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "23"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fffafed7dded49b9b27daabdf7626b79",
+      "case_code": "case287",
+      "task_code": "A3.1",
+      "dataset_id": "C017",
+      "schema_version": "0.6.2",
+      "title": "A3.1 · 硬组织异常 · C017",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "评价牙体缺损、折裂、根尖周改变、牙周骨吸收、牙根及骨质异常等硬组织所见。",
+        "images": [
+          {
+            "sha256": "5d1e6a49e4b727e92545daa3dcef2c8801d5559682ca2d3e8e48830eeb08f289",
+            "modality": "panoramic_radiograph",
+            "width": 2795,
+            "height": 1316,
+            "path": "BRAR-anchored multimodal dataset-C017/level_3/patient_image_000115_42f04a2c.jpg"
+          }
+        ],
+        "fields": [
+          {
+            "key": "evaluation_scope",
+            "name": "异常评价范围",
+            "value": {
+              "concept_codes": [
+                "__UNSPECIFIED_FINDING__"
+              ],
+              "other_text": "",
+              "site": {
+                "type": "tooth",
+                "fdi": [
+                  "46"
+                ]
+              },
+              "localization_mode": "site_only",
+              "localization_site_type": "tooth"
+            }
+          }
+        ]
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "findings",
+            "name": "异常",
+            "value": [
+              {
+                "finding_code": "龋样缺损",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              },
+              {
+                "finding_code": "根尖周透射影",
+                "site": {
+                  "type": "tooth",
+                  "fdi": [
+                    "46"
+                  ]
+                },
+                "other_text": ""
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

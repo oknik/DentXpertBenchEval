@@ -1,0 +1,15 @@
+{
+  "model": "Qwen/Qwen3.5-4B",
+  "base_url": "http://124.222.246.189:24758/v1",
+  "requires_api_key": false,
+  "generation": {
+    "timeout": 600,
+    "retries": 10,
+    "retry_sleep": 2.0,
+    "extra_body": {
+      "response_format": {
+        "type": "json_object"
+      }
+    }
+  }
+}

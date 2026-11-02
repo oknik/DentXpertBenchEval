@@ -1,0 +1,1349 @@
+{
+  "format_version": "3.3",
+  "cases": [
+    {
+      "id": "candidate:05b53909e0ae46a8be60bf313ba056d3",
+      "case_code": "case196",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "22dbd9004fb3f0359f39b794d6bf6a49dc7ba02f56ea3150050608a6d00e7eac",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate6-00135.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "53",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "13",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "32",
+                "status": "萌出中"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:14f9aa8aa27c465798499ccb1f9408e3",
+      "case_code": "case195",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "baaf2a5cec93cc6373712bc69f84457caf8f9ca6efd9784d8ac074880a0f61cc",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Children's dental caries segmentation dataset/Supplemental content-93/images/cate1_0013.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "13",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "14",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "15",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "23",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "24",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "25",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "43",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "44",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "45",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "33",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "34",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "35",
+                "status": "未萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:164646fca20d49019455f968896dddde",
+      "case_code": "case198",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "e3bc2a49e043abbf94ff71e4562acd447607ecfecd6b1fca45ec49fb6124a368",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate6-00160.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "28",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "38",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "48",
+                "status": "未萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:256b429bd45541ec8e7adeaa502f793b",
+      "case_code": "case200",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "0bdc8ca6104de4132403447792ff339450471a0af414049816a438902ad7b7d8",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/test/images/cate2-00150.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "阻生"
+              },
+              {
+                "fdi": "48",
+                "status": "阻生"
+              },
+              {
+                "fdi": "28",
+                "status": "阻生"
+              },
+              {
+                "fdi": "38",
+                "status": "阻生"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:28bf36772a8d4d348f714a64ad3a2465",
+      "case_code": "case191",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "195354e217a63d207a0f37dbe575b0cec8c6f0630ff11e1c9d2d78146320675e",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_124.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "25",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3b338b53ab984a91a59faeddafdf618c",
+      "case_code": "case209",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "c417602e138ded8bc9abf2e292006a5f6f4b141030ba54faf3949cf569349c5e",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1454.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "28",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "48",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "38",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "46",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:3cff515a457641a4bd22193d50072234",
+      "case_code": "case199",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "2ad56044316f13799e27aff48242cfc7bd8a72bf5741094ab09264b254c3c347",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate9-00001.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "46",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4d9cb957a27d464c9500cb450779471f",
+      "case_code": "case186",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "4d3b1e9958966c7a570bed4edd23e649661e68aafe2fc46300851826fa36a0c3",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_123.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "31",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4e93e33a17dd42f888edbc3ca4aa9f2e",
+      "case_code": "case207",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "4f7823a1578d7945a62575d869218369b58b2914254b4f6812da6cf36c69402e",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_0205.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "15",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "25",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "45",
+                "status": "萌出中"
+              },
+              {
+                "fdi": "35",
+                "status": "萌出中"
+              },
+              {
+                "fdi": "44",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "34",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:4fc2623cc1bd4782bc267831a6f9c212",
+      "case_code": "case190",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "6d47161ac73926d19a2fa373eda3719560f37b3d1fef5002bfe18def91a4b145",
+            "modality": "panoramic_radiograph",
+            "width": 2880,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_49.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "11",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:50f9a9e801e949afba00f4c086bf0a35",
+      "case_code": "case210",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "1a3b7e86887af79ae3f7e90feb9ff59aa83c8aac39920ad562de8a043dbe7778",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1698.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "阻生"
+              },
+              {
+                "fdi": "28",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "36",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "38",
+                "status": "阻生"
+              },
+              {
+                "fdi": "48",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:68a5cbaebe3c4bdea41e974f29c7f153",
+      "case_code": "case187",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "512de123605bc3af2439d00af6c2fd950ff72a19763194c87e71a21c937c2160",
+            "modality": "panoramic_radiograph",
+            "width": 2902,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_11.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "阻生"
+              },
+              {
+                "fdi": "38",
+                "status": "阻生"
+              },
+              {
+                "fdi": "28",
+                "status": "阻生"
+              },
+              {
+                "fdi": "48",
+                "status": "阻生"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:6dc4646d758948debc68c3687c263e11",
+      "case_code": "case204",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "c3dacb5a5de06e44c626ea7d9039499b14485dfb4b4c829af1ea3ed80f9beceb",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/357-F-46.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "26",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "36",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "16",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:75d0bf9e09dd43e88290d6a7ce383576",
+      "case_code": "case188",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "ab330f3f100492c32ec2b5d7fbab9375f5dcc498a58624a8aac0998fc7b81e3c",
+            "modality": "panoramic_radiograph",
+            "width": 2872,
+            "height": 1504,
+            "path": "DENTEX-C002/input/test_65.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "38",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "28",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "48",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "43",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7e2bcbc169334ade9fe0c55d075a2b2e",
+      "case_code": "case211",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "32b7f37ba34794ec819862e81908bb4f9808ba0dc8fa5d372ab6ad5bea9ea291",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_1014.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "18",
+                "status": "阻生"
+              },
+              {
+                "fdi": "28",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "38",
+                "status": "阻生"
+              },
+              {
+                "fdi": "48",
+                "status": "阻生"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:7ef37f0fd4a34150a88c456b882ab0f8",
+      "case_code": "case205",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "dcbb4b10f001cb1eeeae0b3d549b89e03d992ec2668b1bfdf103649eb57cf2fa",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/209-F-26.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "46",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "37",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "47",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:87bee376f23e411a92f1a89535432b7c",
+      "case_code": "case208",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "9518690e66dcbd2a4ec010b9c6c32bb40e63ee3eb7d097352cea285cdf199154",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_449.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "21",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "22",
+                "status": "萌出中"
+              },
+              {
+                "fdi": "23",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "43",
+                "status": "未萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8a4dd33988804c0eacb99f41f95115d9",
+      "case_code": "case202",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "4ee96af03f21a2e903a7ee85cb16f5ee92e16e5055d38b97062b7c8372aa962d",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/164-F-27.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "46",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:8d2948f0a75445e2bcd3f825429222c0",
+      "case_code": "case189",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "57083c8803090138f2140c97872c8a092806bad177d6ea7c1c1a0c9fa788c9e7",
+            "modality": "panoramic_radiograph",
+            "width": 2702,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_155.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "counterfactual",
+            "name": "本题不存在发育/缺失/阻生",
+            "value": true
+          },
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:91ee7699b53c4949904572101b1f1adb",
+      "case_code": "case214",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.6.2",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "9ce3fe1f37efebd68c1aff2897c5046d770b4bfb0b4082dac903d2f23ce778dc",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/329-F-22.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "counterfactual",
+            "name": "本题不存在发育/缺失/阻生",
+            "value": true
+          },
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:937635c137cd4c2087b4f0cdfaf04f37",
+      "case_code": "case197",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "b3b328dcb9ec81b950b23ca2ba117f6e289b9402d8348804a0d02d6c572c59b2",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/198.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "16",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "18",
+                "status": "阻生"
+              },
+              {
+                "fdi": "48",
+                "status": "阻生"
+              },
+              {
+                "fdi": "25",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "24",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:b635ff254bf740f4813de918da053640",
+      "case_code": "case203",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "aa6b9519c9dff8844444319b0998f218f59f6686ac9a0c0c3b4934b30055e3f9",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/801-F-45.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "36",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c56afdbb457e4f39b32d331733c7d794",
+      "case_code": "case206",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "b80472ae79fd370d2fd46e547bd6ff8de2815cb3b4d10302b821e51b1a79eace",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/A-PXI/Unlabeled/Image/A_U_0145.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "51",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "46",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "16",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "26",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "36",
+                "status": "未萌出"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:c71531f6c9454cf19b4cc0ccd5e1ae3c",
+      "case_code": "case194",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "63c23ee6c74b98b5a5096b91bcd6af2bba44e695d9fc06cc3ddfdc3e0440fe69",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/977-F-21.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "28",
+                "status": "阻生"
+              },
+              {
+                "fdi": "18",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:ccd828f3444c4cf6808f57f973a6e2b5",
+      "case_code": "case192",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "6eccf400113457c00acfac21fb025020a771e9692f47169e7188505e7dd2299b",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/997-F-21.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "48",
+                "status": "阻生"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d43a6bffb7634a34888c89cda4da1769",
+      "case_code": "case193",
+      "task_code": "A2.3",
+      "dataset_id": "C003",
+      "schema_version": "0.7.7",
+      "title": "A2.3 · 发育/缺失/阻生 · C003",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "52c52f1e6c142d8a8a01a1918331d93c5260b383825c68843dabba07552bc076",
+            "modality": "panoramic_radiograph",
+            "width": 2903,
+            "height": 1536,
+            "path": "inredd-dataset-pan924-1.0.0-C003/images/1242-M-27.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "46",
+                "status": "缺牙"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:d658dbf23e3b4519ae9e490e3094a08c",
+      "case_code": "case201",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "simple",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "df8dbb69cfe776f09fbe926d97eac31549e265793566c5b1e97cbdb39ddac7fe",
+            "modality": "panoramic_radiograph",
+            "width": 1991,
+            "height": 1127,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Dataset and code/train/images/cate6-00038.jpg"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "44",
+                "status": "萌出中"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:e5c655b79c9945e285db6860ed4f29de",
+      "case_code": "case212",
+      "task_code": "A2.3",
+      "dataset_id": "C010",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C010",
+      "difficulty": "hard",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "61648c68dbca7cedf23d8bb2baec8422ab1464f47fceed1328315991dc331efa",
+            "modality": "panoramic_radiograph",
+            "width": 640,
+            "height": 320,
+            "path": "SD-Tooth-C010/STS-2D-Tooth/C-PXI/Unlabeled/Image/C_U_092.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "12",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "22",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "31",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "43",
+                "status": "未萌出"
+              },
+              {
+                "fdi": "42",
+                "status": "萌出中"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:f918a85bfa0941468a7daeac5e77bc8e",
+      "case_code": "case185",
+      "task_code": "A2.3",
+      "dataset_id": "C002",
+      "schema_version": "0.6.1",
+      "title": "A2.3 · 发育/缺失/阻生 · C002",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "0b47ba51be3a78c9cd87ab7f7f3c4aed022b3705f290ecf8aaf932dfa9d73d30",
+            "modality": "panoramic_radiograph",
+            "width": 2904,
+            "height": 1316,
+            "path": "DENTEX-C002/input/test_20.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "38",
+                "status": "阻生"
+              },
+              {
+                "fdi": "28",
+                "status": "阻生"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "candidate:fc682e48ce16490382792d8d0da99f95",
+      "case_code": "case213",
+      "task_code": "A2.3",
+      "dataset_id": "C004",
+      "schema_version": "0.17.0",
+      "title": "A2.3 · 发育/缺失/阻生 · C004",
+      "difficulty": "medium",
+      "input": {
+        "instruction": "逐牙记录萌出、阻生或缺失状态，也可构建无目标状态的反事实测试。",
+        "images": [
+          {
+            "sha256": "40b0d1761a8ce4bd0b9b8b7b273e180fdef56e8b545dde738f1f9bea8a99313d",
+            "modality": "panoramic_radiograph",
+            "width": 2000,
+            "height": 942,
+            "path": "Children’s Dental Panoramic Radiographs Dataset-C004/Adult tooth segmentation dataset/Panoramic radiography database/images/340.png"
+          }
+        ],
+        "fields": []
+      },
+      "reference_answer": {
+        "fields": [
+          {
+            "key": "target_teeth",
+            "name": "目标牙齿",
+            "value": [
+              {
+                "fdi": "45",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "35",
+                "status": "缺牙"
+              },
+              {
+                "fdi": "11",
+                "status": "已萌出"
+              },
+              {
+                "fdi": "21",
+                "status": "已萌出"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

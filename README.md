@@ -40,10 +40,38 @@ Dry-run A1.3:
 python run.py --task A1.3 --dry-run --limit 2
 ```
 
+模型回答和评分现在分为两个步骤。运行模型时，每个 task 会保存一个回答文件，默认命名为
+`results/<task>-<model_name>.jsonl`，其中包含 `raw_response`、`thinking`、`parsed_answer`、调用参数和 token usage：
+
+```bash
+python run.py --model-config configs/model-qwen-local.json --task A1.1
+python run.py --model-config configs/model-qwen-local.json --task A1.1 --case-code case35
+```
+
+之后对回答文件评分，结果保存为同名加 `-eval` 的文件：
+
+```bash
+python evaluate.py results/a1_1-Qwen-Qwen3-5-9B.jsonl
+```
+
+`--case-code` 和 `--id` 都可重复使用，分别按 `case_code` 或 `id` 只重新回答指定 case，也可以同时使用。
+
 Dry-run every registered task:
 
 ```bash
 python run.py --task all --dry-run --limit 2
+```
+
+统计 `tokenizer.json` 对所有题目文本输入的 token 数，并按 Qwen2.5-VL 常见的 28px 合并 patch 规则估算图片 token（不调用模型）：
+
+```powershell
+python count_input_tokens.py
+```
+
+结果写入 `results/input_token_counts.json` 和 `results/input_token_counts.csv`。输出同时包含文本 token、估算图片 token 和估算总输入 token。图片估算公式为每张图 `ceil(width/28) × ceil(height/28) + 2`，其中 `+2` 是 vision_start/vision_end；实际服务端会受视觉处理器的缩放策略影响。可只统计一个任务：
+
+```powershell
+python count_input_tokens.py --task A7.2
 ```
 
 在 Windows 下也可以直接双击项目根目录的 `Run-All-A1-A4.cmd`，一次按顺序运行全部 A1-A4 任务。正式运行前可先在 PowerShell 中执行：
@@ -75,6 +103,8 @@ For OpenAI-compatible Qwen servers, use the included local profile:
 ```powershell
 python run.py --model-config configs/model-qwen-local.json --task A1.1 --limit 1
 ```
+
+当前 Qwen profile 直连 `http://124.222.246.189:24758/v1`，不需要启动 SSH 隧道；默认并发为 8，生成 token 上限为 65536。若服务端的 65536 指的是上下文窗口，它仍由服务端配置控制，客户端的 `max_tokens` 只控制最大输出长度。
 
 Each model result records the provider-reported `token_usage` (`prompt_tokens`, `completion_tokens`, `reasoning_tokens`, `visible_completion_tokens`, and `total_tokens`) in the JSONL file. The console also prints usage per case. The `.summary.json` file contains aggregate usage including average, maximum, and P95 total tokens, plus reasoning-token totals. If the server does not return an OpenAI-compatible `usage` object, the field is left empty and the console reports that usage is unavailable.
 

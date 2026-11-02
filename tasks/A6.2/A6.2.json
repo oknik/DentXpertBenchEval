@@ -3,7 +3,8 @@
   "scoring": {
     "case_points": 100.0,
     "field_weights": {
-      "surface_grades": 1.0
+      "diagnoses": 0.5,
+      "reason": 0.5
     }
   }
 }
